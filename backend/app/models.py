@@ -78,6 +78,21 @@ class EstimateResponse(BaseModel):
     results: list[HospitalEstimate]
     created_date: date
     valid_days: int
+    # Hospitals that publish a price for the basket and are within range, but
+    # are hidden by the paediatric filter. Surfaced so the count stays honest.
+    hidden_paediatric_count: int = 0
+
+
+class PriceSource(BaseModel):
+    """One hospital's published price for a code, for the "Published by" list."""
+
+    hospital_id: str
+    hospital_name: str
+    amount: int
+    basis: Literal["cash", "negotiated"]
+    # False when the hospital publishes a price but is not shown on the map
+    # (e.g. Boston Children's, excluded because every patient here is an adult).
+    shown: bool
 
 
 class CodePricing(BaseModel):
@@ -87,11 +102,15 @@ class CodePricing(BaseModel):
     average: int
     lowest: int
     n_hospitals: int
+    # Every hospital publishing this code, so the UI can list them on hover.
+    sources: list[PriceSource] = []
 
 
 class PricingRequest(BaseModel):
     encounter_id: str
     codes: list[str]
+    # When true, paediatric-hospital prices count as "shown on the map" too.
+    include_paediatric: bool = False
 
 
 class PricingResponse(BaseModel):
@@ -103,3 +122,6 @@ class PricingResponse(BaseModel):
 class ExtractRequest(BaseModel):
     encounter_id: str | None = None
     summary_text: str | None = None
+    # Which Claude model runs the live extraction. Validated in extraction.py
+    # against the allow-list; ignored by the CSV replay path.
+    model: str | None = None

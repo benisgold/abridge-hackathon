@@ -18,7 +18,24 @@ from pathlib import Path
 # Rows embed JSON price blobs that comfortably exceed the default field cap.
 csv.field_size_limit(min(sys.maxsize, 10_000_000))
 
-DATA_DIR = Path(__file__).resolve().parents[2] / "data" / "processed_csv"
+_REPO_ROOT = Path(__file__).resolve().parents[2]
+
+
+def _resolve_data_dir() -> Path:
+    """Where the price CSVs live.
+
+    Preferred location is the documented `data/processed_csv/` copy (see
+    README §"price CSVs"). If that copy was never made, fall back to the
+    pipeline's own output at `data_processing/processed_csv/` so the app works
+    without a manual copy step.
+    """
+    preferred = _REPO_ROOT / "data" / "processed_csv"
+    if (preferred / "avs_line_to_billable_codes.csv").exists():
+        return preferred
+    return _REPO_ROOT / "data_processing" / "processed_csv"
+
+
+DATA_DIR = _resolve_data_dir()
 CODES_CSV = DATA_DIR / "avs_line_to_billable_codes.csv"
 AVS_CSV = DATA_DIR / "patient_to_after_visit_summary.csv"
 

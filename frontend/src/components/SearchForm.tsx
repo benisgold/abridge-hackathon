@@ -8,7 +8,7 @@ type Props = {
   onSearch: (zip: string, radiusMiles: number) => void
 }
 
-const RADIUS_OPTIONS = [5, 10, 25, 50]
+const RADIUS_OPTIONS = [5, 10, 25, 50, 1000]
 
 /**
  * Location inputs only. The procedure selection lives in ProcedurePicker and

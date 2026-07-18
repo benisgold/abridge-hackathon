@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 
 from . import real_data
-from .data import HOSPITALS, ZIP_CENTROIDS
+from .data import HOSPITALS, ZIP_CENTROIDS, visible_hospitals
 from .encounters import Encounter, EncounterSummary, find_encounter, load_encounters
 from .extraction import EXTRACTION_MODE, replay_extraction, stream_extraction
 from .geo import haversine_miles
@@ -87,7 +87,7 @@ async def extract_codes(request: ExtractRequest) -> StreamingResponse:
         )
 
     if EXTRACTION_MODE == "live":
-        stream = stream_extraction(summary_text)
+        stream = stream_extraction(summary_text, request.model)
     else:
         if encounter is None:
             raise HTTPException(
@@ -113,7 +113,7 @@ def get_pricing(request: PricingRequest) -> PricingResponse:
     priced = [
         p
         for p in (
-            market_pricing(c)
+            market_pricing(c, include_paediatric=request.include_paediatric)
             for c in real_data.codes_for_encounter(request.encounter_id)
             if c.code in wanted
         )
@@ -140,7 +140,10 @@ def get_estimates(
         alias="zip", description="5-digit ZIP code", min_length=5, max_length=5
     ),
     codes: list[str] = Query(default=[], description="CPT/HCPCS codes; repeatable"),
-    radius_miles: float = Query(default=25, gt=0, le=200),
+    radius_miles: float = Query(default=25, gt=0, le=1000),
+    include_paediatric: bool = Query(
+        default=False, description="Include paediatric hospitals on the map"
+    ),
 ) -> EstimateResponse:
     if not codes:
         raise HTTPException(status_code=400, detail="Provide at least one code.")
@@ -166,8 +169,12 @@ def get_estimates(
 
     origin_lat, origin_lng = origin
     results: list[HospitalEstimate] = []
+    # Count hospitals the paediatric filter hides, but only those that would
+    # otherwise qualify (publish a selected code and sit within range), so the
+    # "N hidden" note matches the discrepancy the user sees against the pricing.
+    hidden_paediatric = 0
 
-    for hospital in HOSPITALS:
+    for hospital in visible_hospitals(include_paediatric=True):
         distance = haversine_miles(origin_lat, origin_lng, hospital.lat, hospital.lng)
         if distance > radius_miles:
             continue
@@ -175,6 +182,11 @@ def get_estimates(
         # A hospital only contributes the codes it actually publishes.
         covered = [(c, c.prices[hospital.id]) for c in selected if hospital.id in c.prices]
         if not covered:
+            continue
+
+        # Qualifies, but the filter keeps it off the map for this request.
+        if hospital.paediatric and not include_paediatric:
+            hidden_paediatric += 1
             continue
 
         breakdown = build_breakdown(
@@ -223,4 +235,5 @@ def get_estimates(
         results=results,
         created_date=date.today(),
         valid_days=ESTIMATE_VALID_DAYS,
+        hidden_paediatric_count=hidden_paediatric,
     )

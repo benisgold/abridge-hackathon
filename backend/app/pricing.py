@@ -7,8 +7,9 @@ UI omits that row.
 
 from hashlib import sha256
 
+from .data import find_seed
 from .real_data import HospitalPrice, RealCode
-from .models import Breakdown, CodePricing, Procedure
+from .models import Breakdown, CodePricing, PriceSource, Procedure
 
 # A published percentile band is only meaningful if it looks like something a
 # person could have paid. Real rows include p10 = $0.04 alongside p90 = $320 —
@@ -121,15 +122,39 @@ def build_breakdown(
     )
 
 
-def market_pricing(code: RealCode) -> CodePricing | None:
+def market_pricing(
+    code: RealCode, include_paediatric: bool = False
+) -> CodePricing | None:
     """Average and lowest across the hospitals that publish this code."""
-    values = [v for v in (payable(p) for p in code.prices.values()) if v is not None]
-    if not values:
+    sources: list[PriceSource] = []
+    for hospital_id, price in code.prices.items():
+        value = payable(price)
+        if value is None:
+            continue
+        amount, basis = value
+        # A hospital in the registry gets its curated name; whether it's shown
+        # on the map depends on the paediatric toggle, so the "Published by"
+        # list stays in step with the pins the user actually sees.
+        seed = find_seed(hospital_id)
+        shown = seed is not None and (include_paediatric or not seed.paediatric)
+        sources.append(
+            PriceSource(
+                hospital_id=hospital_id,
+                hospital_name=seed.name if seed else price.hospital_name,
+                amount=amount,
+                basis=basis,
+                shown=shown,
+            )
+        )
+    if not sources:
         return None
-    amounts = [amount for amount, _ in values]
+
+    sources.sort(key=lambda s: s.amount)
+    amounts = [s.amount for s in sources]
     return CodePricing(
         procedure=to_procedure(code),
         average=round(sum(amounts) / len(amounts)),
         lowest=min(amounts),
         n_hospitals=len(amounts),
+        sources=sources,
     )

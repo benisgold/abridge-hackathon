@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Match the OpenCost Health brand typography across the whole app. */
+body {
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
 /*
  * Map marker cards overlap where hospitals cluster downtown. Leaflet assigns
  * each marker a latitude-derived z-index, so without this the card you're

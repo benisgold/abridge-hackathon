@@ -20,12 +20,22 @@ from . import real_data
 # not exist in the published price data and therefore can't be priced.
 EXTRACTION_MODE = os.environ.get("EXTRACTION_MODE", "csv").lower()
 
-# Haiku is the cheap tier and handles this extraction well; override with
-# EXTRACTION_MODEL in backend/.env to trade cost for accuracy.
+# The only two models the UI lets the user pick between. Haiku is the cheap,
+# fast tier; Sonnet trades cost for accuracy. Anything outside this set is
+# rejected and falls back to the default so a stray request can't run an
+# unexpected (or retired) model.
 # Note: Haiku 4.5 predates adaptive thinking and the effort parameter — passing
 # either returns a 400, so neither is set below.
-MODEL = os.environ.get("EXTRACTION_MODEL", "claude-haiku-4-5")
+ALLOWED_MODELS = ("claude-haiku-4-5", "claude-sonnet-5")
+DEFAULT_MODEL = os.environ.get("EXTRACTION_MODEL", "claude-haiku-4-5")
 MAX_TOKENS = 4096
+
+
+def resolve_model(model: str | None) -> str:
+    """Coerces a requested model to one we allow, defaulting to Haiku."""
+    if model in ALLOWED_MODELS:
+        return model
+    return DEFAULT_MODEL if DEFAULT_MODEL in ALLOWED_MODELS else ALLOWED_MODELS[0]
 
 SYSTEM_PROMPT = """\
 You are a medical billing assistant. You read a patient's after-visit summary and \
@@ -174,8 +184,11 @@ async def replay_extraction(encounter_id: str, summary_text: str) -> AsyncIterat
     yield _sse("done", {"count": count})
 
 
-async def stream_extraction(summary_text: str) -> AsyncIterator[str]:
+async def stream_extraction(
+    summary_text: str, model: str | None = None
+) -> AsyncIterator[str]:
     """Yields SSE frames: step / code / done / error."""
+    resolved_model = resolve_model(model)
     if not os.environ.get("ANTHROPIC_API_KEY"):
         yield _sse(
             "error",
@@ -198,7 +211,7 @@ async def stream_extraction(summary_text: str) -> AsyncIterator[str]:
     count = 0
     try:
         async with client.messages.stream(
-            model=MODEL,
+            model=resolved_model,
             max_tokens=MAX_TOKENS,
             system=SYSTEM_PROMPT,
             messages=[{"role": "user", "content": number_lines(summary_text)}],

@@ -12,8 +12,17 @@ async function request<T>(url: string, init?: RequestInit): Promise<T> {
   if (!res.ok) {
     let detail = `${res.status} ${res.statusText}`
     try {
-      const body = (await res.json()) as { detail?: string }
-      if (body.detail) detail = body.detail
+      const body = (await res.json()) as { detail?: unknown }
+      // FastAPI validation errors return `detail` as an array of objects;
+      // flatten to their messages so we never render "[object Object]".
+      if (Array.isArray(body.detail)) {
+        const msgs = body.detail
+          .map((d) => (d as { msg?: string })?.msg)
+          .filter(Boolean)
+        if (msgs.length) detail = msgs.join('; ')
+      } else if (typeof body.detail === 'string' && body.detail) {
+        detail = body.detail
+      }
     } catch {
       // Non-JSON error body (e.g. the proxy is up but the backend is not).
     }
@@ -41,10 +50,12 @@ export function fetchEncounter(id: string): Promise<Encounter> {
 export function fetchPricing(
   encounterId: string,
   codes: string[],
+  includePaediatric = false,
 ): Promise<PricingResponse> {
   return postJSON<PricingResponse>('/api/pricing', {
     encounter_id: encounterId,
     codes,
+    include_paediatric: includePaediatric,
   })
 }
 
@@ -53,11 +64,13 @@ export function fetchEstimates(
   codes: string[],
   zip: string,
   radiusMiles: number,
+  includePaediatric = false,
 ): Promise<EstimateResponse> {
   const params = new URLSearchParams({
     encounter_id: encounterId,
     zip,
     radius_miles: String(radiusMiles),
+    include_paediatric: String(includePaediatric),
   })
   for (const code of codes) params.append('codes', code)
   return request<EstimateResponse>(`/api/estimates?${params}`)
@@ -77,7 +90,7 @@ type ExtractHandlers = {
  * cannot issue a POST, and the summary text has to go in the request body.
  */
 export async function streamExtraction(
-  body: { encounter_id?: string; summary_text?: string },
+  body: { encounter_id?: string; summary_text?: string; model?: string },
   handlers: ExtractHandlers,
   signal?: AbortSignal,
 ): Promise<void> {

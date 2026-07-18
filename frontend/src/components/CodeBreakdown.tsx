@@ -1,5 +1,5 @@
 import { formatUSD } from '../lib/format'
-import type { PricingResponse } from '../types'
+import type { PriceSource, PricingResponse } from '../types'
 
 type Props = {
   pricing: PricingResponse
@@ -8,19 +8,65 @@ type Props = {
   onContinue: () => void
 }
 
-/** How many hospitals publish a price, since 1 is much weaker than 3. */
-function SourcesCell({ count }: { count: number }) {
-  if (count <= 1) {
-    return (
+/**
+ * How many hospitals publish a price, since 1 is much weaker than 3. On hover
+ * it reveals every publishing hospital and its price — including hospitals that
+ * publish a price but aren't shown on the map (flagged shown=false), which is
+ * why the count here can exceed the number of pins.
+ */
+function SourcesCell({ sources }: { sources: PriceSource[] }) {
+  const count = sources.length
+  const hiddenCount = sources.filter((s) => !s.shown).length
+  const label = count === 1 ? '1 hospital' : `${count} hospitals`
+
+  return (
+    <div className="group relative inline-block">
       <span
-        title="Only one hospital publishes a price for this code."
-        className="text-amber-700"
+        className={`cursor-help underline decoration-dotted underline-offset-2 ${
+          count <= 1 ? 'text-amber-700' : 'text-slate-600'
+        }`}
       >
-        1 hospital
+        {label}
       </span>
-    )
-  }
-  return <span className="text-slate-600">{count} hospitals</span>
+
+      <div className="pointer-events-none absolute top-full right-0 z-20 mt-1 hidden w-72 rounded border border-slate-200 bg-white p-3 text-left whitespace-normal shadow-lg group-hover:block">
+        <p className="mb-2 text-xs font-medium tracking-wide text-slate-500 uppercase">
+          Published by
+        </p>
+        <ul className="space-y-1.5">
+          {sources.map((s) => (
+            <li
+              key={s.hospital_id}
+              className="flex items-baseline justify-between gap-3 text-sm"
+            >
+              <span className="min-w-0 flex-1 break-words text-slate-700">
+                {s.hospital_name}
+                {!s.shown && (
+                  <span className="mt-0.5 block text-xs text-slate-400">
+                    not shown on map
+                  </span>
+                )}
+              </span>
+              <span className="shrink-0 font-medium whitespace-nowrap text-slate-900">
+                {formatUSD(s.amount)}
+                {s.basis === 'negotiated' && (
+                  <span className="ml-1 text-xs font-normal text-slate-400">
+                    neg.
+                  </span>
+                )}
+              </span>
+            </li>
+          ))}
+        </ul>
+        {hiddenCount > 0 && (
+          <p className="mt-2 border-t border-slate-100 pt-2 text-xs text-slate-500">
+            {hiddenCount} publishes a price but isn't shown on the map (adult
+            patients aren't quoted paediatric-hospital prices).
+          </p>
+        )}
+      </div>
+    </div>
+  )
 }
 
 export function CodeBreakdown({
@@ -47,7 +93,7 @@ export function CodeBreakdown({
         </p>
       </div>
 
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto md:overflow-x-visible">
         <table className="w-full min-w-[46rem] text-left">
           <thead>
             <tr className="border-b border-slate-200 text-sm text-slate-600">
@@ -112,7 +158,7 @@ export function CodeBreakdown({
                     {formatUSD(item.lowest)}
                   </td>
                   <td className="px-6 py-4 text-sm whitespace-nowrap">
-                    <SourcesCell count={item.n_hospitals} />
+                    <SourcesCell sources={item.sources} />
                   </td>
                 </tr>
               )

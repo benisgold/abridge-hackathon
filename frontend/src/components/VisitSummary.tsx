@@ -1,18 +1,17 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { buildColorMap, colorForIndex } from '../lib/codeColors'
-import type { Encounter, EncounterSummary, ExtractedCode } from '../types'
+import type { Encounter, ExtractedCode } from '../types'
 
 /** Above this many codes on one line, show a count instead of every badge. */
 const MAX_INLINE_BADGES = 4
 
 type Props = {
-  encounters: EncounterSummary[]
-  selectedId: string
   encounter: Encounter | null
   summaryText: string
   codes: ExtractedCode[]
   selectedCode: string | null
-  onSelectEncounter: (id: string) => void
+  /** True while the agent is running: sweeps a highlight down the note. */
+  scanning: boolean
   onSelectCode: (code: string | null) => void
 }
 
@@ -21,18 +20,32 @@ type Props = {
  * code marked inline and colour-paired to its card.
  */
 export function VisitSummary({
-  encounters,
-  selectedId,
   encounter,
   summaryText,
   codes,
   selectedCode,
-  onSelectEncounter,
+  scanning,
   onSelectCode,
 }: Props) {
   const lines = summaryText.split('\n')
   const activeLineRef = useRef<HTMLDivElement>(null)
   const colorSlots = buildColorMap(codes)
+
+  // The line the reading cursor sits on: the source line of the most recently
+  // generated code. As codes stream in, the highlight jumps to wherever the
+  // agent is currently pulling a code from, rather than blindly cycling.
+  const [scanLine, setScanLine] = useState<number | null>(null)
+  useEffect(() => {
+    if (!scanning) {
+      setScanLine(null)
+      return
+    }
+    const traced = codes.filter(
+      (c) => c.line !== null && c.line !== undefined,
+    )
+    const latest = traced[traced.length - 1]
+    setScanLine(latest ? (latest.line as number) : null)
+  }, [scanning, codes])
 
   // Codes grouped by the line they came from; a line can produce several.
   const byLine = new Map<number, ExtractedCode[]>()
@@ -61,29 +74,15 @@ export function VisitSummary({
             ? `${encounter.visit_title} · ${encounter.date}`
             : 'Loading encounter…'}
         </p>
-
-        <label className="mt-3 flex flex-col gap-1">
-          <span className="text-sm text-slate-600">Encounter</span>
-          <select
-            value={selectedId}
-            onChange={(e) => onSelectEncounter(e.target.value)}
-            className="rounded border border-slate-300 px-3 py-2 text-sm text-slate-900 focus:border-teal-600 focus:ring-1 focus:ring-teal-600 focus:outline-none"
-          >
-            {encounters.map((e) => (
-              <option key={e.id} value={e.id}>
-                {e.has_codes ? '' : '(no priced follow-ups) '}
-                {e.patient_name} — {e.visit_title}
-              </option>
-            ))}
-          </select>
-        </label>
       </div>
 
       <div className="flex flex-1 flex-col p-5">
         <p className="mb-2 text-sm text-slate-600">
-          {codes.length > 0
-            ? 'Highlighted lines produced a billing code. Click a line or a code to link them.'
-            : 'Uploaded by your care team.'}
+          {scanning
+            ? 'Reading your summary line by line…'
+            : codes.length > 0
+              ? 'Highlighted lines produced a billing code. Click a line or a code to link them.'
+              : 'Uploaded by your care team.'}
         </p>
         <div
           data-testid="summary-lines"
@@ -92,6 +91,7 @@ export function VisitSummary({
           {lines.map((line, lineIndex) => {
             const hits = byLine.get(lineIndex) ?? []
             const isSelected = hits.some((h) => h.code === selectedCode)
+            const isScanning = scanning && lineIndex === scanLine
             // Every code on this line shares its slot, so hits[0] is safe.
             const color =
               hits.length > 0
@@ -103,7 +103,11 @@ export function VisitSummary({
                 <div
                   key={lineIndex}
                   data-line={lineIndex}
-                  className="px-2 py-0.5 whitespace-pre-wrap text-slate-700"
+                  className={`rounded px-2 py-0.5 whitespace-pre-wrap text-slate-700 transition ${
+                    isScanning
+                      ? 'bg-teal-100 text-teal-900 ring-1 ring-teal-300'
+                      : ''
+                  }`}
                 >
                   {line || ' '}
                 </div>
@@ -119,7 +123,11 @@ export function VisitSummary({
                 data-selected={isSelected ? 'true' : 'false'}
                 onClick={() => onSelectCode(isSelected ? null : hits[0].code)}
                 className={`cursor-pointer rounded px-2 py-1 whitespace-pre-wrap text-slate-900 transition ${
-                  isSelected ? color!.lineActive : color!.lineIdle
+                  isScanning
+                    ? 'bg-teal-100 ring-1 ring-teal-300'
+                    : isSelected
+                      ? color!.lineActive
+                      : color!.lineIdle
                 }`}
               >
                 <span>{line || ' '}</span>

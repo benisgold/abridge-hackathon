@@ -57,6 +57,16 @@ HOSPITALS: list[HospitalSeed] = [
 ]
 
 
+def visible_hospitals(include_paediatric: bool = INCLUDE_PAEDIATRIC) -> list[HospitalSeed]:
+    """Hospitals shown on the map for a request; paediatric ones are opt-in."""
+    return [h for h in ALL_HOSPITALS if include_paediatric or not h.paediatric]
+
+
+def find_seed(hospital_id: str) -> HospitalSeed | None:
+    """Look up a hospital regardless of the paediatric filter."""
+    return next((h for h in ALL_HOSPITALS if h.id == hospital_id), None)
+
+
 def find_hospital(hospital_id: str) -> HospitalSeed | None:
     return next((h for h in HOSPITALS if h.id == hospital_id), None)
 

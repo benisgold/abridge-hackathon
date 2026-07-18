@@ -58,6 +58,8 @@ export type EstimateResponse = {
   results: HospitalEstimate[]
   created_date: string
   valid_days: number
+  /** Hospitals within range that the paediatric filter keeps off the map. */
+  hidden_paediatric_count: number
 }
 
 export type EncounterSummary = {
@@ -86,12 +88,23 @@ export type ExtractedCode = {
   confidence: string
 }
 
+export type PriceSource = {
+  hospital_id: string
+  hospital_name: string
+  amount: number
+  basis: PriceBasis
+  /** False when the hospital publishes a price but isn't shown on the map. */
+  shown: boolean
+}
+
 export type CodePricing = {
   procedure: Procedure
   average: number
   lowest: number
   /** How many hospitals publish a price for this code. */
   n_hospitals: number
+  /** Every hospital publishing this code, revealed on hover. */
+  sources: PriceSource[]
 }
 
 export type PricingResponse = {

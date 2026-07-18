@@ -1,0 +1,99 @@
+/*
+ * Shared OpenCost Health top navigation, used by both the marketing landing
+ * page and the tool so the two share one header, theme, and brand. Scoped under
+ * `.site-header` so nothing leaks into the tool's Tailwind.
+ */
+.site-header {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(220, 229, 238, 0.7);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.site-header-inner {
+  width: min(1160px, calc(100% - 40px));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #10233f;
+  font-size: 16px;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.site-brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  background: #0d1b2f;
+  display: grid;
+  place-items: center;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.site-brand-mark svg { width: 20px; height: 20px; }
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  color: #5f7089;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.site-nav a { color: inherit; text-decoration: none; }
+.site-nav a:hover { color: #0f766e; }
+
+.site-nav-link {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  padding: 0;
+}
+.site-nav-link:hover { color: #0f766e; }
+
+.site-nav-user { color: #5f7089; }
+.site-nav-user strong { color: #10233f; font-weight: 700; }
+
+.site-btn-dark {
+  border: 0;
+  border-radius: 999px;
+  padding: 11px 18px;
+  font-weight: 750;
+  cursor: pointer;
+  color: white;
+  background: #0d1b2f;
+  box-shadow: 0 10px 28px rgba(13, 27, 47, 0.18);
+  transition: transform 0.2s ease;
+  font: inherit;
+}
+.site-btn-dark:hover { transform: translateY(-1px); }
+
+@media (max-width: 700px) {
+  .site-header-inner { width: min(100% - 24px, 1160px); }
+  .site-nav { gap: 18px; }
+  .site-nav .site-nav-hide { display: none; }
+}

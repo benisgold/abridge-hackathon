@@ -1,4 +1,5 @@
 import { buildColorMap, colorForIndex } from '../lib/codeColors'
+import { EXTRACTION_MODELS, type ModelId } from '../lib/models'
 import type { ExtractedCode } from '../types'
 
 type Props = {
@@ -10,6 +11,8 @@ type Props = {
   started: boolean
   error: string | null
   selectedCode: string | null
+  model: ModelId
+  onModelChange: (model: ModelId) => void
   onRun: () => void
   onRegenerate: () => void
   onContinue: () => void
@@ -24,6 +27,8 @@ export function ExtractionProgress({
   started,
   error,
   selectedCode,
+  model,
+  onModelChange,
   onRun,
   onRegenerate,
   onContinue,
@@ -53,15 +58,33 @@ export function ExtractionProgress({
           </div>
         </div>
 
-        {codes.length > 0 && !running && (
-          <button
-            type="button"
-            onClick={onRegenerate}
-            className="rounded border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50"
-          >
-            ↻ Regenerate
-          </button>
-        )}
+        <div className="flex items-center gap-2">
+          <label className="flex items-center gap-1.5 text-sm text-slate-600">
+            <span className="hidden sm:inline">Model</span>
+            <select
+              value={model}
+              disabled={running}
+              onChange={(e) => onModelChange(e.target.value as ModelId)}
+              className="rounded border border-slate-300 px-2 py-1.5 text-sm text-slate-900 focus:border-teal-600 focus:ring-1 focus:ring-teal-600 focus:outline-none disabled:opacity-60"
+            >
+              {EXTRACTION_MODELS.map((m) => (
+                <option key={m.id} value={m.id}>
+                  {m.label} · {m.blurb}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          {codes.length > 0 && !running && (
+            <button
+              type="button"
+              onClick={onRegenerate}
+              className="rounded border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50"
+            >
+              ↻ Regenerate
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="flex flex-1 flex-col p-5">

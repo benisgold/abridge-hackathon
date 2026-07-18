@@ -13,7 +13,9 @@ import { HospitalList } from './components/HospitalList'
 import { HospitalMap } from './components/HospitalMap'
 import { ProcedurePicker } from './components/ProcedurePicker'
 import { SearchForm } from './components/SearchForm'
+import { SiteHeader } from './components/SiteHeader'
 import { VisitSummary } from './components/VisitSummary'
+import { DEFAULT_MODEL, type ModelId } from './lib/models'
 import type {
   Encounter,
   EncounterSummary,
@@ -30,7 +32,12 @@ const STEPS: { id: Step; label: string }[] = [
   { id: 'hospitals', label: 'Compare hospitals' },
 ]
 
-function App() {
+type AppProps = {
+  /** Optional: return to the marketing landing page. */
+  onBackHome?: () => void
+}
+
+function App({ onBackHome }: AppProps = {}) {
   const [step, setStep] = useState<Step>('review')
 
   // Encounter selection and note text
@@ -47,6 +54,8 @@ function App() {
   const [steps, setSteps] = useState<string[]>([])
   const [extracted, setExtracted] = useState<ExtractedCode[]>([])
   const [cachedFor, setCachedFor] = useState<string | null>(null)
+  // Which Claude model the live extraction path uses; picked in the header.
+  const [model, setModel] = useState<ModelId>(DEFAULT_MODEL)
   const [extracting, setExtracting] = useState(false)
   const [extractStarted, setExtractStarted] = useState(false)
   const [servedFromCache, setServedFromCache] = useState(false)
@@ -58,6 +67,11 @@ function App() {
   // Pricing. `costCodes` drives the total on the cost screen only.
   const [pricing, setPricing] = useState<PricingResponse | null>(null)
   const [costCodes, setCostCodes] = useState<Set<string>>(new Set())
+
+  // Whether paediatric hospitals appear on the map / in the "Published by"
+  // count. Off by default (every patient here is an adult); the header toggle
+  // flips it so the two counts always agree with what's shown.
+  const [includePaediatric, setIncludePaediatric] = useState(false)
 
   // Hospitals. `hospitalCodes` is a separate selection: patients often split
   // procedures across facilities, so what you're pricing overall and what
@@ -147,8 +161,13 @@ function App() {
 
       await streamExtraction(
         // Send both: CSV replay keys off the encounter, while the live model
-        // path (EXTRACTION_MODE=live) reads the possibly-edited note text.
-        { encounter_id: selectedEncounterId, summary_text: noteAtRunStart },
+        // path (EXTRACTION_MODE=live) reads the possibly-edited note text and
+        // the chosen model.
+        {
+          encounter_id: selectedEncounterId,
+          summary_text: noteAtRunStart,
+          model,
+        },
         {
           onStep: (label) =>
             setSteps((prev) => (prev.includes(label) ? prev : [...prev, label])),
@@ -169,7 +188,7 @@ function App() {
         controller.signal,
       )
     },
-    [extracted.length, cachedFor, summaryText, selectedEncounterId],
+    [extracted.length, cachedFor, summaryText, selectedEncounterId, model],
   )
 
   async function goToPricing() {
@@ -188,7 +207,11 @@ function App() {
     setError(null)
     try {
       const codes = extracted.map((c) => c.code)
-      const result = await fetchPricing(selectedEncounterId, codes)
+      const result = await fetchPricing(
+        selectedEncounterId,
+        codes,
+        includePaediatric,
+      )
       setPricing(result)
       setCostCodes(new Set(codes))
       setHospitalCodes(new Set(codes))
@@ -243,6 +266,7 @@ function App() {
       [...hospitalCodes],
       lastQuery.zip,
       lastQuery.radiusMiles,
+      includePaediatric,
     )
       .then((result) => {
         // Ignore anything but the newest request — rapid toggling can leave
@@ -259,7 +283,18 @@ function App() {
       .finally(() => {
         if (requestId === estimateRequestRef.current) setLoading(false)
       })
-  }, [hospitalCodes, lastQuery, selectedEncounterId])
+  }, [hospitalCodes, lastQuery, selectedEncounterId, includePaediatric])
+
+  // Re-price when the paediatric toggle flips so the "Published by" counts and
+  // the map pins stay in agreement. Only runs once a basket is already priced.
+  useEffect(() => {
+    if (!pricing) return
+    const codes = pricing.codes.map((c) => c.procedure.code)
+    fetchPricing(selectedEncounterId, codes, includePaediatric)
+      .then(setPricing)
+      .catch((err: Error) => setError(err.message))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [includePaediatric])
 
   function handleSelectHospital(hospitalId: string) {
     setSelectedHospitalId(hospitalId)
@@ -274,59 +309,151 @@ function App() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <header className="border-b border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-5">
-          <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h1 className="text-2xl font-semibold text-slate-900">
-              MyHealth Portal
-            </h1>
-            {encounter && (
-              <p className="text-sm text-slate-600">
-                Signed in as{' '}
-                <span className="font-medium text-slate-800">
-                  {encounter.patient_name}
-                </span>
-              </p>
-            )}
+      <SiteHeader onBrandClick={onBackHome}>
+        <div
+          className="site-nav-user site-nav-hide"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-end',
+              gap: 3,
+            }}
+          >
+            <span>
+              Signed in as <strong>Robbert Struyven</strong>
+            </span>
+            <label
+              title="Every patient in this demo is an adult, so paediatric hospitals are hidden by default."
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 6,
+                cursor: 'pointer',
+                fontWeight: 500,
+                fontSize: 13,
+              }}
+            >
+              <input
+                type="checkbox"
+                checked={includePaediatric}
+                onChange={(e) => setIncludePaediatric(e.target.checked)}
+                style={{ accentColor: '#0f766e', cursor: 'pointer' }}
+              />
+              Include paediatric hospitals
+            </label>
           </div>
+        {onBackHome && (
+          <button
+            type="button"
+            onClick={onBackHome}
+            className="site-nav-link"
+          >
+            Home
+          </button>
+        )}
+      </SiteHeader>
 
-          <ol className="mt-4 flex flex-wrap gap-x-2 gap-y-1 text-sm">
-            {STEPS.map((s, index) => {
-              const reachable = index < currentStepIndex
-              const active = index === currentStepIndex
-              return (
-                <li key={s.id} className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      if (!reachable) return
-                      // Returning to the review step shows saved codes rather
-                      // than re-running the model.
-                      if (s.id === 'review' && extracted.length > 0) {
-                        setServedFromCache(true)
-                      }
-                      setStep(s.id)
-                    }}
-                    disabled={!reachable}
-                    className={
-                      active
-                        ? 'font-medium text-teal-800'
-                        : reachable
-                          ? 'text-slate-600 hover:text-teal-800 hover:underline'
-                          : 'text-slate-400'
-                    }
+      <div className="border-b border-slate-200 bg-gradient-to-b from-white to-slate-50">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-4 lg:flex-row lg:items-center lg:gap-10">
+          <label className="flex shrink-0 items-center gap-2">
+            <span className="text-sm font-semibold whitespace-nowrap text-slate-800">
+              Select encounter
+            </span>
+            <select
+              value={selectedEncounterId}
+              onChange={(e) => setSelectedEncounterId(e.target.value)}
+              className="w-full rounded border border-slate-300 px-3 py-2 text-sm text-slate-900 focus:border-teal-600 focus:ring-1 focus:ring-teal-600 focus:outline-none lg:w-72"
+            >
+              {encounters.map((e, index) => (
+                <option key={e.id} value={e.id}>
+                  {index + 1}. {e.has_codes ? '' : '(no priced follow-ups) '}
+                  {e.patient_name} — {e.visit_title}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <nav aria-label="Progress" className="flex-1">
+            <ol className="flex items-center">
+              {STEPS.map((s, index) => {
+                const reachable = index < currentStepIndex
+                const active = index === currentStepIndex
+                const completed = index < currentStepIndex
+                return (
+                  <li
+                    key={s.id}
+                    className={`flex items-center ${
+                      index < STEPS.length - 1 ? 'flex-1' : ''
+                    }`}
                   >
-                    {index + 1}. {s.label}
-                  </button>
-                  {index < STEPS.length - 1 && (
-                    <span className="text-slate-300">›</span>
-                  )}
-                </li>
-              )
-            })}
-          </ol>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (!reachable) return
+                        // Returning to the review step shows saved codes rather
+                        // than re-running the model.
+                        if (s.id === 'review' && extracted.length > 0) {
+                          setServedFromCache(true)
+                        }
+                        setStep(s.id)
+                      }}
+                      disabled={!reachable}
+                      className={`group flex items-center gap-3 ${
+                        reachable ? 'cursor-pointer' : 'cursor-default'
+                      }`}
+                    >
+                      <span
+                        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold transition ${
+                          completed
+                            ? 'bg-teal-600 text-white shadow-sm shadow-teal-600/30 group-hover:bg-teal-700'
+                            : active
+                              ? 'bg-slate-900 text-white ring-4 ring-teal-100'
+                              : 'border border-slate-300 bg-white text-slate-400'
+                        }`}
+                      >
+                        {completed ? (
+                          <svg
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            className="h-4 w-4"
+                            aria-hidden="true"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0l-3.5-3.5a1 1 0 1 1 1.4-1.4l2.8 2.8 6.8-6.8a1 1 0 0 1 1.4 0Z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                        ) : (
+                          index + 1
+                        )}
+                      </span>
+                      <span
+                        className={`hidden text-sm whitespace-nowrap transition sm:block ${
+                          active
+                            ? 'font-semibold text-slate-900'
+                            : completed
+                              ? 'font-medium text-slate-700 group-hover:text-teal-700'
+                              : 'text-slate-400'
+                        }`}
+                      >
+                        {s.label}
+                      </span>
+                    </button>
+                    {index < STEPS.length - 1 && (
+                      <span
+                        className={`mx-3 h-0.5 flex-1 rounded-full transition ${
+                          completed ? 'bg-teal-500' : 'bg-slate-200'
+                        }`}
+                      />
+                    )}
+                  </li>
+                )
+              })}
+            </ol>
+          </nav>
         </div>
-      </header>
+      </div>
 
       <main className="mx-auto max-w-7xl px-6 py-6">
         <p className="mb-5 rounded border border-sky-300 bg-sky-50 px-4 py-3 text-sm text-sky-900">
@@ -345,13 +472,11 @@ function App() {
         {step === 'review' && (
           <div className="grid grid-cols-1 items-start gap-5 lg:grid-cols-2">
             <VisitSummary
-              encounters={encounters}
-              selectedId={selectedEncounterId}
               encounter={encounter}
               summaryText={summaryText}
               codes={extracted}
               selectedCode={selectedCode}
-              onSelectEncounter={setSelectedEncounterId}
+              scanning={extracting}
               onSelectCode={setSelectedCode}
             />
             <ExtractionProgress
@@ -362,6 +487,8 @@ function App() {
               started={extractStarted}
               error={extractError}
               selectedCode={selectedCode}
+              model={model}
+              onModelChange={setModel}
               onRun={() => runExtraction(false)}
               onRegenerate={() => runExtraction(true)}
               onContinue={goToPricing}
@@ -418,6 +545,11 @@ function App() {
                     {response.procedures.length === 1
                       ? 'procedure'
                       : 'procedures'}
+                    {response.hidden_paediatric_count > 0 && (
+                      <span className="ml-2 font-normal text-slate-500">
+                        · {response.hidden_paediatric_count} hidden (paediatric)
+                      </span>
+                    )}
                   </h2>
                   <p className="text-sm text-slate-600">Sorted by lowest cost</p>
                 </div>

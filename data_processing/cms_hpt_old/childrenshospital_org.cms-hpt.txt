@@ -1,0 +1,58 @@
+# cms-hpt fetch metadata
+# facility: CHILDREN'S HOSPITAL CORPORATION (Boston Children's)
+# system-url: https://www.childrenshospital.org/
+# cms-hpt-url: https://www.childrenshospital.org/cms-hpt.txt
+# --- original cms-hpt.txt body ---
+location-name: Boston Children's Longwood
+source-page-url: https://www.childrenshospital.org/patient-resources/financial-and-billing-matters/hospital-services-and-charges
+mrf-url: https://www.childrenshospital.org/sites/default/files/cms-hpt/comp-2026/04-2774441_Boston-Childrens-Longwood_StandardCharges.json
+contact-name: Margaret Fisher
+contact-email: Margaret.Fisher@childrens.harvard.edu
+
+location-name: Boston Children's Brookline
+source-page-url: https://www.childrenshospital.org/patient-resources/financial-and-billing-matters/hospital-services-and-charges
+mrf-url: https://www.childrenshospital.org/sites/default/files/cms-hpt/comp-2026/04-2774441_Boston-Childrens-Brookline_StandardCharges.json
+contact-name: Margaret Fisher
+contact-email: Margaret.Fisher@childrens.harvard.edu
+
+location-name: Martha Eliot Health Center
+source-page-url: https://www.childrenshospital.org/patient-resources/financial-and-billing-matters/hospital-services-and-charges
+mrf-url: https://www.childrenshospital.org/sites/default/files/cms-hpt/comp-2026/04-2774441_Boston-Childrens-Martha-Eliot_StandardCharges.json
+contact-name: Margaret Fisher
+contact-email: Margaret.Fisher@childrens.harvard.edu
+
+location-name: Boston Children's Waltham
+source-page-url: https://www.childrenshospital.org/patient-resources/financial-and-billing-matters/hospital-services-and-charges
+mrf-url: https://www.childrenshospital.org/sites/default/files/cms-hpt/comp-2026/04-2774441_Boston-Childrens-Waltham_StandardCharges.json
+contact-name: Margaret Fisher
+contact-email: Margaret.Fisher@childrens.harvard.edu
+
+location-name: Boston Children's Weymouth
+source-page-url: https://www.childrenshospital.org/patient-resources/financial-and-billing-matters/hospital-services-and-charges
+mrf-url: https://www.childrenshospital.org/sites/default/files/cms-hpt/comp-2026/04-2774441_Boston-Childrens-Weymouth_StandardCharges.json
+contact-name: Margaret Fisher
+contact-email: Margaret.Fisher@childrens.harvard.edu
+
+location-name: Boston Children's Lexington
+source-page-url: https://www.childrenshospital.org/patient-resources/financial-and-billing-matters/hospital-services-and-charges
+mrf-url: https://www.childrenshospital.org/sites/default/files/cms-hpt/comp-2026/04-2774441_Boston-Childrens-Lexington_StandardCharges.json
+contact-name: Margaret Fisher
+contact-email: Margaret.Fisher@childrens.harvard.edu
+
+location-name: Boston Children's Peabody
+source-page-url: https://www.childrenshospital.org/patient-resources/financial-and-billing-matters/hospital-services-and-charges
+mrf-url: https://www.childrenshospital.org/sites/default/files/cms-hpt/comp-2026/04-2774441_Boston-Childrens-Peabody_StandardCharges.json
+contact-name: Margaret Fisher
+contact-email: Margaret.Fisher@childrens.harvard.edu
+
+location-name: Boston Children's North Dartmouth
+source-page-url: https://www.childrenshospital.org/patient-resources/financial-and-billing-matters/hospital-services-and-charges
+mrf-url: https://www.childrenshospital.org/sites/default/files/cms-hpt/comp-2026/04-2774441_Boston-Childrens-North-Dartmouth_StandardCharges.json
+contact-name: Margaret Fisher
+contact-email: Margaret.Fisher@childrens.harvard.edu
+
+location-name: Boston Children's Needham
+source-page-url: https://www.childrenshospital.org/patient-resources/financial-and-billing-matters/hospital-services-and-charges
+mrf-url: https://www.childrenshospital.org/sites/default/files/cms-hpt/comp-2026/04-2774441_Boston-Childrens-Needham_StandardCharges.json
+contact-name: Margaret Fisher
+contact-email: Margaret.Fisher@childrens.harvard.edu

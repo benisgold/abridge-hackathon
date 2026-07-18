@@ -1,0 +1,468 @@
+patient_number,patient_id,encounter_id,patient,gender,birth_date,encounter_date,visit_title,facility,what_we_discussed,next_steps,num_discussed,num_next_steps,avs_word_count,after_visit_summary
+0,3a3a1f26-ed23-f65c-a7df-c96fac56f464,3a3a1f26-ed23-f65c-e264-be689558faea,Ali Jerry Kuhic,male,1991-05-24,2022-08-05,Annual physical — preventive screening and migraine check-in,WHITLEY WELLNESS LLC,Gingivitis | Chronic intractable migraine without aura | Social isolation and stress | Transportation insecurity | Preventive health and screening,"Patient referral for dental care placed (sliding-scale clinic). | Daily flossing and twice-daily brushing reviewed. | Medication reconciliation completed and chart list updated. | Keep a simple headache log; return precautions reviewed for any change in pattern or new neurologic symptoms. | Assessment of health and social care needs completed (PRAPARE). | Care coordinator outreach this week; encouraged trial of community men's group. | Enrollment in medical ride-service program via care coordination, including dental visits. | Lifestyle counseling on diet and regular aerobic activity; repeat lipid panel to follow the trend.",5,8,120,"Visit summary
+
+What we discussed
+• Gingivitis
+• Chronic intractable migraine without aura
+• Social isolation and stress
+• Transportation insecurity
+• Preventive health and screening
+
+Next steps
+• Patient referral for dental care placed (sliding-scale clinic).
+• Daily flossing and twice-daily brushing reviewed.
+• Medication reconciliation completed and chart list updated.
+• Keep a simple headache log; return precautions reviewed for any change in pattern or new neurologic symptoms.
+• Assessment of health and social care needs completed (PRAPARE).
+• Care coordinator outreach this week; encouraged trial of community men's group.
+• Enrollment in medical ride-service program via care coordination, including dental visits.
+• Lifestyle counseling on diet and regular aerobic activity; repeat lipid panel to follow the trend."
+1,7bd9e5b0-5d4b-f10d-9579-f4813faf9cdc,7bd9e5b0-5d4b-f10d-cb93-7fcf216727d8,Ariane Jan Runolfsson,female,1940-05-16,2021-01-03,Inpatient admission — COVID-19 isolation with pneumonia and hypoxemia,"FIRST PSYCHIATRIC PLANNERS, INC",COVID-19 with pneumonia | Hypoxemia and respiratory distress | Renal function and metabolic abnormalities | Chronic cardiovascular disease | Allergy and supportive care,"Hospital admission to isolation room; no in-room visitors, daily family updates and video calls arranged. | Daily monitoring labs: CBC with automated differential, comprehensive metabolic panel; scheduled troponin I (high-sensitivity), PT/coagulation panel, and iron panel. | Oxygen administration by mask, continuous, titrated to saturation; ongoing daily oxygen therapy through the stay. | Daily prone positioning sessions as tolerated, with padding accommodations for scoliosis. | Escalation and call-bell instructions reviewed with patient; monitor for worsening respiratory distress. | Follow daily comprehensive metabolic panel; support hydration and oral intake. | Review home antihypertensives daily against renal function and potassium; adjust per lab trend. | Continue home aspirin 81 mg, atenolol 50 mg, rosuvastatin 40 mg, lisinopril 20 mg as labs and hemodynamics allow.",5,8,153,"Visit summary
+
+What we discussed
+• COVID-19 with pneumonia
+• Hypoxemia and respiratory distress
+• Renal function and metabolic abnormalities
+• Chronic cardiovascular disease
+• Allergy and supportive care
+
+Next steps
+• Hospital admission to isolation room; no in-room visitors, daily family updates and video calls arranged.
+• Daily monitoring labs: CBC with automated differential, comprehensive metabolic panel; scheduled troponin I (high-sensitivity), PT/coagulation panel, and iron panel.
+• Oxygen administration by mask, continuous, titrated to saturation; ongoing daily oxygen therapy through the stay.
+• Daily prone positioning sessions as tolerated, with padding accommodations for scoliosis.
+• Escalation and call-bell instructions reviewed with patient; monitor for worsening respiratory distress.
+• Follow daily comprehensive metabolic panel; support hydration and oral intake.
+• Review home antihypertensives daily against renal function and potassium; adjust per lab trend.
+• Continue home aspirin 81 mg, atenolol 50 mg, rosuvastatin 40 mg, lisinopril 20 mg as labs and hemodynamics allow."
+2,b342f27e-56bc-08ac-347c-323279c0d595,b342f27e-56bc-08ac-24f0-de401f6e3c47,Clarence Reinger,female,1993-05-09,2025-06-01,Prenatal intake visit — initial obstetric evaluation,CAMBRIDGE PUBLIC HEALTH COMMISSION,Normal pregnancy — initial prenatal visit | Recurrent urinary tract infection | Medication review due,"Full prenatal intake panel sent today: blood type, hemogram with differential, hepatitis B surface antigen, HIV antigen, hepatitis C confirmatory antibody, syphilis titer, rubella and varicella immunity, chlamydia and gonorrhea testing, urine diabetes screen, and qualitative urine protein. | Cervical cytology (Pap smear) collected; results to portal with call for anything actionable. | TB Tine test placed; nurse visit in 2-3 days for reading. | Routine prenatal visits every 4 weeks for now; lifestyle counseling given (no alcohol, no smoking, caffeine in moderation, small frequent meals for nausea). | Urine culture sent today; surveillance cultures at prenatal visits given risk of asymptomatic bacteriuria. | Same-day call instructions reviewed for dysuria, urgency, unilateral back pain, or fever; prompt pregnancy-safe treatment if any culture is positive. | Chart medication list updated; patient to contact office before starting any new prescription or over-the-counter medication.",3,7,165,"Visit summary
+
+What we discussed
+• Normal pregnancy — initial prenatal visit
+• Recurrent urinary tract infection
+• Medication review due
+
+Next steps
+• Full prenatal intake panel sent today: blood type, hemogram with differential, hepatitis B surface antigen, HIV antigen, hepatitis C confirmatory antibody, syphilis titer, rubella and varicella immunity, chlamydia and gonorrhea testing, urine diabetes screen, and qualitative urine protein.
+• Cervical cytology (Pap smear) collected; results to portal with call for anything actionable.
+• TB Tine test placed; nurse visit in 2-3 days for reading.
+• Routine prenatal visits every 4 weeks for now; lifestyle counseling given (no alcohol, no smoking, caffeine in moderation, small frequent meals for nausea).
+• Urine culture sent today; surveillance cultures at prenatal visits given risk of asymptomatic bacteriuria.
+• Same-day call instructions reviewed for dysuria, urgency, unilateral back pain, or fever; prompt pregnancy-safe treatment if any culture is positive.
+• Chart medication list updated; patient to contact office before starting any new prescription or over-the-counter medication."
+3,6b716621-5454-68ec-2017-362939ab6f36,6b716621-5454-68ec-7553-080856a4cfa2,Corinne Charlesetta Crooks,female,1970-12-13,2017-01-01,Annual wellness examination — preventive screening and health maintenance,"LEAP INTO WELLNESS,LLC",Health maintenance and preventive screening | Not in labor force — recent work transition | Chronic sinusitis | Weight and lifestyle | Medication review due,"Influenza vaccine (split virus, trivalent, PF) administered today given missed fall dosing. | Continue routine age-appropriate screening; return in one year. | Encouraged continued daily walking and social engagement; will rescreen mood at future visits. | Daily saline rinses through the winter; humidifier at night. | Return precautions: fever, tooth pain, or a week of steady worsening. | Positive reinforcement given; continue current activity and diet pattern. | Patient to bring all medication bottles, including leftover medications at home, to the next visit for full reconciliation.",5,7,120,"Visit summary
+
+What we discussed
+• Health maintenance and preventive screening
+• Not in labor force — recent work transition
+• Chronic sinusitis
+• Weight and lifestyle
+• Medication review due
+
+Next steps
+• Influenza vaccine (split virus, trivalent, PF) administered today given missed fall dosing.
+• Continue routine age-appropriate screening; return in one year.
+• Encouraged continued daily walking and social engagement; will rescreen mood at future visits.
+• Daily saline rinses through the winter; humidifier at night.
+• Return precautions: fever, tooth pain, or a week of steady worsening.
+• Positive reinforcement given; continue current activity and diet pattern.
+• Patient to bring all medication bottles, including leftover medications at home, to the next visit for full reconciliation."
+4,966e9818-9cf6-8d71-74bc-36aef6643618,966e9818-9cf6-8d71-3eff-a424a6faa0d3,Delana Jamie Gutkowski,female,2003-03-21,2025-05-23,Young adult preventive exam — prediabetes and allergy follow-up,MEASURED WELLNESS LLC,Prediabetes | Body mass index 30+ — obesity | Gingivitis | Social isolation | Allergic disposition and medication management | Health maintenance,"Lifestyle counseling: replace juice and sugary drinks, post-shift walking, budget-friendly meal patterns. | Referral to free nutrition class; recheck A1c in about 6 months. | Goals set around drink swaps and regular walking; progress review at follow-up. | Patient referral for dental care placed (clinic accepting her coverage); daily flossing and brushing technique reviewed. | Community walking group and student-association engagement recommended; health and social care needs assessment completed; rescreen mood at next visit. | Medication reconciliation completed; continue cetirizine daily in season; avoid aspirin and check before using related analgesics. | Administered today: influenza (trivalent, PF), Td booster, hepatitis B (adult), and meningococcal MCV4P. | Return visit for A1c recheck and follow-up in about 6 months.",6,8,148,"Visit summary
+
+What we discussed
+• Prediabetes
+• Body mass index 30+ — obesity
+• Gingivitis
+• Social isolation
+• Allergic disposition and medication management
+• Health maintenance
+
+Next steps
+• Lifestyle counseling: replace juice and sugary drinks, post-shift walking, budget-friendly meal patterns.
+• Referral to free nutrition class; recheck A1c in about 6 months.
+• Goals set around drink swaps and regular walking; progress review at follow-up.
+• Patient referral for dental care placed (clinic accepting her coverage); daily flossing and brushing technique reviewed.
+• Community walking group and student-association engagement recommended; health and social care needs assessment completed; rescreen mood at next visit.
+• Medication reconciliation completed; continue cetirizine daily in season; avoid aspirin and check before using related analgesics.
+• Administered today: influenza (trivalent, PF), Td booster, hepatitis B (adult), and meningococcal MCV4P.
+• Return visit for A1c recheck and follow-up in about 6 months."
+5,374e68b2-ee15-0852-cd48-3c7b6fd8e114,374e68b2-ee15-0852-8f80-26e1007e6c00,Dick Larson,male,1987-05-23,2024-05-18,Annual check-up — post-sepsis recovery and prediabetes,CHILDREN'S HOSPITAL CORPORATION,"Prediabetes | Body mass index 30+ — obesity | Post-sepsis recovery (sepsis, septic shock, ARDS) and anemia | Unemployment, social isolation, and unsatisfactory housing | Medication review due | Preventive care and screening","Lifestyle counseling provided: goal of 5–7% weight loss and progressive daily walking. | Repeat A1c at follow-up in approximately 6 months. | Dietary moderation and graded aerobic activity as tolerated post-ARDS. | Weight recheck at follow-up. | Continue graduated activity; return precautions reviewed for fever, dyspnea, or declining stamina. | Continue longitudinal monitoring of anemia and fatigue trajectory. | Community resource sheet provided (employment center, tenant advocacy line). | Encouraged structured daily routine and social re-engagement; patient agreed to report mood changes.",6,8,124,"Visit summary
+
+What we discussed
+• Prediabetes
+• Body mass index 30+ — obesity
+• Post-sepsis recovery (sepsis, septic shock, ARDS) and anemia
+• Unemployment, social isolation, and unsatisfactory housing
+• Medication review due
+• Preventive care and screening
+
+Next steps
+• Lifestyle counseling provided: goal of 5–7% weight loss and progressive daily walking.
+• Repeat A1c at follow-up in approximately 6 months.
+• Dietary moderation and graded aerobic activity as tolerated post-ARDS.
+• Weight recheck at follow-up.
+• Continue graduated activity; return precautions reviewed for fever, dyspnea, or declining stamina.
+• Continue longitudinal monitoring of anemia and fatigue trajectory.
+• Community resource sheet provided (employment center, tenant advocacy line).
+• Encouraged structured daily routine and social re-engagement; patient agreed to report mood changes."
+6,4b4735a2-ee12-ec86-041f-3ba4d5c81ec9,4b4735a2-ee12-ec86-c1c9-c610cc6ef8ab,Elias Wisozk,male,1972-05-25,2026-06-18,General adult exam — new hypertension and metabolic syndrome,GREATER LAWRENCE FAMILY HEALTH CENTER INC,Essential hypertension | Metabolic syndrome X | Prediabetes | Gingivitis | Anemia | Not in labor force; social circumstances | Preventive care and screening,"Start hydrochlorothiazide 25 mg orally each morning; counseled on diuresis, orthostatic symptoms, and cramping. | Enrolled in lifestyle education regarding hypertension: sodium reduction, regular walking, home BP log. | Recheck BP in approximately 1 month; interval electrolytes after medication initiation. | Weight-loss counseling with dietary emphasis on reduced processed/salty foods. | Risk discussion completed; combined lifestyle targets shared with hypertension plan. | Lifestyle modification as above; repeat A1c at follow-up. | Patient referral for dental care placed (cleaning and examination). | Oral hygiene counseling: soft brush twice daily, daily flossing.",7,8,123,"Visit summary
+
+What we discussed
+• Essential hypertension
+• Metabolic syndrome X
+• Prediabetes
+• Gingivitis
+• Anemia
+• Not in labor force; social circumstances
+• Preventive care and screening
+
+Next steps
+• Start hydrochlorothiazide 25 mg orally each morning; counseled on diuresis, orthostatic symptoms, and cramping.
+• Enrolled in lifestyle education regarding hypertension: sodium reduction, regular walking, home BP log.
+• Recheck BP in approximately 1 month; interval electrolytes after medication initiation.
+• Weight-loss counseling with dietary emphasis on reduced processed/salty foods.
+• Risk discussion completed; combined lifestyle targets shared with hypertension plan.
+• Lifestyle modification as above; repeat A1c at follow-up.
+• Patient referral for dental care placed (cleaning and examination).
+• Oral hygiene counseling: soft brush twice daily, daily flossing."
+7,1ba8eeb9-bc93-7129-4390-0d2ddd560616,1ba8eeb9-bc93-7129-2e7d-8c427e72b964,Emory Britt Kovacek,male,1999-01-19,2021-04-06,General exam — chronic low back pain and positive depression screen,SUNRISE HEALTHCARE LLC,Chronic low back pain | Stress with depressive symptoms | Gingivitis | Elevated blood pressure reading | Preventive care and screening,"Ibuprofen 400 mg oral tablet prescribed; take with food as needed for flares. | Activity counseling: hourly breaks from sitting, daily walking, hip-hinge lifting mechanics. | Reassess at 4-week follow-up. | Counseling resource list provided (including telehealth options); patient agreed to review. | Behavioral activation counseling: fixed wake time, morning light, daily movement, scheduled social contact. | Repeat PHQ-9 at 4-week follow-up; discuss therapy and further options if not improving. Crisis-line information provided with explicit same-day return precautions. | Patient referral for dental care placed for cleaning and examination. | Daily flossing and twice-daily brushing counseled.",5,8,126,"Visit summary
+
+What we discussed
+• Chronic low back pain
+• Stress with depressive symptoms
+• Gingivitis
+• Elevated blood pressure reading
+• Preventive care and screening
+
+Next steps
+• Ibuprofen 400 mg oral tablet prescribed; take with food as needed for flares.
+• Activity counseling: hourly breaks from sitting, daily walking, hip-hinge lifting mechanics.
+• Reassess at 4-week follow-up.
+• Counseling resource list provided (including telehealth options); patient agreed to review.
+• Behavioral activation counseling: fixed wake time, morning light, daily movement, scheduled social contact.
+• Repeat PHQ-9 at 4-week follow-up; discuss therapy and further options if not improving. Crisis-line information provided with explicit same-day return precautions.
+• Patient referral for dental care placed for cleaning and examination.
+• Daily flossing and twice-daily brushing counseled."
+8,73043f9e-3254-a1d3-aa45-b82f0fc6d502,73043f9e-3254-a1d3-ecbd-a0c16f2d8db0,Eva Julia Casas,female,1954-06-22,2016-08-30,"Annual general exam — prediabetes, hyperlipidemia, and knee osteoarthritis","PRIMARY CARE MEDICINE AND PEDIATRICS, LLC",Prediabetes | Hyperlipidemia | Osteoarthritis of knee | Stress and mild anxiety symptoms | Gingivitis | Safety screening (history of intimate partner abuse) | Anemia (historical) | Preventive care,Continue dietary portion control and daily walking; reinforce 5% weight-loss trajectory. | Repeat A1c at next annual visit. | Continue current diet; repeat lipid panel annually. | Continue naproxen sodium 220 mg as needed with food; reviewed GI precautions. | Encourage continued walking and quadriceps activity. | Supportive counseling provided; encouraged scheduled peer contact. | Reassess mood and anxiety screens at next visit; return sooner if symptoms escalate. | Patient referral for dental care placed for cleaning and examination; oral hygiene counseled.,8,8,120,"Visit summary
+
+What we discussed
+• Prediabetes
+• Hyperlipidemia
+• Osteoarthritis of knee
+• Stress and mild anxiety symptoms
+• Gingivitis
+• Safety screening (history of intimate partner abuse)
+• Anemia (historical)
+• Preventive care
+
+Next steps
+• Continue dietary portion control and daily walking; reinforce 5% weight-loss trajectory.
+• Repeat A1c at next annual visit.
+• Continue current diet; repeat lipid panel annually.
+• Continue naproxen sodium 220 mg as needed with food; reviewed GI precautions.
+• Encourage continued walking and quadriceps activity.
+• Supportive counseling provided; encouraged scheduled peer contact.
+• Reassess mood and anxiety screens at next visit; return sooner if symptoms escalate.
+• Patient referral for dental care placed for cleaning and examination; oral hygiene counseled."
+9,40cb7be2-9c26-6328-3aa0-71db4ed81e06,40cb7be2-9c26-6328-75bd-838e58c2583e,Hiedi Moira Thiel,female,1993-07-26,2024-07-22,"Prenatal intake visit — first trimester, newly identified anemia",ENCOMPASS HEALTH REHAB HOSPITAL OF WESTERN MASS,Normal pregnancy — prenatal intake | Anemia | Severe anxiety (panic) | Adolescent idiopathic scoliosis | Transportation barriers | Health maintenance,"Enrolled in routine antenatal care; return visits every 4 weeks for now. | Intake panel sent: blood group typing, hepatitis B surface antigen, hepatitis C antibody (confirmatory), HIV antigen, syphilis titer, gonorrhea titer, chlamydia antigen, rubella screen, varicella-zoster antibody, urine culture, urine protein, urine diabetes screen; Pap smear collected. | Nausea counseling: small frequent meals, morning crackers, cold foods, ginger tea; call if unable to keep fluids down. | Return precautions reviewed: bleeding, severe cramping, fever. | Ferrous sulfate 325 mg oral tablet daily started; counseled to take with vitamin C, apart from coffee/tea/milk; anticipatory guidance on constipation and dark stools. | Vitamin B12 5 mg/mL injectable solution started; first injection administered today. | Recheck blood count at subsequent visits. | Accommodations arranged: quiet waiting area flagged in chart; partner welcome at all visits including delivery.",6,8,166,"Visit summary
+
+What we discussed
+• Normal pregnancy — prenatal intake
+• Anemia
+• Severe anxiety (panic)
+• Adolescent idiopathic scoliosis
+• Transportation barriers
+• Health maintenance
+
+Next steps
+• Enrolled in routine antenatal care; return visits every 4 weeks for now.
+• Intake panel sent: blood group typing, hepatitis B surface antigen, hepatitis C antibody (confirmatory), HIV antigen, syphilis titer, gonorrhea titer, chlamydia antigen, rubella screen, varicella-zoster antibody, urine culture, urine protein, urine diabetes screen; Pap smear collected.
+• Nausea counseling: small frequent meals, morning crackers, cold foods, ginger tea; call if unable to keep fluids down.
+• Return precautions reviewed: bleeding, severe cramping, fever.
+• Ferrous sulfate 325 mg oral tablet daily started; counseled to take with vitamin C, apart from coffee/tea/milk; anticipatory guidance on constipation and dark stools.
+• Vitamin B12 5 mg/mL injectable solution started; first injection administered today.
+• Recheck blood count at subsequent visits.
+• Accommodations arranged: quiet waiting area flagged in chart; partner welcome at all visits including delivery."
+10,74919836-2db2-2f73-d2cf-5287a180b0ff,74919836-2db2-2f73-ed42-440eccc6591a,Isreal Delbert Howell,male,1939-03-20,2024-10-07,Annual physical — geriatric cardiometabolic follow-up,SUNRISE HEALTHCARE LLC,Type 2 diabetes mellitus | Essential hypertension | Ischemic heart disease / hyperlipidemia | Gingivitis | Anemia | Health maintenance and geriatric screening,Start 24 hr metformin hydrochloride 500 mg extended-release tablet daily with the evening meal. | Counseled to avoid skipping breakfast before morning walks; report GI intolerance rather than self-discontinuing. | Start hydrochlorothiazide 25 mg each morning. | Continue losartan 50 mg daily and metoprolol succinate ER 100 mg daily. | Monitor for orthostatic symptoms; repeat basic metabolic panel and potassium at follow-up. | Consolidate to atorvastatin 20 mg nightly; simvastatin 20 mg removed at reconciliation. | Continue aspirin 81 mg daily; nitroglycerin 0.4 mg/actuation mucosal spray PRN chest pain. | Repeat lipid panel at follow-up before dose escalation.,6,8,130,"Visit summary
+
+What we discussed
+• Type 2 diabetes mellitus
+• Essential hypertension
+• Ischemic heart disease / hyperlipidemia
+• Gingivitis
+• Anemia
+• Health maintenance and geriatric screening
+
+Next steps
+• Start 24 hr metformin hydrochloride 500 mg extended-release tablet daily with the evening meal.
+• Counseled to avoid skipping breakfast before morning walks; report GI intolerance rather than self-discontinuing.
+• Start hydrochlorothiazide 25 mg each morning.
+• Continue losartan 50 mg daily and metoprolol succinate ER 100 mg daily.
+• Monitor for orthostatic symptoms; repeat basic metabolic panel and potassium at follow-up.
+• Consolidate to atorvastatin 20 mg nightly; simvastatin 20 mg removed at reconciliation.
+• Continue aspirin 81 mg daily; nitroglycerin 0.4 mg/actuation mucosal spray PRN chest pain.
+• Repeat lipid panel at follow-up before dose escalation."
+11,be1b73f7-b0f0-0ca3-b24b-28369ce68943,be1b73f7-b0f0-0ca3-5c23-d051118e002b,Issac Daniel Mayer,male,1988-05-01,2019-07-14,Annual physical — new adult patient wellness exam,CLARITY HEALTH & WELLNESS LLC,Medication review due | Obesity (BMI 30+) | Reports of violence in the environment / stress | Substance use | Health maintenance,"Medication reconciliation completed; no active medications confirmed and recorded. | Activity prescription: three 30-40 minute runs or brisk walks weekly, daylight hours. | Snack substitution rather than restriction; standing-desk interval work encouraged. | Nutrition class referral offered; patient prefers a self-directed trial with reassessment at the next annual visit. | Depression screening ×2, assessment of anxiety, and screening for domestic abuse completed. | Supportive counseling provided; advised to return if worry escalates, sleep deteriorates, or mood symptoms persist beyond a few days. | Assessment of substance use and screening for drug abuse completed. | Low-risk counseling: no driving after use; return without judgment if use trends from choice toward need.",5,8,141,"Visit summary
+
+What we discussed
+• Medication review due
+• Obesity (BMI 30+)
+• Reports of violence in the environment / stress
+• Substance use
+• Health maintenance
+
+Next steps
+• Medication reconciliation completed; no active medications confirmed and recorded.
+• Activity prescription: three 30-40 minute runs or brisk walks weekly, daylight hours.
+• Snack substitution rather than restriction; standing-desk interval work encouraged.
+• Nutrition class referral offered; patient prefers a self-directed trial with reassessment at the next annual visit.
+• Depression screening ×2, assessment of anxiety, and screening for domestic abuse completed.
+• Supportive counseling provided; advised to return if worry escalates, sleep deteriorates, or mood symptoms persist beyond a few days.
+• Assessment of substance use and screening for drug abuse completed.
+• Low-risk counseling: no driving after use; return without judgment if use trends from choice toward need."
+12,6d4fd363-1ddb-74f8-516f-2fdc861cb736,6d4fd363-1ddb-74f8-95dd-b53404f1e107,Julius Alphonso Renner,male,1989-12-17,2025-07-13,General exam — hypertension treatment initiation and chronic low back pain,BL HEALTHCARE INC DELEWARE,Essential hypertension | Chronic low back pain / chronic pain | Unemployed / stress | Housing unsatisfactory | Gingivitis | Substance use / health maintenance,"Start lisinopril 10 mg daily, amlodipine 2.5 mg daily, and hydrochlorothiazide 25 mg daily — low-dose combination taken together each morning, all generic. | Counseled on dizziness, dry cough, and ankle swelling; keep a home BP log. | Return in 4-6 weeks with the log to titrate. | Acetaminophen 325 mg oral tablets (Tylenol) prescribed for scheduled rather than crisis use. | Activity prescription: daily walking, previously taught stretches, standing breaks every 30 minutes during computer work. | Assessment of anxiety and assessment of health and social care needs completed; supportive counseling provided. | Return earlier if sleep disruption becomes nightly or mood declines. | Tenant-rights and county housing hotline resource packet provided at checkout.",6,8,149,"Visit summary
+
+What we discussed
+• Essential hypertension
+• Chronic low back pain / chronic pain
+• Unemployed / stress
+• Housing unsatisfactory
+• Gingivitis
+• Substance use / health maintenance
+
+Next steps
+• Start lisinopril 10 mg daily, amlodipine 2.5 mg daily, and hydrochlorothiazide 25 mg daily — low-dose combination taken together each morning, all generic.
+• Counseled on dizziness, dry cough, and ankle swelling; keep a home BP log.
+• Return in 4-6 weeks with the log to titrate.
+• Acetaminophen 325 mg oral tablets (Tylenol) prescribed for scheduled rather than crisis use.
+• Activity prescription: daily walking, previously taught stretches, standing breaks every 30 minutes during computer work.
+• Assessment of anxiety and assessment of health and social care needs completed; supportive counseling provided.
+• Return earlier if sleep disruption becomes nightly or mood declines.
+• Tenant-rights and county housing hotline resource packet provided at checkout."
+13,256bea3d-7833-e7f8-74b4-0e4f7e299c73,256bea3d-7833-e7f8-1c5a-743d9ec18b07,Lala Kazuko Casper,female,1972-05-24,2020-06-17,Annual exam — psychosocial screening with safety disclosure,"CARING HEALTH CENTER, INC",Victim of intimate partner abuse | Stress with mild anxiety symptoms | Substance use | Obesity (BMI 30+) | Recurrent urinary tract infection | Health maintenance,"Disclosure validated; confidential domestic violence hotline number provided unlabeled at her request. | Safety planning discussed, including the protective presence of her sister in the home. | Documented with patient consent; open-access return offered for any change in safety. | Depression screening ×2 and assessment of anxiety completed; supportive counseling provided. | Walking recommended as an accessible stress and weight intervention. | Follow-up visit in approximately one month to reassess. | Assessment of substance use and screening for drug abuse completed. | Harm-reduction counseling: no use before driving; secure storage away from children; reassess if reliance grows.",6,8,132,"Visit summary
+
+What we discussed
+• Victim of intimate partner abuse
+• Stress with mild anxiety symptoms
+• Substance use
+• Obesity (BMI 30+)
+• Recurrent urinary tract infection
+• Health maintenance
+
+Next steps
+• Disclosure validated; confidential domestic violence hotline number provided unlabeled at her request.
+• Safety planning discussed, including the protective presence of her sister in the home.
+• Documented with patient consent; open-access return offered for any change in safety.
+• Depression screening ×2 and assessment of anxiety completed; supportive counseling provided.
+• Walking recommended as an accessible stress and weight intervention.
+• Follow-up visit in approximately one month to reassess.
+• Assessment of substance use and screening for drug abuse completed.
+• Harm-reduction counseling: no use before driving; secure storage away from children; reassess if reliance grows."
+14,4c893b3e-df6f-a2f0-5d03-98714cbad61a,4c893b3e-df6f-a2f0-3e2d-587d1263ccd4,Lamont Boyce Ernser,male,1971-05-08,2023-05-20,General adult exam — preventive screening and sleep review,GREATER NEW BEDFORD COMMUNITY HEALTH CENTER INC,Gingivitis | Elevated office blood pressure reading | Obesity (BMI 30+) | Sleep difficulty with chronic diphenhydramine use | Social isolation / limited social contact | Health maintenance,"Patient referral for dental care placed; twice-daily brushing and daily flossing reviewed. | Counseled on the link between periodontal inflammation and cardiovascular risk. | Home BP monitoring with a validated cuff, morning and evening for two weeks, with a written log. | Office recheck in 2-4 weeks; lifestyle measures below support blood pressure. | Activity prescription: 30-minute walk after work five days weekly. | Sleep hygiene program: fixed schedule, screens off before bed, caffeine cutoff at noon, workspace separated from sleep. | Reduce diphenhydramine to intermittent use for difficult nights only; reassess response in one month. | Counseled on the health impact of isolation; agreed to maintain one weekly shared activity with his brother and to walk in public settings.",6,8,157,"Visit summary
+
+What we discussed
+• Gingivitis
+• Elevated office blood pressure reading
+• Obesity (BMI 30+)
+• Sleep difficulty with chronic diphenhydramine use
+• Social isolation / limited social contact
+• Health maintenance
+
+Next steps
+• Patient referral for dental care placed; twice-daily brushing and daily flossing reviewed.
+• Counseled on the link between periodontal inflammation and cardiovascular risk.
+• Home BP monitoring with a validated cuff, morning and evening for two weeks, with a written log.
+• Office recheck in 2-4 weeks; lifestyle measures below support blood pressure.
+• Activity prescription: 30-minute walk after work five days weekly.
+• Sleep hygiene program: fixed schedule, screens off before bed, caffeine cutoff at noon, workspace separated from sleep.
+• Reduce diphenhydramine to intermittent use for difficult nights only; reassess response in one month.
+• Counseled on the health impact of isolation; agreed to maintain one weekly shared activity with his brother and to walk in public settings."
+15,1be66dc9-cf0b-cb78-e88e-ada9a9a5405b,1be66dc9-cf0b-cb78-ee14-c92f2fe041a4,Latoyia Willene Wilkinson,female,1944-11-15,2019-11-20,Skilled nursing facility admission after hospitalization,MARIAN MANOR,Skilled nursing facility admission — post-hospital deconditioning | Diabetes mellitus type 2 with diabetic kidney disease (CKD stage 1) | Essential hypertension | Anemia | Hypertriglyceridemia / metabolic syndrome X | Cardiovascular medications and safety | Rehabilitation | Allergy precautions,"Development of individualized plan of care with the interdisciplinary team. | Nursing care and supplementary surveillance every shift throughout the stay. | Professional and ancillary services engaged, including dietitian and social services. | Weekly care regimes assessment to review and adjust the plan. | Structured diabetic meals with dietitian involvement; peanut-free tray flag. | Nursing glucose monitoring and medication administration per the care plan. | Daily foot checks given distal paresthesias. | Continue 24 HR metoprolol succinate 100 mg extended-release tablet daily.",8,8,131,"Visit summary
+
+What we discussed
+• Skilled nursing facility admission — post-hospital deconditioning
+• Diabetes mellitus type 2 with diabetic kidney disease (CKD stage 1)
+• Essential hypertension
+• Anemia
+• Hypertriglyceridemia / metabolic syndrome X
+• Cardiovascular medications and safety
+• Rehabilitation
+• Allergy precautions
+
+Next steps
+• Development of individualized plan of care with the interdisciplinary team.
+• Nursing care and supplementary surveillance every shift throughout the stay.
+• Professional and ancillary services engaged, including dietitian and social services.
+• Weekly care regimes assessment to review and adjust the plan.
+• Structured diabetic meals with dietitian involvement; peanut-free tray flag.
+• Nursing glucose monitoring and medication administration per the care plan.
+• Daily foot checks given distal paresthesias.
+• Continue 24 HR metoprolol succinate 100 mg extended-release tablet daily."
+16,c2cbc55e-34dc-73c6-5ee4-cabe0c40fc32,c2cbc55e-34dc-73c6-4d09-7d9c99b11de4,Margarita Kaylene Rau,female,1976-08-20,2019-09-27,Initial prenatal visit — new pregnancy at 43,"LAHEY HOSPITAL & MEDICAL CENTER, BURLINGTON",Normal pregnancy — initial prenatal visit | Advanced maternal age and prior pregnancy loss | Essential hypertension | Prediabetes / metabolic syndrome | Anemia | Obesity | Intimate partner violence history,"Enroll in routine antenatal care with visits about every four weeks initially, more frequent later in pregnancy. | Prenatal laboratory panel sent: blood group typing; automated hemogram with manual differential; hepatitis B surface antigen; hepatitis C antibody confirmatory test; HIV antigen test; syphilis titer; gonorrhea titer; chlamydia antigen; rubella screen; varicella-zoster antibody measurement. | Urine culture, qualitative urine protein, and urine diabetes screen collected. | Cervical cytology (Pap smear) collected. | Tuberculosis Tine test to be read in two to three days. | Results to the patient via portal; call promptly for bleeding, cramping, or intractable vomiting. | Increased visit frequency as the pregnancy progresses. | Discussion of optional genetic screening at the next visit; partner invited to attend.",7,8,159,"Visit summary
+
+What we discussed
+• Normal pregnancy — initial prenatal visit
+• Advanced maternal age and prior pregnancy loss
+• Essential hypertension
+• Prediabetes / metabolic syndrome
+• Anemia
+• Obesity
+• Intimate partner violence history
+
+Next steps
+• Enroll in routine antenatal care with visits about every four weeks initially, more frequent later in pregnancy.
+• Prenatal laboratory panel sent: blood group typing; automated hemogram with manual differential; hepatitis B surface antigen; hepatitis C antibody confirmatory test; HIV antigen test; syphilis titer; gonorrhea titer; chlamydia antigen; rubella screen; varicella-zoster antibody measurement.
+• Urine culture, qualitative urine protein, and urine diabetes screen collected.
+• Cervical cytology (Pap smear) collected.
+• Tuberculosis Tine test to be read in two to three days.
+• Results to the patient via portal; call promptly for bleeding, cramping, or intractable vomiting.
+• Increased visit frequency as the pregnancy progresses.
+• Discussion of optional genetic screening at the next visit; partner invited to attend."
+17,e1a7c2af-1e7f-300b-44f6-012ae75bbab1,e1a7c2af-1e7f-300b-bc8f-6bb66fcf2ddc,Marty Rodrick Toy,male,1990-12-10,2025-03-10,Dental referral visit — gingival disease treatment,SOUTH SHORE HOSPITAL INC.,Gingival disease | Dentin sensitivity | Prevention and oral hygiene | Surveillance and follow-up,"Dental consultation completed with report back to the referring clinic. | Examination of the gingivae and bitewing radiographs completed. | Removal of supragingival plaque and calculus from all teeth performed. | Removal of subgingival plaque and calculus from all teeth performed with local comfort measures. | Gingivectomy/gingivoplasty performed per tooth at the overgrown lower right segment as the dental surgical portion of the visit. | Postoperative care instructions provided: soft foods today, nothing scalding or sharp, no chewing on the surgical side today, gentle salt-water rinses starting tomorrow, continue gentle brushing through transient bleeding. | Desensitizing medicament applied to the affected areas after scaling. | Reassess sensitivity at the follow-up visit.",4,8,134,"Visit summary
+
+What we discussed
+• Gingival disease
+• Dentin sensitivity
+• Prevention and oral hygiene
+• Surveillance and follow-up
+
+Next steps
+• Dental consultation completed with report back to the referring clinic.
+• Examination of the gingivae and bitewing radiographs completed.
+• Removal of supragingival plaque and calculus from all teeth performed.
+• Removal of subgingival plaque and calculus from all teeth performed with local comfort measures.
+• Gingivectomy/gingivoplasty performed per tooth at the overgrown lower right segment as the dental surgical portion of the visit.
+• Postoperative care instructions provided: soft foods today, nothing scalding or sharp, no chewing on the surgical side today, gentle salt-water rinses starting tomorrow, continue gentle brushing through transient bleeding.
+• Desensitizing medicament applied to the affected areas after scaling.
+• Reassess sensitivity at the follow-up visit."
+18,a3292ec4-64b6-20fc-480e-39e1f7f51e50,a3292ec4-64b6-20fc-55a4-b753a07a1881,Melodee Bobette Satterfield,female,2005-10-22,2026-03-21,Prenatal intake visit — first pregnancy with chronic pain,THE LOWELL GENERAL HOSPITAL,Normal pregnancy — initial prenatal visit | Chronic pain — opioid use in pregnancy | Risk activity — horseback riding | Stress and psychosocial support,"Enroll in routine antenatal care: visits about every four weeks initially, more frequent later in pregnancy. | Prenatal laboratory panel sent: blood group typing; automated hemogram with manual differential; hepatitis B surface antigen; hepatitis C antibody confirmatory test; HIV antigen test; syphilis titer; gonorrhea titer; chlamydia antigen; rubella screen; varicella-zoster antibody measurement. | Urine culture, qualitative urine protein, and urine diabetes screen collected. | Cervical cytology (Pap smear) collected; tuberculosis Tine test to be read in two to three days. | Nausea counseling: small frequent snacks, fluids between meals; call if unable to keep fluids down. | Continue current medications at the lowest effective use for now; no abrupt discontinuation. | Coordinate a written gradual taper schedule with her pain specialist this week. | Layer nonpharmacologic strategies: pregnancy-safe physical therapy, heat, stretching, activity pacing.",4,8,168,"Visit summary
+
+What we discussed
+• Normal pregnancy — initial prenatal visit
+• Chronic pain — opioid use in pregnancy
+• Risk activity — horseback riding
+• Stress and psychosocial support
+
+Next steps
+• Enroll in routine antenatal care: visits about every four weeks initially, more frequent later in pregnancy.
+• Prenatal laboratory panel sent: blood group typing; automated hemogram with manual differential; hepatitis B surface antigen; hepatitis C antibody confirmatory test; HIV antigen test; syphilis titer; gonorrhea titer; chlamydia antigen; rubella screen; varicella-zoster antibody measurement.
+• Urine culture, qualitative urine protein, and urine diabetes screen collected.
+• Cervical cytology (Pap smear) collected; tuberculosis Tine test to be read in two to three days.
+• Nausea counseling: small frequent snacks, fluids between meals; call if unable to keep fluids down.
+• Continue current medications at the lowest effective use for now; no abrupt discontinuation.
+• Coordinate a written gradual taper schedule with her pain specialist this week.
+• Layer nonpharmacologic strategies: pregnancy-safe physical therapy, heat, stretching, activity pacing."
+19,b504cdf2-e13b-979e-9c4a-95456823e3dd,b504cdf2-e13b-979e-4f0c-523d0948189e,Monica Harriett Hilpert,female,1947-11-02,2023-11-27,SNF admission — rehabilitation and pain management,COURTYARD NURSING CARE CENTER,"Skilled nursing facility admission — deconditioning after hospitalization | Pain — low back and hips | Osteoporosis and fall prevention | Nutrition — tooth loss, prediabetes, hyperlipidemia, obesity | Psychosocial — social isolation | Discharge planning","Development of individualized plan of care with the interdisciplinary team. | Daily nursing care and supplementary surveillance every shift (pain, vital signs, skin, medications). | Professional and ancillary services engaged, including social work and dietitian visits. | Started naproxen sodium 220 mg tablets for baseline pain control. | Started meperidine hydrochloride 50 mg tablets for more severe pain, to be used sparingly with close nursing observation for sedation, confusion, or unsteadiness given her age. | Patient instructed to report any cognitive fogginess promptly; regimen to be changed if poorly tolerated. | Time analgesia ahead of therapy sessions to enable participation. | Strict call-before-standing instruction reinforced; call bell education provided and accepted.",6,8,156,"Visit summary
+
+What we discussed
+• Skilled nursing facility admission — deconditioning after hospitalization
+• Pain — low back and hips
+• Osteoporosis and fall prevention
+• Nutrition — tooth loss, prediabetes, hyperlipidemia, obesity
+• Psychosocial — social isolation
+• Discharge planning
+
+Next steps
+• Development of individualized plan of care with the interdisciplinary team.
+• Daily nursing care and supplementary surveillance every shift (pain, vital signs, skin, medications).
+• Professional and ancillary services engaged, including social work and dietitian visits.
+• Started naproxen sodium 220 mg tablets for baseline pain control.
+• Started meperidine hydrochloride 50 mg tablets for more severe pain, to be used sparingly with close nursing observation for sedation, confusion, or unsteadiness given her age.
+• Patient instructed to report any cognitive fogginess promptly; regimen to be changed if poorly tolerated.
+• Time analgesia ahead of therapy sessions to enable participation.
+• Strict call-before-standing instruction reinforced; call bell education provided and accepted."
+20,d57244c4-df7d-9ce7-7878-38361fc0087b,d57244c4-df7d-9ce7-c30b-92c6cf8c0859,Nigel Giovanni Ankunding,male,1967-04-10,2019-04-22,Annual physical — prediabetes and psychosocial screening,"PLYMOUTH CARVER PRIMARY CARE, P.C.",Prediabetes | Stress | Social isolation | Depression and substance use screening | Medication review due | Chronic sinusitis | Health maintenance,"Lifestyle counseling provided: 20 minutes of pre-shift exercise 4-5 days weekly; replace late-night fast food with packed meals. | Repeat HbA1c at the next annual visit, sooner if symptoms develop. | Discussed exercise and stress-management strategies as first-line. | Return sooner if worry becomes uncontrollable or disrupts sleep or function. | Patient plans to join a Saturday bowling league; will revisit at follow-up. | No intervention indicated; continue current low-level weekend alcohol use. | Rescreen annually. | Medication reconciliation completed; regimen confirmed as sodium fluoride oral gel nightly plus occasional OTC acetaminophen.",7,8,123,"Visit summary
+
+What we discussed
+• Prediabetes
+• Stress
+• Social isolation
+• Depression and substance use screening
+• Medication review due
+• Chronic sinusitis
+• Health maintenance
+
+Next steps
+• Lifestyle counseling provided: 20 minutes of pre-shift exercise 4-5 days weekly; replace late-night fast food with packed meals.
+• Repeat HbA1c at the next annual visit, sooner if symptoms develop.
+• Discussed exercise and stress-management strategies as first-line.
+• Return sooner if worry becomes uncontrollable or disrupts sleep or function.
+• Patient plans to join a Saturday bowling league; will revisit at follow-up.
+• No intervention indicated; continue current low-level weekend alcohol use.
+• Rescreen annually.
+• Medication reconciliation completed; regimen confirmed as sodium fluoride oral gel nightly plus occasional OTC acetaminophen."
+21,25fb1227-d194-b15e-e099-7cffcd6081ec,25fb1227-d194-b15e-ecd8-6fcb9efd8141,Nola Robert Kling,female,1947-05-14,2022-05-18,Hospice admission — end-stage colon cancer,NEW ENGLAND HOSPICE II LLC,Overlapping malignant neoplasm of colon — hospice admission | Pain — malignancy-related abdominal pain with chronic low back pain | Fatigue and anemia | Psychosocial and caregiver support | Care coordination,"Initial patient assessment completed today; individualized plan of care developed around her stated goals: home, comfort, no hospital transfer, no resuscitation attempts, documented in her own words. | Ongoing hospice care visits: nursing twice weekly to start with escalation as needs increase; aide support for bathing offered; grab bars to be provided (hospital bed declined for now); 24/7 on-call line reviewed with patient and niece. | Continue current analgesics; nursing to consolidate into a written schedule distinguishing scheduled versus breakthrough dosing for patient and caregiver. | Monitor bowel function at every visit given opioid burden; encourage fluids; caregiver to report absent stool immediately. | Energy-conservation counseling: schedule valued activities (garden, visits) during her best morning hours. | Social worker and chaplain visits offered; caregiver education and anticipatory guidance for the niece. | Trauma-informed, consent-forward care documented in the plan of care. | Hospice team assumes coordination of all services going forward; formal patient discharge processing to be completed at the close of the episode.",5,8,204,"Visit summary
+
+What we discussed
+• Overlapping malignant neoplasm of colon — hospice admission
+• Pain — malignancy-related abdominal pain with chronic low back pain
+• Fatigue and anemia
+• Psychosocial and caregiver support
+• Care coordination
+
+Next steps
+• Initial patient assessment completed today; individualized plan of care developed around her stated goals: home, comfort, no hospital transfer, no resuscitation attempts, documented in her own words.
+• Ongoing hospice care visits: nursing twice weekly to start with escalation as needs increase; aide support for bathing offered; grab bars to be provided (hospital bed declined for now); 24/7 on-call line reviewed with patient and niece.
+• Continue current analgesics; nursing to consolidate into a written schedule distinguishing scheduled versus breakthrough dosing for patient and caregiver.
+• Monitor bowel function at every visit given opioid burden; encourage fluids; caregiver to report absent stool immediately.
+• Energy-conservation counseling: schedule valued activities (garden, visits) during her best morning hours.
+• Social worker and chaplain visits offered; caregiver education and anticipatory guidance for the niece.
+• Trauma-informed, consent-forward care documented in the plan of care.
+• Hospice team assumes coordination of all services going forward; formal patient discharge processing to be completed at the close of the episode."
+22,693a049b-0fd5-c1af-a6ab-e31c329f2891,693a049b-0fd5-c1af-8dff-09e595625529,Solomon Maria Macejkovic,male,1945-01-06,2020-01-11,Hospice admission — advanced colon cancer with cardiac comorbidity,"WEST RIVER HOSPICE, LLC","Primary malignant neoplasm of colon — hospice admission | Ischemic heart disease | Fatigue, anemia, and anorexia | Abdominal discomfort | Caregiver support and care coordination","Initial patient assessment completed; individualized plan of care developed documenting his goals in his own words: home, porch, music, no hospitalization, no resuscitation attempts. | Ongoing hospice care visits: nursing twice weekly to start, escalating with need; aide support offered and declined for now (his choice to revisit); chaplain and social worker available; 24/7 on-call line reviewed — call hospice first, not emergency services. | Continue 24-hr metoprolol succinate 100 mg ER and nitroglycerin 0.4 mg spray as needed — both directly serve comfort. | Continue clopidogrel 75 mg and simvastatin 20 mg for now; identified with the patient as first candidates for future deprescribing if pill burden grows, by shared decision. | Energy budgeting: prioritize porch mornings and valued activities; liberalize diet to preference; wife to keep a simple daily comfort diary (pain, appetite, sleep) to guide visits. | Monitor at each nursing visit; anticipatory guidance provided; escalate through the on-call line if pain sharpens or persists. | Respite care benefit explained and available; caregiver education begun. | Hospice assumes coordination of services; formal patient discharge processing at the close of the episode.",5,8,219,"Visit summary
+
+What we discussed
+• Primary malignant neoplasm of colon — hospice admission
+• Ischemic heart disease
+• Fatigue, anemia, and anorexia
+• Abdominal discomfort
+• Caregiver support and care coordination
+
+Next steps
+• Initial patient assessment completed; individualized plan of care developed documenting his goals in his own words: home, porch, music, no hospitalization, no resuscitation attempts.
+• Ongoing hospice care visits: nursing twice weekly to start, escalating with need; aide support offered and declined for now (his choice to revisit); chaplain and social worker available; 24/7 on-call line reviewed — call hospice first, not emergency services.
+• Continue 24-hr metoprolol succinate 100 mg ER and nitroglycerin 0.4 mg spray as needed — both directly serve comfort.
+• Continue clopidogrel 75 mg and simvastatin 20 mg for now; identified with the patient as first candidates for future deprescribing if pill burden grows, by shared decision.
+• Energy budgeting: prioritize porch mornings and valued activities; liberalize diet to preference; wife to keep a simple daily comfort diary (pain, appetite, sleep) to guide visits.
+• Monitor at each nursing visit; anticipatory guidance provided; escalate through the on-call line if pain sharpens or persists.
+• Respite care benefit explained and available; caregiver education begun.
+• Hospice assumes coordination of services; formal patient discharge processing at the close of the episode."
+23,5e93dd7e-1639-0886-8d0e-80ac11f2785c,5e93dd7e-1639-0886-70ab-27e7ee37e5a0,Traci Saran Wiegand,female,1956-10-12,2021-10-15,Skilled nursing facility admission — diabetes stabilization and rehabilitation,"SUNNY ACRES NURSING HOME, INC.",Type 2 diabetes mellitus with hyperglycemia | Blurred vision | Tingling in hands and feet | Functional status and rehabilitation | Hypertriglyceridemia and metabolic syndrome | Stress and social isolation | Discharge planning,"Continue 24-hr metformin 500 mg ER daily, administered consistently with meals; no regimen change at admission. | Daily nursing care and supplementary surveillance: pre-meal glucose checks, medication administration support, symptom monitoring. | Consistent-carbohydrate meal plan; dietitian involvement through professional/ancillary services, including a home-translatable meal plan. | Track symptoms as glycemic control steadies; maintain scheduled outpatient eye follow-up; report acute visual change immediately. | Daily foot inspection by nursing; protective footwear; report any skin break; reassess symptoms as control improves. | Occupational therapy several sessions weekly: medication organization, kitchen and self-management routines, energy pacing. | Physical therapy: strength and balance sessions. | Speech and language therapy: baseline swallow screen and cognitive-communication strategies (checklists, memory aids) supporting regimen self-management.",7,8,159,"Visit summary
+
+What we discussed
+• Type 2 diabetes mellitus with hyperglycemia
+• Blurred vision
+• Tingling in hands and feet
+• Functional status and rehabilitation
+• Hypertriglyceridemia and metabolic syndrome
+• Stress and social isolation
+• Discharge planning
+
+Next steps
+• Continue 24-hr metformin 500 mg ER daily, administered consistently with meals; no regimen change at admission.
+• Daily nursing care and supplementary surveillance: pre-meal glucose checks, medication administration support, symptom monitoring.
+• Consistent-carbohydrate meal plan; dietitian involvement through professional/ancillary services, including a home-translatable meal plan.
+• Track symptoms as glycemic control steadies; maintain scheduled outpatient eye follow-up; report acute visual change immediately.
+• Daily foot inspection by nursing; protective footwear; report any skin break; reassess symptoms as control improves.
+• Occupational therapy several sessions weekly: medication organization, kitchen and self-management routines, energy pacing.
+• Physical therapy: strength and balance sessions.
+• Speech and language therapy: baseline swallow screen and cognitive-communication strategies (checklists, memory aids) supporting regimen self-management."
+24,01573895-dbf5-29c6-4ef9-cd09aecc51f6,01573895-dbf5-29c6-f885-ade2bd6537a5,Van Loren O'Reilly,male,1977-07-14,2019-07-25,Annual physical — hand osteoarthritis and anxiety screening,MELROSE INTERNAL MEDICINE ASSOC PC,Stress with moderate anxiety symptoms | Localized primary osteoarthritis of the hand | Low HDL cholesterol | Dental health | Medication review due | Health maintenance,"Behavioral plan discussed: brisk 20-30 minute walks most evenings; scheduled daily worry time for budgeting. | Provided information for sliding-scale counseling; patient will consider — not saying no. | No medication initiated today; return in 2-3 months to reassess, sooner if worry disrupts sleep nightly or chest tightness escalates. | Continue naproxen sodium 220 mg as needed, always with food; monitor for GI symptoms. | Taught tendon-glide exercises and morning warm soaks; pace gripping tasks where possible. | Regular aerobic activity as above; recheck lipids at next annual visit. | Patient referral for dental care placed to a sliding-scale clinic; patient agreeable. | Medication reconciliation completed: naproxen sodium 220 mg PRN is the only agent; use pattern appropriate.",6,8,153,"Visit summary
+
+What we discussed
+• Stress with moderate anxiety symptoms
+• Localized primary osteoarthritis of the hand
+• Low HDL cholesterol
+• Dental health
+• Medication review due
+• Health maintenance
+
+Next steps
+• Behavioral plan discussed: brisk 20-30 minute walks most evenings; scheduled daily worry time for budgeting.
+• Provided information for sliding-scale counseling; patient will consider — not saying no.
+• No medication initiated today; return in 2-3 months to reassess, sooner if worry disrupts sleep nightly or chest tightness escalates.
+• Continue naproxen sodium 220 mg as needed, always with food; monitor for GI symptoms.
+• Taught tendon-glide exercises and morning warm soaks; pace gripping tasks where possible.
+• Regular aerobic activity as above; recheck lipids at next annual visit.
+• Patient referral for dental care placed to a sliding-scale clinic; patient agreeable.
+• Medication reconciliation completed: naproxen sodium 220 mg PRN is the only agent; use pattern appropriate."

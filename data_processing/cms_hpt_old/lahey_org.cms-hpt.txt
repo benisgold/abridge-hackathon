@@ -1,0 +1,16 @@
+# cms-hpt fetch metadata
+# facility: LAHEY HOSPITAL & MEDICAL CENTER, BURLINGTON
+# system-url: https://www.lahey.org/
+# cms-hpt-url: https://www.lahey.org/cms-hpt.txt
+# --- original cms-hpt.txt body ---
+location-name: Lahey Hospital & Medical Center
+source-page-url: https://www.lahey.org/patients-visitors/billing-financial-services/price-transparency
+mrf-url: https://www.lahey.org/042704686_lahey-hospital-medical-center-burlington_standardcharges.json
+contact-name: BILH Pricing Transparency Office 
+contact-email: BILH-PricingTransparency@bilh.org
+
+location-name: Lahey Medical Center, Peabody
+source-page-url: https://www.lahey.org/patients-visitors/billing-financial-services/price-transparency
+mrf-url: https://www.lahey.org/042704686_lahey-hospital-medical-center-burlington_standardcharges.json
+contact-name: BILH Pricing Transparency Office 
+contact-email: BILH-PricingTransparency@bilh.org

@@ -2,6 +2,19 @@
 /data/
 data/
 
+# --- Large hospital price transparency MRFs ---
+data_processing/cms_hpt/mrfs/
+data_processing/cms_hpt_old/mrfs/
+
+# --- Agent intermediate cache (regenerated per model; keep the CSV outputs) ---
+# data_processing/text_map_cache*.json
+# data_processing/random/text_map_cache*.json
+data_processing/random/mapping_cache.json
+
+# Keep processed CSV outputs tracked even if broader ignores are added later.
+!data_processing/processed_csv/
+!data_processing/processed_csv/*.csv
+
 # --- Secrets / environment ---
 .env
 .env.*

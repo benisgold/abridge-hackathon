@@ -1,128 +1,37 @@
 # abridge-hackathon
 
-## Running the app
+## Python environment
 
-A React frontend (Vite + TypeScript + Tailwind) and a Python backend (FastAPI).
-
-Prerequisites: Node 20+, Python 3.11+, [uv](https://docs.astral.sh/uv/), and an
-Anthropic API key (the CPT extraction step calls Claude — see below).
+Set up a local virtual environment (`.venv`, git-ignored) and install the pinned dependencies:
 
 ```bash
-cp backend/.env.example backend/.env   # then add your ANTHROPIC_API_KEY
+# from the repo root (abridge-hackathon/)
+python3 -m venv .venv
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 ```
 
-Backend — in one terminal:
+Add your Anthropic key to a `.env` file at the repo root (also git-ignored):
+
+```
+ANTHROPIC_API_KEY=sk-ant-...
+```
+
+### Running the notebooks
+
+The `data_processing/*.ipynb` notebooks expect this environment. Either:
+
+- **In VS Code / Cursor:** open a notebook and pick the `.venv` interpreter as the kernel (top-right kernel picker → *Python Environments* → `.venv`), or
+- **From the CLI:**
 
 ```bash
-cd backend
-uv run uvicorn app.main:app --reload --port 8000
+source .venv/bin/activate
+jupyter nbconvert --to notebook --execute --inplace \
+  data_processing/04_avs_line_to_billable_codes.ipynb
 ```
 
-Frontend — in another terminal:
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-Then open http://localhost:5173. The Vite dev server proxies `/api` to the
-backend on port 8000, so frontend code can use relative paths like
-`fetch('/api/health')` without hardcoding a host.
-
-## The patient flow
-
-Three screens, in order:
-
-1. **Visit summary** — two panels side by side. On the left, the after-visit
-   summary the care team uploaded (pick any of the 25 encounters from the
-   dropdown). On the right, Claude extracts CPT codes for the procedures
-   *recommended as follow-up*, ignoring anything already done at the visit.
-   Codes stream in one at a time as the model produces them.
-
-   **Each code is traced to the line it came from.** The model cites a line
-   number from a numbered copy of the note; the source line is highlighted
-   inline with the code's badge, and colour pairs the two panels. Clicking a
-   code emphasises its line (and vice versa). Codes drawn from the same line
-   share one colour — colour identifies the *line*, not the card, so a line
-   with several codes doesn't leave the others advertising an unused colour.
-   Colour is a secondary cue: every marker also carries the CPT number.
-2. **Estimated costs** — each code with its description, average and lowest cost
-   across Boston-area hospitals, and Medicare coverage. Click any row to include
-   or exclude it; the totals recompute. **This selection affects the estimate
-   total only** — it doesn't carry into the next step.
-3. **Compare hospitals** — every extracted code is offered again as its own
-   toggle, because patients routinely have different procedures done at
-   different facilities. Enter a ZIP and radius once, then toggle procedures to
-   see hospitals re-rank **live** — no re-submit. The map, the ranking, and any
-   open estimate all update together. The location button only applies ZIP or
-   radius edits.
-
-### The extraction step calls Claude
-
-`backend/app/extraction.py` streams from `claude-haiku-4-5` — the cheap tier,
-which handles this extraction in 1–3s. Override with `EXTRACTION_MODEL` in
-`backend/.env` to trade cost for accuracy (`claude-opus-4-8` is noticeably more
-precise about excluding already-completed items, at ~8x the latency).
-
-It needs `ANTHROPIC_API_KEY` in `backend/.env`; without it the endpoint returns a
-clear error event and the UI surfaces it rather than failing opaquely.
-
-Claude emits **one JSON object per line** instead of a single array, so each code
-can be parsed and forwarded the moment its line completes — that's what makes the
-streaming reveal real rather than a spinner that resolves all at once. Malformed
-lines are skipped rather than aborting the stream.
-
-Each object carries a `line` number plus a verbatim quote. `resolve_line()`
-checks the quote actually appears on the cited line and re-locates by word
-overlap when it doesn't, so an off-by-one from the model doesn't highlight the
-wrong text. Codes that can't be traced are labelled as such rather than pointed
-at a guess.
-
-### Code caching
-
-Extracted codes are cached in the browser for the duration of one patient's
-flow, so navigating to the cost or hospital steps and back doesn't re-run the
-model. The cache is keyed on the exact note text:
-
-- **Navigating between steps** reuses the cached codes (no API call).
-- **Regenerate** forces a fresh call, overwriting the cache.
-- **Switching patients** clears it — one patient's codes never carry into
-  another's flow.
-
-The cache key is the note text rather than the encounter id, so it stays correct
-if the note is ever made editable again.
-
-> **All pricing is synthetic.** The hospital names, addresses, and coordinates
-> are real; every dollar figure is generated by `backend/app/pricing.py` from a
-> per-procedure base price and a per-hospital multiplier. Nothing here reflects
-> what these hospitals actually charge. Visit summaries are synthetic too —
-> Synthea patients with LLM-generated notes, no real patient data. The UI carries
-> the same warning on every screen.
-
-Notes on the demo data:
-
-- **Coverage is the Boston metro area only** — roughly 60 seeded ZIPs. Try
-  `02114`, `02139`, `02458`, or `01803`. Any other ZIP returns a 404 explaining
-  the limitation, since there's no geocoding service behind this.
-- **~65 CPT codes are seeded.** Claude can return anything, so unseeded codes get
-  a deterministic hash-derived price and report Medicare coverage as **Unknown** —
-  an invented coverage answer is the kind of detail someone might act on.
-- Estimates are **self-pay**. The "Add insurance" button is deliberately inert.
-- Prices are **deterministic** — the same query always returns the same numbers.
-- The map uses **OpenStreetMap tiles**, so it needs internet access. Everything
-  else works offline (except the extraction step, which calls the API).
-
-API endpoints:
-
-```bash
-curl localhost:8000/api/encounters
-curl -X POST localhost:8000/api/extract -H 'content-type: application/json' \
-  -d '{"summary_text": "Next steps\n• Repeat lipid panel in 3 months."}'
-curl -X POST localhost:8000/api/pricing -H 'content-type: application/json' \
-  -d '{"codes": ["80061", "83036"]}'
-curl 'localhost:8000/api/estimates?codes=80061&codes=83036&zip=02114&radius_miles=10'
-```
+If you hit `ModuleNotFoundError: No module named 'dotenv'` (or similar), the notebook is running against the wrong interpreter — make sure the selected kernel is the `.venv` created above.
 
 ## Data setup
 

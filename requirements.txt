@@ -1,0 +1,11 @@
+# Python dependencies for the abridge-hackathon data_processing notebooks.
+# Install into a local virtual environment (see README "Python environment").
+
+pandas>=2.2
+anthropic>=0.117        # Claude client used by data_processing/random agents
+python-dotenv>=1.0      # loads ANTHROPIC_API_KEY from .env
+
+# Notebook execution
+jupyter>=1.0
+ipykernel>=6.29
+nbconvert>=7.16

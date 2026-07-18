@@ -3,7 +3,9 @@ name = "abridge-hackathon-backend"
 version = "0.1.0"
 requires-python = ">=3.11"
 dependencies = [
+    "anthropic>=0.117.0",
     "fastapi>=0.115",
+    "python-dotenv>=1.2.2",
     "uvicorn[standard]>=0.30",
 ]
 

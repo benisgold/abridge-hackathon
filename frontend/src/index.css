@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+/*
+ * Map marker cards overlap where hospitals cluster downtown. Leaflet assigns
+ * each marker a latitude-derived z-index, so without this the card you're
+ * pointing at can sit underneath its neighbours and be unreadable.
+ */
+.leaflet-marker-icon:hover {
+  z-index: 10000 !important;
+}

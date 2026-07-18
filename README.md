@@ -1,5 +1,30 @@
 # abridge-hackathon
 
+## Running the app
+
+A React frontend (Vite + TypeScript + Tailwind) and a Python backend (FastAPI).
+
+Prerequisites: Node 20+, Python 3.11+, and [uv](https://docs.astral.sh/uv/).
+
+Backend — in one terminal:
+
+```bash
+cd backend
+uv run uvicorn app.main:app --reload --port 8000
+```
+
+Frontend — in another terminal:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Then open http://localhost:5173. The Vite dev server proxies `/api` to the
+backend on port 8000, so frontend code can use relative paths like
+`fetch('/api/health')` without hardcoding a host.
+
 ## Data setup
 
 The dataset is **not** included in this repository (it's git-ignored).

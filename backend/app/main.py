@@ -6,10 +6,10 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 
-from .data import HOSPITALS, PROCEDURES, ZIP_CENTROIDS
-from .encounters import Encounter, EncounterSummary, dataset_present, find_encounter
-from .encounters import load_encounters
-from .extraction import stream_extraction
+from . import real_data
+from .data import HOSPITALS, ZIP_CENTROIDS
+from .encounters import Encounter, EncounterSummary, find_encounter, load_encounters
+from .extraction import EXTRACTION_MODE, replay_extraction, stream_extraction
 from .geo import haversine_miles
 from .models import (
     EstimateResponse,
@@ -20,7 +20,7 @@ from .models import (
     PricingResponse,
     Procedure,
 )
-from .pricing import build_breakdown, combine_breakdowns, market_pricing, resolve_procedure
+from .pricing import build_breakdown, market_pricing, payable, to_procedure
 
 load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
@@ -39,22 +39,26 @@ app.add_middleware(
 
 
 @app.get("/api/health")
-def health() -> dict[str, str | bool]:
+def health() -> dict[str, str | bool | int]:
     return {
         "status": "ok",
-        "message": "hello from fastapi",
-        "dataset_present": dataset_present(),
+        "price_data_present": real_data.dataset_present(),
+        "extraction_mode": EXTRACTION_MODE,
+        "priced_hospitals": len(HOSPITALS),
     }
-
-
-@app.get("/api/procedures")
-def list_procedures() -> list[Procedure]:
-    return [procedure.to_model() for procedure in PROCEDURES]
 
 
 @app.get("/api/encounters")
 def list_encounters() -> list[EncounterSummary]:
-    return [EncounterSummary(**e.model_dump()) for e in load_encounters()]
+    """Encounters, flagged with whether they yield any priced follow-up codes."""
+    with_codes = real_data.encounters_with_codes()
+    return [
+        EncounterSummary(
+            **{k: v for k, v in e.model_dump().items() if k != "has_codes"},
+            has_codes=e.id in with_codes,
+        )
+        for e in load_encounters()
+    ]
 
 
 @app.get("/api/encounters/{encounter_id}")
@@ -67,23 +71,36 @@ def get_encounter(encounter_id: str) -> Encounter:
 
 @app.post("/api/extract")
 async def extract_codes(request: ExtractRequest) -> StreamingResponse:
-    """Streams CPT codes extracted from a visit summary by Claude, as SSE."""
-    summary_text = request.summary_text
-    if not summary_text and request.encounter_id:
-        encounter = find_encounter(request.encounter_id)
-        if encounter is None:
-            raise HTTPException(
-                status_code=404, detail=f"No encounter '{request.encounter_id}'"
-            )
-        summary_text = encounter.after_visit_summary
+    """Streams the follow-up codes for an encounter as SSE."""
+    encounter = find_encounter(request.encounter_id) if request.encounter_id else None
+    if request.encounter_id and encounter is None:
+        raise HTTPException(
+            status_code=404, detail=f"No encounter '{request.encounter_id}'"
+        )
 
-    if not summary_text or not summary_text.strip():
+    summary_text = request.summary_text or (
+        encounter.after_visit_summary if encounter else ""
+    )
+    if not summary_text.strip():
         raise HTTPException(
             status_code=400, detail="Provide either encounter_id or summary_text."
         )
 
+    if EXTRACTION_MODE == "live":
+        stream = stream_extraction(summary_text)
+    else:
+        if encounter is None:
+            raise HTTPException(
+                status_code=400,
+                detail=(
+                    "CSV extraction needs an encounter_id. Set EXTRACTION_MODE=live "
+                    "to extract from arbitrary text."
+                ),
+            )
+        stream = replay_extraction(encounter.id, summary_text)
+
     return StreamingResponse(
-        stream_extraction(summary_text),
+        stream,
         media_type="text/event-stream",
         headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
     )
@@ -91,11 +108,23 @@ async def extract_codes(request: ExtractRequest) -> StreamingResponse:
 
 @app.post("/api/pricing")
 def get_pricing(request: PricingRequest) -> PricingResponse:
-    """Market-level average and lowest cost per code, across all seeded hospitals."""
-    if not request.codes:
-        raise HTTPException(status_code=400, detail="Provide at least one code.")
+    """Average and lowest published price per code, across hospitals."""
+    wanted = set(request.codes)
+    priced = [
+        p
+        for p in (
+            market_pricing(c)
+            for c in real_data.codes_for_encounter(request.encounter_id)
+            if c.code in wanted
+        )
+        if p is not None
+    ]
+    if not priced:
+        raise HTTPException(
+            status_code=404,
+            detail="No published prices found for those codes.",
+        )
 
-    priced = [market_pricing(code) for code in request.codes]
     return PricingResponse(
         codes=priced,
         total_average=sum(p.average for p in priced),
@@ -105,19 +134,16 @@ def get_pricing(request: PricingRequest) -> PricingResponse:
 
 @app.get("/api/estimates")
 def get_estimates(
-    # Bound to `zip_code` so the parameter doesn't shadow the zip() builtin below.
+    encounter_id: str = Query(description="Encounter the codes belong to"),
+    # Bound to `zip_code` so the parameter doesn't shadow the zip() builtin.
     zip_code: str = Query(
         alias="zip", description="5-digit ZIP code", min_length=5, max_length=5
     ),
-    codes: list[str] = Query(default=[], description="CPT codes; repeatable"),
-    code: str | None = Query(default=None, description="Single CPT code (legacy)"),
+    codes: list[str] = Query(default=[], description="CPT/HCPCS codes; repeatable"),
     radius_miles: float = Query(default=25, gt=0, le=200),
 ) -> EstimateResponse:
-    requested = list(codes) or ([code] if code else [])
-    if not requested:
-        raise HTTPException(
-            status_code=400, detail="Provide at least one code via ?codes= or ?code=."
-        )
+    if not codes:
+        raise HTTPException(status_code=400, detail="Provide at least one code.")
 
     origin = ZIP_CENTROIDS.get(zip_code.strip())
     if origin is None:
@@ -129,38 +155,71 @@ def get_estimates(
             ),
         )
 
-    procedures = [resolve_procedure(c)[0] for c in requested]
+    wanted = set(codes)
+    selected = [
+        c for c in real_data.codes_for_encounter(encounter_id) if c.code in wanted
+    ]
+    if not selected:
+        raise HTTPException(
+            status_code=404, detail="None of those codes belong to this encounter."
+        )
 
     origin_lat, origin_lng = origin
     results: list[HospitalEstimate] = []
+
     for hospital in HOSPITALS:
         distance = haversine_miles(origin_lat, origin_lng, hospital.lat, hospital.lng)
         if distance > radius_miles:
             continue
 
-        breakdowns = [build_breakdown(p, hospital) for p in procedures]
+        # A hospital only contributes the codes it actually publishes.
+        covered = [(c, c.prices[hospital.id]) for c in selected if hospital.id in c.prices]
+        if not covered:
+            continue
+
+        breakdown = build_breakdown(
+            [price for _, price in covered],
+            f"{hospital.id}:{','.join(sorted(wanted))}",
+        )
+        if breakdown is None:
+            continue
+
+        line_items = []
+        for code, price in covered:
+            value = payable(price)
+            if value is None:
+                continue
+            amount, basis = value
+            line_items.append(
+                LineItem(
+                    procedure=to_procedure(code),
+                    patient_responsibility=amount,
+                    basis=basis,
+                )
+            )
+
         results.append(
             HospitalEstimate(
                 hospital=hospital.to_model(),
                 distance_miles=round(distance, 1),
-                breakdown=combine_breakdowns(
-                    breakdowns, f"{hospital.id}:{','.join(requested)}"
-                ),
-                line_items=[
-                    LineItem(
-                        procedure=procedure.to_model(),
-                        patient_responsibility=breakdown.patient_responsibility,
-                        total_fees=breakdown.total_fees,
-                    )
-                    for procedure, breakdown in zip(procedures, breakdowns, strict=True)
-                ],
+                breakdown=breakdown,
+                line_items=line_items,
+                covered_count=len(line_items),
+                requested_count=len(selected),
             )
         )
 
-    results.sort(key=lambda r: r.breakdown.patient_responsibility)
+    # Hospitals covering the whole basket rank first — otherwise a hospital
+    # that publishes fewer prices would look cheapest on missing data alone.
+    results.sort(
+        key=lambda r: (
+            r.covered_count < r.requested_count,
+            r.breakdown.patient_responsibility,
+        )
+    )
 
     return EstimateResponse(
-        procedures=[p.to_model() for p in procedures],
+        procedures=[to_procedure(c) for c in selected],
         results=results,
         created_date=date.today(),
         valid_days=ESTIMATE_VALID_DAYS,

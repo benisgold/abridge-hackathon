@@ -146,7 +146,9 @@ function App() {
       const noteAtRunStart = summaryText
 
       await streamExtraction(
-        { summary_text: noteAtRunStart },
+        // Send both: CSV replay keys off the encounter, while the live model
+        // path (EXTRACTION_MODE=live) reads the possibly-edited note text.
+        { encounter_id: selectedEncounterId, summary_text: noteAtRunStart },
         {
           onStep: (label) =>
             setSteps((prev) => (prev.includes(label) ? prev : [...prev, label])),
@@ -167,7 +169,7 @@ function App() {
         controller.signal,
       )
     },
-    [extracted.length, cachedFor, summaryText],
+    [extracted.length, cachedFor, summaryText, selectedEncounterId],
   )
 
   async function goToPricing() {
@@ -186,7 +188,7 @@ function App() {
     setError(null)
     try {
       const codes = extracted.map((c) => c.code)
-      const result = await fetchPricing(codes)
+      const result = await fetchPricing(selectedEncounterId, codes)
       setPricing(result)
       setCostCodes(new Set(codes))
       setHospitalCodes(new Set(codes))
@@ -236,7 +238,12 @@ function App() {
 
     const requestId = ++estimateRequestRef.current
     setLoading(true)
-    fetchEstimates([...hospitalCodes], lastQuery.zip, lastQuery.radiusMiles)
+    fetchEstimates(
+      selectedEncounterId,
+      [...hospitalCodes],
+      lastQuery.zip,
+      lastQuery.radiusMiles,
+    )
       .then((result) => {
         // Ignore anything but the newest request — rapid toggling can leave
         // slower earlier responses in flight.
@@ -252,7 +259,7 @@ function App() {
       .finally(() => {
         if (requestId === estimateRequestRef.current) setLoading(false)
       })
-  }, [hospitalCodes, lastQuery])
+  }, [hospitalCodes, lastQuery, selectedEncounterId])
 
   function handleSelectHospital(hospitalId: string) {
     setSelectedHospitalId(hospitalId)
@@ -322,11 +329,11 @@ function App() {
       </header>
 
       <main className="mx-auto max-w-7xl px-6 py-6">
-        <p className="mb-5 rounded border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-          <strong>Demo data.</strong> Visit summaries come from Abridge's
-          synthetic encounter dataset — no real patients. Hospital names and
-          locations are real, but every price shown here is synthetic and does
-          not reflect what these hospitals actually charge.
+        <p className="mb-5 rounded border border-sky-300 bg-sky-50 px-4 py-3 text-sm text-sky-900">
+          <strong>Real published prices.</strong> Costs come from Boston-area
+          hospitals' own price-transparency files, published under the CMS
+          hospital price-transparency rule. Visit summaries are synthetic —
+          Abridge's demo encounter dataset, no real patients.
         </p>
 
         {error && (
@@ -437,7 +444,6 @@ function App() {
                 <div ref={detailRef} className="mt-6">
                   {selectedHospital ? (
                     <EstimateDetail
-                      procedures={response.procedures}
                       estimate={selectedHospital}
                       createdDate={response.created_date}
                       validDays={response.valid_days}

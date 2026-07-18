@@ -1,8 +1,9 @@
 import { formatDate, formatUSD } from '../lib/format'
-import type { EstimateResponse, HospitalEstimate } from '../types'
+import type { HospitalEstimate } from '../types'
 
 type Props = {
-  procedures: EstimateResponse['procedures']
+  // The basket comes from line_items, not the request: a hospital only
+  // itemises the procedures it actually publishes a price for.
   estimate: HospitalEstimate
   createdDate: string
   validDays: number
@@ -23,16 +24,13 @@ function InfoIcon({ label }: { label: string }) {
 
 function RangeBar({ low, high, value }: { low: number; high: number; value: number }) {
   const span = high - low
-  const percent = span > 0 ? ((value - low) / span) * 100 : 50
+  // The cash price can sit outside the negotiated band; clamp so the marker
+  // stays on the bar rather than flying off the end.
+  const clamped = Math.min(Math.max(value, low), high)
+  const percent = span > 0 ? ((clamped - low) / span) * 100 : 50
 
   return (
     <div className="px-8 pt-2 pb-1">
-      <p
-        className="mb-1 text-center text-lg font-semibold text-emerald-600"
-        style={{ marginLeft: `${percent - 50}%` }}
-      >
-        {formatUSD(value)}
-      </p>
       <div className="flex items-center gap-2">
         <span className="shrink-0 text-sm text-slate-700">{formatUSD(low)}</span>
         <div className="relative h-px flex-1 bg-slate-800">
@@ -54,12 +52,14 @@ function RangeBar({ low, high, value }: { low: number; high: number; value: numb
 }
 
 export function EstimateDetail({
-  procedures,
   estimate,
   createdDate,
   validDays,
 }: Props) {
   const { hospital, breakdown, line_items: lineItems } = estimate
+  const partial = estimate.covered_count < estimate.requested_count
+  const hasBand =
+    breakdown.expected_low !== null && breakdown.expected_high !== null
 
   return (
     <section className="border border-slate-200 bg-white p-6">
@@ -82,19 +82,29 @@ export function EstimateDetail({
 
       <div className="mt-5 border border-slate-200 p-5">
         <p className="font-bold text-slate-900">
-          {procedures.length}{' '}
-          {procedures.length === 1 ? 'procedure' : 'procedures'}
+          {estimate.covered_count}{' '}
+          {estimate.covered_count === 1 ? 'procedure' : 'procedures'}
         </p>
         <p className="font-bold text-slate-900">
-          CPT® {procedures.map((p) => p.code).join(', ')}
+          {lineItems.map((i) => i.procedure.code).join(', ')}
         </p>
         <ul className="mt-2 space-y-1">
-          {procedures.map((p) => (
-            <li key={p.code} className="text-slate-700">
-              <span className="font-medium">{p.name}</span> — {p.description}
+          {lineItems.map((item) => (
+            <li key={item.procedure.code} className="text-slate-700">
+              <span className="font-medium">{item.procedure.name}</span> —{' '}
+              {item.procedure.description}
             </li>
           ))}
         </ul>
+
+        {partial && (
+          <p className="mt-3 rounded border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-900">
+            This hospital publishes prices for {estimate.covered_count} of the{' '}
+            {estimate.requested_count} procedures you selected. The total below
+            covers only those.
+          </p>
+        )}
+
         <p className="mt-3 text-sm text-slate-600">
           At <span className="font-medium">{hospital.name}</span> —{' '}
           {hospital.address}, {hospital.city}, {hospital.state}{' '}
@@ -106,32 +116,43 @@ export function EstimateDetail({
         {/* Left: headline figure */}
         <div className="border border-slate-200 p-5">
           <p className="font-medium text-slate-800">
-            Estimated Patient Responsibility
+            {breakdown.basis === 'cash'
+              ? 'Estimated cost without insurance'
+              : 'Estimated cost (negotiated)'}
           </p>
           <p className="mt-4 text-6xl font-semibold text-emerald-600">
             {formatUSD(breakdown.patient_responsibility)}
           </p>
+          <p className="mt-2 text-sm text-slate-500">
+            {breakdown.limited_data
+              ? 'Limited data — based on a single plan'
+              : `Based on ${breakdown.n_payers} plans`}
+          </p>
 
-          <dl className="mt-8">
-            <div className="flex justify-between border-b border-slate-200 py-3">
-              <dt className="text-slate-700">
-                Subtotal
-                <InfoIcon label="Total fees before any discount is applied" />
-              </dt>
-              <dd className="text-slate-900">{formatUSD(breakdown.total_fees)}</dd>
-            </div>
-            <div className="flex justify-between py-3">
-              <dt className="text-slate-700">
-                Discount
-                <InfoIcon label="Self-pay discount offered by this hospital" />
-              </dt>
-              <dd className="text-slate-900">
-                -{formatUSD(breakdown.discount)}
-              </dd>
-            </div>
-          </dl>
+          {breakdown.gross !== null && (
+            <dl className="mt-8">
+              <div className="flex justify-between border-b border-slate-200 py-3">
+                <dt className="text-slate-700">
+                  List price
+                  <InfoIcon label="The hospital's published gross charge, before any self-pay discount" />
+                </dt>
+                <dd className="text-slate-900">{formatUSD(breakdown.gross)}</dd>
+              </div>
+              {breakdown.discount !== null && breakdown.discount > 0 && (
+                <div className="flex justify-between py-3">
+                  <dt className="text-slate-700">
+                    Self-pay discount
+                    <InfoIcon label="List price minus the published cash price" />
+                  </dt>
+                  <dd className="text-slate-900">
+                    -{formatUSD(breakdown.discount)}
+                  </dd>
+                </div>
+              )}
+            </dl>
+          )}
 
-          <p className="mt-2 text-slate-700">
+          <p className="mt-4 text-slate-700">
             Reference #: {breakdown.reference_number}
           </p>
           <p className="mt-2 text-sm text-slate-600 italic">
@@ -139,19 +160,72 @@ export function EstimateDetail({
           </p>
         </div>
 
-        {/* Right: itemization */}
+        {/* Right: the three published figures */}
         <div className="border border-slate-200 p-5">
           <p className="font-medium text-slate-800">Details:</p>
 
-          <RangeBar
-            low={breakdown.low}
-            high={breakdown.high}
-            value={breakdown.total_fees}
-          />
+          {hasBand && (
+            <RangeBar
+              low={breakdown.expected_low!}
+              high={breakdown.expected_high!}
+              value={breakdown.patient_responsibility}
+            />
+          )}
 
           <dl className="mt-4">
+            {breakdown.without_insurance !== null && (
+              <div className="border-b border-slate-200 py-3">
+                <div className="flex justify-between">
+                  <dt className="font-medium text-slate-800">
+                    Without insurance
+                  </dt>
+                  <dd className="font-medium text-slate-900">
+                    {formatUSD(breakdown.without_insurance)}
+                  </dd>
+                </div>
+                <p className="mt-0.5 text-sm text-slate-600">
+                  What you pay if you self-pay.
+                </p>
+              </div>
+            )}
+
+            {breakdown.with_insurance !== null && (
+              <div className="border-b border-slate-200 py-3">
+                <div className="flex justify-between">
+                  <dt className="font-medium text-slate-800">
+                    With your insurance
+                    <InfoIcon label="A typical (median) negotiated rate across this hospital's plans — not specific to your plan, which we don't have." />
+                  </dt>
+                  <dd className="font-medium text-slate-900">
+                    {formatUSD(breakdown.with_insurance)}
+                  </dd>
+                </div>
+                <p className="mt-0.5 text-sm text-slate-600">
+                  What your plan agreed to pay here.
+                </p>
+              </div>
+            )}
+
+            {hasBand && (
+              <div className="border-b border-slate-200 py-3">
+                <div className="flex justify-between">
+                  <dt className="font-medium text-slate-800">Expected range</dt>
+                  <dd className="font-medium text-slate-900">
+                    {formatUSD(breakdown.expected_low!)} –{' '}
+                    {formatUSD(breakdown.expected_high!)}
+                  </dd>
+                </div>
+                <p className="mt-0.5 text-sm text-slate-600">
+                  What people actually paid, most landing in this band.
+                </p>
+              </div>
+            )}
+
             {lineItems.length > 1 && (
-              <>
+              <div className="pt-3">
+                <p className="text-sm font-medium text-slate-700">
+                  By procedure
+                </p>
                 {lineItems.map((item) => (
                   <div
                     key={item.procedure.code}
@@ -164,73 +238,27 @@ export function EstimateDetail({
                       {item.procedure.name}
                     </dt>
                     <dd className="whitespace-nowrap text-slate-900">
-                      {formatUSD(item.total_fees)}
+                      {formatUSD(item.patient_responsibility)}
                     </dd>
                   </div>
                 ))}
-                <div className="mt-2 border-t border-slate-200" />
-              </>
+              </div>
             )}
-            <div className="flex justify-between pt-3">
-              <dt className="text-slate-700">
-                Total Fees
-                <InfoIcon label="Facility and physician fees before discount" />
-              </dt>
-              <dd className="text-slate-900">{formatUSD(breakdown.total_fees)}</dd>
-            </div>
-            <div className="flex justify-between py-1 pl-6">
-              <dt className="text-slate-700">Hospital fees</dt>
-              <dd className="text-slate-900">
-                {formatUSD(breakdown.hospital_fees)}
-              </dd>
-            </div>
-            <div className="flex justify-between border-b border-slate-200 py-1 pb-3 pl-6">
-              <dt className="text-slate-700">Physician fees</dt>
-              <dd className="text-slate-900">
-                {formatUSD(breakdown.physician_fees)}
-              </dd>
-            </div>
-            <div className="flex justify-between border-b border-slate-200 py-3">
-              <dt className="text-slate-700">
-                Discount
-                <InfoIcon label="Self-pay discount offered by this hospital" />
-              </dt>
-              <dd className="text-slate-900">
-                -{formatUSD(breakdown.discount)}
-              </dd>
-            </div>
-            <div className="flex justify-between py-3">
-              <dt className="font-medium text-emerald-700">
-                Estimated Patient Responsibility
-                <InfoIcon label="What you would pay out of pocket after the discount" />
-              </dt>
-              <dd className="font-medium text-emerald-700">
-                {formatUSD(breakdown.patient_responsibility)}
-              </dd>
-            </div>
           </dl>
         </div>
       </div>
 
       <div className="mt-5 border border-slate-200 p-5">
-        <p className="font-medium text-slate-800">Coverage Information</p>
-        <p className="mt-3 flex items-center gap-2 text-lg text-slate-900">
-          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-600 text-xs text-white">
-            ✓
-          </span>
-          Not using insurance (self-pay)
-        </p>
+        <p className="font-medium text-slate-800">Where these numbers come from</p>
         <p className="mt-3 text-slate-700">
-          This estimate shows what you would pay out-of-pocket without insurance.
+          {hospital.name} publishes these prices under the CMS hospital
+          price-transparency rule. They are the hospital's own published figures,
+          not estimates generated by this app.
         </p>
-        <button
-          type="button"
-          disabled
-          title="Insurance is not wired up in this demo — every estimate is self-pay."
-          className="mt-4 cursor-not-allowed bg-teal-700/50 px-6 py-3 font-medium tracking-wider text-white uppercase"
-        >
-          Add Insurance
-        </button>
+        <p className="mt-2 text-sm text-slate-600">
+          Prices can change, and your final bill depends on what is actually
+          performed. Confirm with the hospital before scheduling.
+        </p>
       </div>
     </section>
   )

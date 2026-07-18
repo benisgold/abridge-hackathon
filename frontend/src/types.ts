@@ -1,9 +1,11 @@
 export type Procedure = {
   code: string
+  code_type: string // CPT or HCPCS
   name: string
   description: string
-  /** null = not in the demo catalog, so coverage is unknown (never guessed). */
-  medicare_covered: boolean | null
+  category: string
+  confidence: string
+  needs_review: boolean
 }
 
 export type Hospital = {
@@ -18,21 +20,28 @@ export type Hospital = {
   phone: string
 }
 
+/** Which published figure a quoted price came from. */
+export type PriceBasis = 'cash' | 'negotiated'
+
 export type Breakdown = {
-  hospital_fees: number
-  physician_fees: number
-  total_fees: number
-  discount: number
   patient_responsibility: number
-  low: number
-  high: number
+  basis: PriceBasis
+  /** null means the hospital doesn't publish it — render nothing. */
+  without_insurance: number | null
+  with_insurance: number | null
+  expected_low: number | null
+  expected_high: number | null
+  gross: number | null
+  discount: number | null
+  n_payers: number
+  limited_data: boolean
   reference_number: string
 }
 
 export type LineItem = {
   procedure: Procedure
   patient_responsibility: number
-  total_fees: number
+  basis: PriceBasis
 }
 
 export type HospitalEstimate = {
@@ -40,6 +49,8 @@ export type HospitalEstimate = {
   distance_miles: number
   breakdown: Breakdown
   line_items: LineItem[]
+  covered_count: number
+  requested_count: number
 }
 
 export type EstimateResponse = {
@@ -54,6 +65,8 @@ export type EncounterSummary = {
   patient_name: string
   visit_title: string
   date: string
+  /** False when the encounter yields no priced follow-up codes. */
+  has_codes: boolean
 }
 
 export type Encounter = EncounterSummary & {
@@ -62,19 +75,23 @@ export type Encounter = EncounterSummary & {
 
 export type ExtractedCode = {
   code: string
+  code_type: string
   name: string
   description: string
-  /** Verbatim excerpt of the summary line that prompted this code. */
+  /** The summary line this code came from, verbatim. */
   rationale: string
   /** 0-based index of that line; null when it couldn't be resolved. */
   line: number | null
+  needs_review: boolean
+  confidence: string
 }
 
 export type CodePricing = {
   procedure: Procedure
   average: number
   lowest: number
-  in_catalog: boolean
+  /** How many hospitals publish a price for this code. */
+  n_hospitals: number
 }
 
 export type PricingResponse = {

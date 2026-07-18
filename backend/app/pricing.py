@@ -1,105 +1,135 @@
-"""Synthetic price generation.
+"""Turns CMS-published prices into the figures the UI quotes.
 
-Deterministic on purpose: the same (procedure, hospital) pair always yields the
-same figures, so a demo doesn't reshuffle its numbers on every refresh.
+Everything here reads Robbert's `prices_by_hospital` data. Nothing is
+synthesised: if a hospital doesn't publish a number, the field is None and the
+UI omits that row.
 """
 
 from hashlib import sha256
 
-from .data import HOSPITALS, HospitalSeed, ProcedureSeed, find_procedure
-from .models import Breakdown, CodePricing
+from .real_data import HospitalPrice, RealCode
+from .models import Breakdown, CodePricing, Procedure
 
-# How far the plausible-range bar extends either side of the quoted total.
-LOW_FACTOR = 0.93
-HIGH_FACTOR = 1.09
+# A published percentile band is only meaningful if it looks like something a
+# person could have paid. Real rows include p10 = $0.04 alongside p90 = $320 —
+# near-zero floors are capitated or percentage-of-charge contracts, not prices.
+MIN_PLAUSIBLE_P10 = 1.0
+MAX_PLAUSIBLE_SPREAD = 50.0
 
-# Bounds for prices synthesized for codes we don't have seeded.
-FALLBACK_MIN_PRICE = 120
-FALLBACK_MAX_PRICE = 3200
-
-
-def _stable_hash(value: str) -> int:
-    return int(sha256(value.encode()).hexdigest()[:8], 16)
+# "based on N plans" is only worth showing when N means something.
+LIMITED_DATA_PAYERS = 1
 
 
-def _reference_number(procedure_code: str, hospital_id: str) -> str:
-    return str(_stable_hash(f"{procedure_code}:{hospital_id}") % 9_000_000 + 1_000_000)
+def _reference_number(*parts: str) -> str:
+    digest = sha256(":".join(parts).encode()).hexdigest()
+    return str(int(digest[:8], 16) % 9_000_000 + 1_000_000)
 
 
-def synthesize_procedure(code: str) -> ProcedureSeed:
-    """A plausible stand-in for a code that isn't in the seeded catalog.
+def to_procedure(code: RealCode) -> Procedure:
+    return Procedure(
+        code=code.code,
+        code_type=code.code_type,
+        name=code.name,
+        description=code.description,
+        category=code.category,
+        confidence=code.confidence,
+        needs_review=code.needs_review,
+    )
 
-    Price is hash-derived so it stays stable across requests. Coverage is left
-    unknown rather than guessed — an invented Medicare answer is the kind of
-    fake detail someone might actually act on.
+
+def payable(price: HospitalPrice) -> tuple[int, str] | None:
+    """What this hospital would charge, and which published figure that is.
+
+    Cash price first — that's the self-pay question the app asks. Falling back
+    to the negotiated median keeps a hospital rankable when it publishes no
+    cash price (35% of South Shore's entries), but the basis travels with the
+    number so the UI never calls it a self-pay price.
     """
-    seed = _stable_hash(f"procedure:{code}")
-    span = FALLBACK_MAX_PRICE - FALLBACK_MIN_PRICE
-    return ProcedureSeed(
-        code=code,
-        name=f"Procedure {code}",
-        description=(
-            "This code isn't in the demo catalog, so its price is a synthetic "
-            "placeholder and its Medicare coverage is unknown."
-        ),
-        base_price=FALLBACK_MIN_PRICE + (seed % span),
-        physician_share=0.15,
-        medicare_covered=None,
+    if price.discounted_cash is not None:
+        return round(price.discounted_cash), "cash"
+    if price.negotiated_median is not None:
+        return round(price.negotiated_median), "negotiated"
+    return None
+
+
+def expected_band(price: HospitalPrice) -> tuple[int, int] | None:
+    """The p10-p90 band, or None when it isn't published or isn't plausible."""
+    if price.p10 is None or price.p90 is None:
+        return None
+    if price.p10 < MIN_PLAUSIBLE_P10:
+        return None
+    if price.p90 / price.p10 > MAX_PLAUSIBLE_SPREAD:
+        return None
+    return round(price.p10), round(price.p90)
+
+
+def build_breakdown(
+    prices: list[HospitalPrice], reference_seed: str
+) -> Breakdown | None:
+    """Combines one hospital's prices across every code in the basket."""
+    payables = [(p, payable(p)) for p in prices]
+    usable = [(p, v) for p, v in payables if v is not None]
+    if not usable:
+        return None
+
+    total = sum(value for _, (value, _) in usable)
+    # If any line falls back to a negotiated figure, the whole total is no
+    # longer purely a cash quote and must not be labelled as one.
+    basis = "cash" if all(b == "cash" for _, (_, b) in usable) else "negotiated"
+
+    cash_parts = [p.discounted_cash for p, _ in usable if p.discounted_cash is not None]
+    without_insurance = (
+        round(sum(cash_parts)) if len(cash_parts) == len(usable) else None
     )
 
-
-def resolve_procedure(code: str) -> tuple[ProcedureSeed, bool]:
-    """Returns (procedure, in_catalog)."""
-    seeded = find_procedure(code)
-    if seeded is not None:
-        return seeded, True
-    return synthesize_procedure(code), False
-
-
-def build_breakdown(procedure: ProcedureSeed, hospital: HospitalSeed) -> Breakdown:
-    total_fees = round(procedure.base_price * hospital.price_multiplier)
-    physician_fees = round(total_fees * procedure.physician_share)
-    hospital_fees = total_fees - physician_fees
-    discount = round(total_fees * hospital.self_pay_discount_rate)
-
-    return Breakdown(
-        hospital_fees=hospital_fees,
-        physician_fees=physician_fees,
-        total_fees=total_fees,
-        discount=discount,
-        patient_responsibility=total_fees - discount,
-        low=round(total_fees * LOW_FACTOR),
-        high=round(total_fees * HIGH_FACTOR),
-        reference_number=_reference_number(procedure.code, hospital.id),
-    )
-
-
-def combine_breakdowns(
-    breakdowns: list[Breakdown], reference_seed: str
-) -> Breakdown:
-    """Sums per-procedure breakdowns into one basket total."""
-    return Breakdown(
-        hospital_fees=sum(b.hospital_fees for b in breakdowns),
-        physician_fees=sum(b.physician_fees for b in breakdowns),
-        total_fees=sum(b.total_fees for b in breakdowns),
-        discount=sum(b.discount for b in breakdowns),
-        patient_responsibility=sum(b.patient_responsibility for b in breakdowns),
-        low=sum(b.low for b in breakdowns),
-        high=sum(b.high for b in breakdowns),
-        reference_number=str(_stable_hash(reference_seed) % 9_000_000 + 1_000_000),
-    )
-
-
-def market_pricing(code: str) -> CodePricing:
-    """Average and lowest patient responsibility across every seeded hospital."""
-    procedure, in_catalog = resolve_procedure(code)
-    responsibilities = [
-        build_breakdown(procedure, hospital).patient_responsibility
-        for hospital in HOSPITALS
+    negotiated_parts = [
+        p.negotiated_median for p, _ in usable if p.negotiated_median is not None
     ]
+    with_insurance = (
+        round(sum(negotiated_parts)) if len(negotiated_parts) == len(usable) else None
+    )
+
+    bands = [expected_band(p) for p, _ in usable]
+    expected_low = expected_high = None
+    if all(b is not None for b in bands):
+        expected_low = sum(b[0] for b in bands)  # type: ignore[index]
+        expected_high = sum(b[1] for b in bands)  # type: ignore[index]
+
+    gross_parts = [p.gross for p, _ in usable if p.gross is not None]
+    gross = round(sum(gross_parts)) if len(gross_parts) == len(usable) else None
+    discount = (
+        gross - without_insurance
+        if gross is not None and without_insurance is not None
+        else None
+    )
+
+    payer_counts = [p.n_payers for p, _ in usable]
+
+    return Breakdown(
+        patient_responsibility=total,
+        basis=basis,
+        without_insurance=without_insurance,
+        with_insurance=with_insurance,
+        expected_low=expected_low,
+        expected_high=expected_high,
+        gross=gross,
+        discount=discount,
+        # The weakest line governs how much the whole quote can be trusted.
+        n_payers=min(payer_counts),
+        limited_data=min(payer_counts) <= LIMITED_DATA_PAYERS,
+        reference_number=_reference_number(reference_seed),
+    )
+
+
+def market_pricing(code: RealCode) -> CodePricing | None:
+    """Average and lowest across the hospitals that publish this code."""
+    values = [v for v in (payable(p) for p in code.prices.values()) if v is not None]
+    if not values:
+        return None
+    amounts = [amount for amount, _ in values]
     return CodePricing(
-        procedure=procedure.to_model(),
-        average=round(sum(responsibilities) / len(responsibilities)),
-        lowest=min(responsibilities),
-        in_catalog=in_catalog,
+        procedure=to_procedure(code),
+        average=round(sum(amounts) / len(amounts)),
+        lowest=min(amounts),
+        n_hospitals=len(amounts),
     )

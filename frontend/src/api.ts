@@ -4,7 +4,6 @@ import type {
   EstimateResponse,
   ExtractedCode,
   PricingResponse,
-  Procedure,
 } from './types'
 
 /** Surfaces the backend's `detail` message rather than a bare status code. */
@@ -31,10 +30,6 @@ function postJSON<T>(url: string, body: unknown): Promise<T> {
   })
 }
 
-export function fetchProcedures(): Promise<Procedure[]> {
-  return request<Procedure[]>('/api/procedures')
-}
-
 export function fetchEncounters(): Promise<EncounterSummary[]> {
   return request<EncounterSummary[]>('/api/encounters')
 }
@@ -43,16 +38,27 @@ export function fetchEncounter(id: string): Promise<Encounter> {
   return request<Encounter>(`/api/encounters/${encodeURIComponent(id)}`)
 }
 
-export function fetchPricing(codes: string[]): Promise<PricingResponse> {
-  return postJSON<PricingResponse>('/api/pricing', { codes })
+export function fetchPricing(
+  encounterId: string,
+  codes: string[],
+): Promise<PricingResponse> {
+  return postJSON<PricingResponse>('/api/pricing', {
+    encounter_id: encounterId,
+    codes,
+  })
 }
 
 export function fetchEstimates(
+  encounterId: string,
   codes: string[],
   zip: string,
   radiusMiles: number,
 ): Promise<EstimateResponse> {
-  const params = new URLSearchParams({ zip, radius_miles: String(radiusMiles) })
+  const params = new URLSearchParams({
+    encounter_id: encounterId,
+    zip,
+    radius_miles: String(radiusMiles),
+  })
   for (const code of codes) params.append('codes', code)
   return request<EstimateResponse>(`/api/estimates?${params}`)
 }

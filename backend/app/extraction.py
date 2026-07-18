@@ -5,12 +5,20 @@ parse and forward each code the moment its line completes, so the UI reveals
 codes as they're actually produced instead of all at once at the end.
 """
 
+import asyncio
 import json
 import os
 from collections.abc import AsyncIterator
 
 from anthropic import AsyncAnthropic
 from pydantic import BaseModel, ValidationError
+
+from . import real_data
+
+# "csv" replays Robbert's precomputed codes (default — real prices, no API key
+# needed). "live" calls Claude, which still works but produces codes that may
+# not exist in the published price data and therefore can't be priced.
+EXTRACTION_MODE = os.environ.get("EXTRACTION_MODE", "csv").lower()
 
 # Haiku is the cheap tier and handles this extraction well; override with
 # EXTRACTION_MODEL in backend/.env to trade cost for accuracy.
@@ -108,6 +116,62 @@ def resolve_line(code: ExtractedCode, lines: list[str]) -> int | None:
 
 def _sse(event: str, data: dict) -> str:
     return f"event: {event}\ndata: {json.dumps(data)}\n\n"
+
+
+# --------------------------------------------------------------- CSV replay
+
+# Pacing for the replay. The codes are already known, but revealing them at
+# once would make a three-step "agent" look like a page load. These delays
+# roughly match what the live Haiku call used to take.
+STEP_DELAY = 0.45
+CODE_DELAY = 0.35
+
+
+async def replay_extraction(encounter_id: str, summary_text: str) -> AsyncIterator[str]:
+    """Streams Robbert's precomputed codes over the live SSE contract.
+
+    The frontend cannot tell this apart from a model call, which is the point:
+    the reveal stays, the numbers become real, and no API key is needed.
+    """
+    source_lines = summary_text.split("\n")
+
+    for label in (
+        "Reading after-visit summary",
+        "Identifying recommended follow-ups",
+        "Matching procedures to published prices",
+    ):
+        yield _sse("step", {"label": label})
+        await asyncio.sleep(STEP_DELAY)
+
+    codes = real_data.codes_for_encounter(encounter_id)
+    count = 0
+    for entry in codes:
+        # His line_number counts bullets in his own parse, not text lines —
+        # patient 0's lipid row is line_number 12 but raw line 17. Locate by
+        # text instead, reusing the resolver already built for the model path.
+        located = resolve_line(
+            ExtractedCode(
+                code=entry.code, name=entry.name, rationale=entry.line_text
+            ),
+            source_lines,
+        )
+        yield _sse(
+            "code",
+            {
+                "code": entry.code,
+                "code_type": entry.code_type,
+                "name": entry.name,
+                "description": entry.description,
+                "rationale": entry.line_text,
+                "line": located,
+                "needs_review": entry.needs_review,
+                "confidence": entry.confidence,
+            },
+        )
+        count += 1
+        await asyncio.sleep(CODE_DELAY)
+
+    yield _sse("done", {"count": count})
 
 
 async def stream_extraction(summary_text: str) -> AsyncIterator[str]:

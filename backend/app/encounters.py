@@ -27,6 +27,9 @@ class EncounterSummary(BaseModel):
     patient_name: str
     visit_title: str
     date: str
+    # Only 14 of the 25 encounters yield priced follow-up codes; the picker
+    # marks the rest so a demo doesn't land on an empty one by accident.
+    has_codes: bool = False
 
 
 class Encounter(EncounterSummary):

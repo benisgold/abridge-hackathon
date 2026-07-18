@@ -8,7 +8,10 @@ type Props = {
 }
 
 export function HospitalList({ results, selectedId, onSelect }: Props) {
-  const cheapest = results[0]?.breakdown.patient_responsibility
+  // Only crown a hospital that prices the full basket — a partial total
+  // isn't comparable, so calling it 'lowest' would be misleading.
+  const complete = results.filter((r) => r.covered_count === r.requested_count)
+  const cheapest = complete[0]?.breakdown.patient_responsibility
 
   return (
     <ul className="flex max-h-[32rem] flex-col gap-2 overflow-y-auto pr-1">
@@ -36,12 +39,19 @@ export function HospitalList({ results, selectedId, onSelect }: Props) {
                     {result.hospital.city}, {result.hospital.state} ·{' '}
                     {result.distance_miles} mi
                   </p>
+                  {result.covered_count < result.requested_count && (
+                    <p className="mt-1 text-sm text-amber-700">
+                      Prices {result.covered_count} of{' '}
+                      {result.requested_count} procedures
+                    </p>
+                  )}
                 </div>
                 <div className="shrink-0 text-right">
                   <p className="text-xl font-semibold text-emerald-600">
                     {formatUSD(result.breakdown.patient_responsibility)}
                   </p>
-                  {result.breakdown.patient_responsibility === cheapest && (
+                  {cheapest !== undefined &&
+                    result.breakdown.patient_responsibility === cheapest && (
                     <span className="text-xs font-medium tracking-wide text-emerald-700 uppercase">
                       Lowest
                     </span>

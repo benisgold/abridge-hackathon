@@ -8,22 +8,19 @@ type Props = {
   onContinue: () => void
 }
 
-function MedicareCell({ covered }: { covered: boolean | null }) {
-  if (covered === null) {
+/** How many hospitals publish a price, since 1 is much weaker than 3. */
+function SourcesCell({ count }: { count: number }) {
+  if (count <= 1) {
     return (
       <span
-        title="This code isn't in the demo catalog, so coverage is unknown."
-        className="text-slate-500"
+        title="Only one hospital publishes a price for this code."
+        className="text-amber-700"
       >
-        Unknown
+        1 hospital
       </span>
     )
   }
-  return covered ? (
-    <span className="text-emerald-700">✓ Covered</span>
-  ) : (
-    <span className="text-red-700">✗ Not covered</span>
-  )
+  return <span className="text-slate-600">{count} hospitals</span>
 }
 
 export function CodeBreakdown({
@@ -45,7 +42,7 @@ export function CodeBreakdown({
           Your estimated follow-up costs
         </h2>
         <p className="mt-0.5 text-sm text-slate-600">
-          Averages and lows across Boston-area hospitals. Click a row to include
+          Real prices published by Boston-area hospitals under CMS price-transparency rules. Click a row to include
           or exclude it from your total.
         </p>
       </div>
@@ -59,7 +56,7 @@ export function CodeBreakdown({
               <th className="px-3 py-3 font-medium">Procedure</th>
               <th className="px-3 py-3 text-right font-medium">Average</th>
               <th className="px-3 py-3 text-right font-medium">Lowest</th>
-              <th className="px-6 py-3 font-medium">Medicare</th>
+              <th className="px-6 py-3 font-medium">Published by</th>
             </tr>
           </thead>
           <tbody>
@@ -94,6 +91,11 @@ export function CodeBreakdown({
                     <p className="mt-0.5 max-w-md text-sm text-slate-600">
                       {item.procedure.description}
                     </p>
+                    {item.procedure.needs_review && (
+                      <p className="mt-1 text-xs text-amber-700">
+                        Code match flagged for review
+                      </p>
+                    )}
                   </td>
                   <td
                     className={`px-3 py-4 text-right whitespace-nowrap text-slate-900 ${
@@ -110,7 +112,7 @@ export function CodeBreakdown({
                     {formatUSD(item.lowest)}
                   </td>
                   <td className="px-6 py-4 text-sm whitespace-nowrap">
-                    <MedicareCell covered={item.procedure.medicare_covered} />
+                    <SourcesCell count={item.n_hospitals} />
                   </td>
                 </tr>
               )

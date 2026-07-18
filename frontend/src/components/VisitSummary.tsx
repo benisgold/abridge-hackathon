@@ -2,6 +2,9 @@ import { useEffect, useRef } from 'react'
 import { buildColorMap, colorForIndex } from '../lib/codeColors'
 import type { Encounter, EncounterSummary, ExtractedCode } from '../types'
 
+/** Above this many codes on one line, show a count instead of every badge. */
+const MAX_INLINE_BADGES = 4
+
 type Props = {
   encounters: EncounterSummary[]
   selectedId: string
@@ -68,6 +71,7 @@ export function VisitSummary({
           >
             {encounters.map((e) => (
               <option key={e.id} value={e.id}>
+                {e.has_codes ? '' : '(no priced follow-ups) '}
                 {e.patient_name} — {e.visit_title}
               </option>
             ))}
@@ -119,17 +123,32 @@ export function VisitSummary({
                 }`}
               >
                 <span>{line || ' '}</span>
+                {/*
+                  A panel line can yield 15+ codes. Listing them all turns the
+                  note into a wall of badges, so past a handful we collapse to
+                  a count — the codes themselves are in the right-hand panel.
+                */}
                 <span className="ml-2 inline-flex flex-wrap gap-1 align-middle">
-                  {hits.map((hit) => (
+                  {hits.length > MAX_INLINE_BADGES ? (
                     <span
-                      key={hit.code}
                       className={`inline-block rounded border px-1.5 py-0.5 text-xs font-semibold ${
-                        colorForIndex(colorSlots.get(hit.code) ?? 0).badge
+                        colorForIndex(colorSlots.get(hits[0].code) ?? 0).badge
                       }`}
                     >
-                      {hit.code}
+                      {hits.length} codes
                     </span>
-                  ))}
+                  ) : (
+                    hits.map((hit) => (
+                      <span
+                        key={hit.code}
+                        className={`inline-block rounded border px-1.5 py-0.5 text-xs font-semibold ${
+                          colorForIndex(colorSlots.get(hit.code) ?? 0).badge
+                        }`}
+                      >
+                        {hit.code}
+                      </span>
+                    ))
+                  )}
                 </span>
               </div>
             )

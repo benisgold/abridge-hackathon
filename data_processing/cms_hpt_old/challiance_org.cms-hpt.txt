@@ -1,0 +1,24 @@
+# cms-hpt fetch metadata
+# facility: CAMBRIDGE PUBLIC HEALTH COMMISSION (Cambridge Health Alliance)
+# system-url: https://www.challiance.org/
+# cms-hpt-url: https://www.challiance.org/cms-hpt.txt
+# --- original cms-hpt.txt body ---
+location-name: Cambridge Health Alliance
+source-page-url:  https://challiance.org/patients-visitors/prices
+mrf-url:  https://www.challiance.org/File%20Library/Uploads/PriceTransparency20262320.csv
+contact-name: CHA Customer Service
+contact-email: webmaster@challiance.org
+
+
+location-name: Somerville Hospital
+source-page-url:  https://challiance.org/patients-visitors/prices
+mrf-url:  https://www.challiance.org/File%20Library/Uploads/PriceTransparency20262320.csv
+contact-name: CHA Customer Service
+contact-email: webmaster@challiance.org
+
+
+location-name: Whidden Hospital
+source-page-url:  https://challiance.org/patients-visitors/prices
+mrf-url:  https://www.challiance.org/File%20Library/Uploads/PriceTransparency20262320.csv
+contact-name: CHA Customer Service
+contact-email: webmaster@challiance.org

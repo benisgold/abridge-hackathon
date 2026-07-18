@@ -1,0 +1,10 @@
+# cms-hpt fetch metadata
+# facility: SOUTH SHORE HOSPITAL INC.
+# system-url: https://www.southshorehealth.org/
+# cms-hpt-url: https://www.southshorehealth.org/cms-hpt.txt
+# --- original cms-hpt.txt body ---
+location-name: South Shore Hospital
+source-page-url: https://www.southshorehealth.org/patient-resources/billing-insurance/pricing-information
+mrf-url: https://zencloud-southshorehealth.s3.us-east-1.amazonaws.com/www.southshorehealth.org/assets/2026-03/042769210_south-shore-hospital_standardcharges.json
+contact-name: Chris Contre
+contact-email: ccontre@southshorehealth.org

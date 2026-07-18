@@ -1,0 +1,942 @@
+{
+ "d7bba45ba9fa623e": {
+  "codes": [
+   {
+    "code": "80061",
+    "type": "CPT"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "Standard lipid panel code. HCPCS 80061 is a duplicate entry for the same service. Other candidates are distinct panels (metabolic, hepatic, renal, electrolyte, endocrine stimulation, etc.) and do not map to lipid panel."
+ },
+ "6fc21f2e39fd720b": {
+  "codes": [
+   {
+    "code": "80069",
+    "type": "CPT"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "80069 is clinically equivalent to renal function panel. Other candidates are unrelated panels (hepatic, lipid, obstetric, etc.) or unrelated procedures (imaging, endoscopy, audiology)."
+ },
+ "fe4db343508155cb": {
+  "codes": [
+   {
+    "code": "80053",
+    "type": "CPT"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "80053 Comprehensive Metabolic Panel is clinically equivalent to metabolic panel. Other candidates are unrelated panels or procedures (audiology, ophthalmology, endocrine panels, etc.)."
+ },
+ "94960c1848e84223": {
+  "codes": [
+   {
+    "code": "85027",
+    "type": "HCPCS"
+   },
+   {
+    "code": "85025",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "85027 (complete automated blood count) and 85025 (complete auto with automated differential WBC) are clinically equivalent to CBC with automated differential. Other candidates are component tests or unrelated procedures."
+ },
+ "372bc2e5fbd123eb": {
+  "codes": [
+   {
+    "code": "84484",
+    "type": "CPT"
+   },
+   {
+    "code": "84484",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "84484 (quantitative troponin assay) is the appropriate code for troponin I high-sensitivity measurement. 84512 is qualitative only. Other candidates are unrelated procedures or tests."
+ },
+ "7a447698de7c918e": {
+  "codes": [
+   {
+    "code": "85610",
+    "type": "CPT"
+   },
+   {
+    "code": "85610",
+    "type": "HCPCS"
+   },
+   {
+    "code": "85347",
+    "type": "CPT"
+   },
+   {
+    "code": "85347",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "85610 (prothrombin time) and 85347 (activated coagulation time) are core PT/coagulation panel components. Other candidates are alternative coagulation methods, unrelated panels, or OR/facility time codes."
+ },
+ "304658f6a0ba6dfb": {
+  "codes": [
+   {
+    "code": "83540",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "medium",
+  "needs_review": true,
+  "note": "83540 (assay of iron) is the only iron-specific code in candidates. However, a complete iron panel typically includes iron, TIBC, transferrin saturation, and ferritin. This single code may not fully capture the service, but no other candidates address iron testing specifically. Other codes are unrelated panels or electrolytes."
+ },
+ "94b4cbe83e849adf": {
+  "codes": [
+   {
+    "code": "94762",
+    "type": "CPT"
+   }
+  ],
+  "confidence": "medium",
+  "needs_review": true,
+  "note": "94762 (HC RT NONINVASIVE OXYGEN SAT CONTINUOUS) is clinically related to continuous O2 administration by mask, but candidate descriptions are abbreviated and do not explicitly state 'mask' or confirm this is the standard code for O2 admin by mask. 27000079 (HC Oxygen Mask) and 27000076 (HC Oxygen) appear more directly descriptive but lack standard CPT/HCPCS format and hospital pricing data is minimal (1 hospital each). 94644 is for inhalation therapy, not oxygen administration. Confidence medium due to abbreviated descriptions; needs_review true because billing for continuous O2 typically depends on duration/units and mask type, which are not specified in the service description."
+ },
+ "af0ffb63769158af": {
+  "codes": [
+   {
+    "code": "E0636",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "medium",
+  "needs_review": true,
+  "note": "E0636 describes 'PT support & positioning sys' which relates to positioning equipment/systems but does not explicitly specify prone positioning therapy as a clinical service or procedure. No candidate code directly matches prone positioning therapy as a therapeutic procedure or nursing intervention. 97150 (group therapeutic procedures) and 97110/97530 (therapeutic exercise/activities) are too broad and non-specific to positioning. All other candidates are anatomically or clinically unrelated to prone positioning."
+ },
+ "d5b328712db28c2e": {
+  "codes": [
+   {
+    "code": "86900",
+    "type": "CPT"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "86900 is specifically for blood type and screen, clinically equivalent to blood typing service."
+ },
+ "092db863d797ef6f": {
+  "codes": [
+   {
+    "code": "87340",
+    "type": "CPT"
+   },
+   {
+    "code": "87340",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "87340 is specifically for Hepatitis B surface antigen (HBsAg), clinically equivalent to requested service."
+ },
+ "9ff6129fa643c947": {
+  "codes": [
+   {
+    "code": "87389",
+    "type": "CPT"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "87389 explicitly includes HIV-1 antigen testing, clinically equivalent to HIV antigen service."
+ },
+ "2c50504db73248aa": {
+  "codes": [
+   {
+    "code": "86803",
+    "type": "CPT"
+   },
+   {
+    "code": "86803",
+    "type": "HCPCS"
+   },
+   {
+    "code": "86804",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "86803 is hepatitis C antibody; 86804 specifically notes confirmatory test (immunoblot), directly matching hepatitis C confirmatory antibody service."
+ },
+ "0a358f5054c1f6ce": {
+  "codes": [
+   {
+    "code": "86593",
+    "type": "CPT"
+   },
+   {
+    "code": "86593",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "86593 is specifically syphilis test quantitative (RPR titer), clinically equivalent to syphilis titer service."
+ },
+ "f16bc0e570365913": {
+  "codes": [
+   {
+    "code": "86762",
+    "type": "CPT"
+   },
+   {
+    "code": "86762",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "86762 is rubella antibody testing, which assesses rubella immunity status."
+ },
+ "c3e4c7f7558ca235": {
+  "codes": [
+   {
+    "code": "86787",
+    "type": "CPT"
+   },
+   {
+    "code": "86787",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "86787 is varicella-zoster antibody testing, which assesses varicella immunity status."
+ },
+ "84c401f11d90ee2a": {
+  "codes": [
+   {
+    "code": "86631",
+    "type": "CPT"
+   },
+   {
+    "code": "86631",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "86631 is chlamydia antibody testing, clinically appropriate for chlamydia testing service."
+ },
+ "f44ea89c50a2cfb9": {
+  "codes": [],
+  "confidence": "low",
+  "needs_review": true,
+  "note": "No clinically appropriate gonorrhea testing code found in candidates. The list contains unrelated tests (somatosensory, acoustic, cognitive, genetic testing) with no gonorrhea culture or nucleic acid probe codes."
+ },
+ "08f58e76d985bc4e": {
+  "codes": [
+   {
+    "code": "81005",
+    "type": "CPT"
+   }
+  ],
+  "confidence": "medium",
+  "needs_review": true,
+  "note": "81005 is qualitative urinalysis which can screen for glucose in urine. However, service specifies diabetes screening which may require glucose-specific testing; candidate list lacks dedicated urine glucose codes."
+ },
+ "c7bb05747e04ba71": {
+  "codes": [
+   {
+    "code": "81005",
+    "type": "CPT"
+   }
+  ],
+  "confidence": "medium",
+  "needs_review": true,
+  "note": "81005 is qualitative urinalysis which includes protein detection. However, candidates lack a specific urine protein dipstick/qualitative code; this is the closest match for basic urinalysis with protein evaluation."
+ },
+ "56cf681b2b2227f9": {
+  "codes": [
+   {
+    "code": "Q0091",
+    "type": "HCPCS"
+   },
+   {
+    "code": "P3001",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "Q0091 and P3001 are both screening pap smear codes. Q0091 appears twice (listed as both HCPCS and CPT but same code number); P3001 is screening pap by physician. Other candidates are clinically unrelated (spinal imaging/surgery, traction equipment, blood smears, cervical mucus evaluation, etc.)."
+ },
+ "f19bbb4e7f8bb528": {
+  "codes": [
+   {
+    "code": "87040",
+    "type": "CPT"
+   },
+   {
+    "code": "87045",
+    "type": "CPT"
+   },
+   {
+    "code": "87255",
+    "type": "CPT"
+   },
+   {
+    "code": "87149",
+    "type": "CPT"
+   }
+  ],
+  "confidence": "medium",
+  "needs_review": true,
+  "note": "Surveillance cultures typically include blood, stool, and wound/body site cultures. Selected non-urine culture codes (blood, stool, herpes, and general culture ID). Cannot confirm if service specifies which specimen types are included in 'surveillance cultures.'"
+ },
+ "bde54114ea124f41": {
+  "codes": [
+   {
+    "code": "Q2039",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "Q2039 is the specific influenza virus vaccine code. Other candidates are either diagnostic tests (87275, 87276, 87400), unrelated vaccines (90675, 90581, 90671, 90710, 91302-91309, 90636, 90733), or antibody tests (86684). G0009 and G0010 are administration codes for other vaccines."
+ },
+ "fb6369c62ff53bb7": {
+  "codes": [
+   {
+    "code": "83036",
+    "type": "CPT"
+   },
+   {
+    "code": "83036",
+    "type": "HCPCS"
+   },
+   {
+    "code": "83037",
+    "type": "CPT"
+   },
+   {
+    "code": "83037",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "83036 and 83037 are the only candidates that specifically measure glycosylated hemoglobin A1c, which is the clinically correct test for A1c. 83036 is standard lab method; 83037 is point-of-care. Other candidates measure different hemoglobin variants or fractions and are not clinically equivalent."
+ },
+ "c5f46fff36b37f4a": {
+  "codes": [
+   {
+    "code": "90714",
+    "type": "CPT"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "90714 is the adult Td (tetanus-diphtheria) booster vaccine. The duplicate 90714 entries (CPT and HCPCS) map to the same clinical product. Other candidates are either pediatric formulations (90702), immunoglobulin (90389), serology (86774, 86648), or COVID vaccines (not Td booster)."
+ },
+ "4412476122bea316": {
+  "codes": [
+   {
+    "code": "90746",
+    "type": "CPT"
+   },
+   {
+    "code": "90747",
+    "type": "CPT"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "90746 and 90747 are hepatitis B virus vaccines for adults. G0010 is an administration code, not a vaccine code. Hepatitis A (90632, 90633) and other vaccines are incorrect. Serology codes (86803, 87902, 87523) and other unrelated vaccines excluded."
+ },
+ "f59d47e5e352a782": {
+  "codes": [
+   {
+    "code": "90734",
+    "type": "CPT"
+   },
+   {
+    "code": "90733",
+    "type": "CPT"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "90734 (MENVEO, A/C/Y/W-135) and 90733 are meningococcal conjugate vaccines. Note: MCV4P specifically refers to serogroups A/C/Y/W-135 with added pneumococcal component, but candidates only offer standalone meningococcal codes without pneumococcal combination. G0009 is pneumococcal administration, not meningococcal vaccine. Other candidates are unrelated vaccines."
+ },
+ "8b490f9653640745": {
+  "codes": [
+   {
+    "code": "80051",
+    "type": "CPT"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "80051 CPT is the standard electrolyte panel code. Other candidates are either alternative panel types (metabolic, renal, hepatic, lipid, obstetric), stimulation panels (endocrine testing), or specialty panels (HLA, antibody) that are clinically distinct from a basic electrolyte panel."
+ },
+ "be2e1f2b921843a4": {
+  "codes": [
+   {
+    "code": "86900",
+    "type": "CPT"
+   },
+   {
+    "code": "86900",
+    "type": "HCPCS"
+   },
+   {
+    "code": "86901",
+    "type": "CPT"
+   },
+   {
+    "code": "86901",
+    "type": "HCPCS"
+   },
+   {
+    "code": "86905",
+    "type": "CPT"
+   },
+   {
+    "code": "86906",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "medium",
+  "needs_review": true,
+  "note": "Blood group typing requires ABO and Rh typing as core components. Selected codes cover serologic ABO, RH (D), and RBC antigens. However, the candidate list is heavily contaminated with unrelated tests (blood culture, HLA typing, psychotherapy, occult blood, chloride assay, etc.). Confidence is medium because the service description does not specify whether antigen screening or phenotyping is needed, or if this is a basic type-and-screen."
+ },
+ "9f465f9e212d2cc5": {
+  "codes": [
+   {
+    "code": "86803",
+    "type": "CPT"
+   },
+   {
+    "code": "86803",
+    "type": "HCPCS"
+   },
+   {
+    "code": "86804",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "86803 is the standard hepatitis C antibody screening code. 86804 is the confirmatory test (immunoblot). These are clinically equivalent matches. Other candidates are antibodies to different hepatitis agents or unrelated infections."
+ },
+ "bdac617fb5708ac7": {
+  "codes": [
+   {
+    "code": "87389",
+    "type": "CPT"
+   },
+   {
+    "code": "87390",
+    "type": "CPT"
+   },
+   {
+    "code": "87390",
+    "type": "HCPCS"
+   },
+   {
+    "code": "87391",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "87389 is HIV-1 antigen with HIV-1 and HIV-2 antibodies (fourth-generation assay). 87390 is HIV-1 P24 antigen. 87391 is HIV-2 antigen. These directly match HIV antigen testing. The service specifies 'antigen' not antibody."
+ },
+ "196dd5f4400fd7fc": {
+  "codes": [],
+  "confidence": "low",
+  "needs_review": true,
+  "note": "No candidate codes are clinically equivalent to gonorrhea titer. The candidates are titers for other conditions (antistreptolysin O, rheumatoid factor, cold agglutinin, ANCA, etc.) or unrelated tests. Gonorrhea testing would typically use culture, nucleic acid amplification, or gonorrhea-specific antibody testing\u2014none of which appear in this candidate list."
+ },
+ "ad4922f5602e15db": {
+  "codes": [
+   {
+    "code": "87110",
+    "type": "CPT"
+   }
+  ],
+  "confidence": "low",
+  "needs_review": true,
+  "note": "The service requests chlamydia antigen (not antibody). Candidate 87110 is Chlamydia trachomatis culture. Candidates 86631 and 86632 are chlamydia antibodies, not antigens. Candidate 30000041 is 'CHLAMYDIA CULT TRACHOMATIS' (culture) which may include antigen detection, but labeling is unclear. No direct chlamydia antigen detection code (e.g., nucleic acid amplification or enzyme immunoassay) is definitively present. Selected 87110 with low confidence because culture is the traditional diagnostic method, but antigen-specific codes are not clearly identified."
+ },
+ "cc1f45b673918862": {
+  "codes": [
+   {
+    "code": "86762",
+    "type": "CPT"
+   },
+   {
+    "code": "86762",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "86762 is the specific code for rubella antibody screening. This is clinically equivalent to rubella screen. Both CPT and HCPCS versions are available."
+ },
+ "389b630e2c03a992": {
+  "codes": [
+   {
+    "code": "86787",
+    "type": "CPT"
+   },
+   {
+    "code": "86787",
+    "type": "HCPCS"
+   },
+   {
+    "code": "87290",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "86787 is the specific code for varicella-zoster antibody. 87290 is varicella-zoster virus by immunoassay. Both are clinically appropriate for varicella-zoster antibody testing."
+ },
+ "7ab82b1a0b16cadb": {
+  "codes": [
+   {
+    "code": "84156",
+    "type": "CPT"
+   },
+   {
+    "code": "84156",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "84156 is the standard code for total urine protein (excluding refractometry). This is the direct match for urine protein testing. Both CPT and HCPCS versions are listed."
+ },
+ "a077ccb8b1e608b0": {
+  "codes": [
+   {
+    "code": "82948",
+    "type": "CPT"
+   }
+  ],
+  "confidence": "medium",
+  "needs_review": true,
+  "note": "Service is urine diabetes screen, which typically tests for glucose in urine. Candidate 82948 is glucose reagent strip, which is the most clinically appropriate from the list. However, the candidate list lacks a dedicated urine glucose screening code and contains many unrelated tests (urinalysis, drug screening, etc.). Confidence is medium because reagent strip may be a component of a urine screen rather than a standalone diabetes-specific test code."
+ },
+ "26024b42c33a4851": {
+  "codes": [
+   {
+    "code": "Q0091",
+    "type": "HCPCS"
+   },
+   {
+    "code": "Q0091",
+    "type": "CPT"
+   },
+   {
+    "code": "P3000",
+    "type": "HCPCS"
+   },
+   {
+    "code": "P3001",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "Q0091 is 'Obtaining screening pap smear'. P3000 is 'Screen pap by tech with MD supervision' and P3001 is 'Screening pap smear by physician'. These are the specific codes for Pap smear screening. All are clinically equivalent to the service requested."
+ },
+ "1ed42fafa6b66e0b": {
+  "codes": [
+   {
+    "code": "82607",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "82607 (HCPCS) for cyanocobalamin (vitamin B-12) is the only clinically equivalent candidate for B12 injection. Other vitamin codes (B1, B6, K) and unrelated injectables in the candidate list do not match the service."
+ },
+ "ce1a93966c80f590": {
+  "codes": [
+   {
+    "code": "85025",
+    "type": "HCPCS"
+   },
+   {
+    "code": "85027",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "85025 (complete CBC with automated differential) and 85027 (complete automated CBC) are the most clinically equivalent codes for a CBC recheck. Other candidates are component tests (hemoglobin, hematocrit, RBC, WBC, platelets, reticulocytes) rather than complete CBC panels, or are unrelated services (blood typing, culture, blood volume, H. pylori, cholecystostomy)."
+ },
+ "d79ec19a3b1b921f": {
+  "codes": [],
+  "confidence": "low",
+  "needs_review": false,
+  "note": "No candidate codes match metformin hydrochloride 500 mg ER. Candidates include tacrolimus, mycophenolate, naltrexone, buprenorphine, methylprednisolone, prednisone (immunosuppressants/other drugs), and surgical procedures (ureter/lung/shoulder/elbow/hand releases). None are metformin or appropriate antidiabetic agents."
+ },
+ "b7e6e4280468f2ab": {
+  "codes": [
+   {
+    "code": "80047",
+    "type": "CPT"
+   },
+   {
+    "code": "80048",
+    "type": "CPT"
+   },
+   {
+    "code": "80050",
+    "type": "CPT"
+   },
+   {
+    "code": "80051",
+    "type": "CPT"
+   }
+  ],
+  "confidence": "medium",
+  "needs_review": true,
+  "note": "Basic metabolic panel typically includes electrolytes and renal function. 80047/80048 specify calcium type (ionized vs total) which is not stated in service description. 80050 (General Health Panel) and 80051 (Electrolyte Panel) are more generic matches. Other candidates are specialty panels (hepatic, renal, obstetric, etc.) or unrelated tests (HLA, arbovirus, etc.) and should not be selected for basic metabolic panel."
+ },
+ "1a3a5f7a1c0337ea": {
+  "codes": [],
+  "confidence": "low",
+  "needs_review": true,
+  "note": "No suitable candidates found. 84133 (Assay of urine potassium) is the only clinically relevant code, but it measures urine potassium specifically, not serum potassium which is typical for a 'potassium' test. S5012 is a dextrose/potassium IV solution (supply), not a potassium assay. All other candidates are unrelated (anesthesia levels, heparin assay, cyanide assay, KOH preps, etc.). Standard serum potassium code 84132 is not in the candidate list."
+ },
+ "9095ee660e0a5256": {
+  "codes": [
+   {
+    "code": "93788",
+    "type": "CPT"
+   },
+   {
+    "code": "93784",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "93788 and 93784 are the only candidates that directly describe ambulatory/home blood pressure monitoring. All other candidates are unrelated blood tests, cultures, or equipment unrelated to BP monitoring."
+ },
+ "5f86db4ee8c6d75a": {
+  "codes": [
+   {
+    "code": "85027",
+    "type": "HCPCS"
+   },
+   {
+    "code": "85025",
+    "type": "HCPCS"
+   },
+   {
+    "code": "85007",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "85027 (automated CBC), 85025 (automated with auto differential), and 85007 (blood smear with manual differential) together represent an automated hemogram with manual differential. These are the most clinically equivalent codes."
+ },
+ "9bbde8feea84f940": {
+  "codes": [
+   {
+    "code": "87389",
+    "type": "CPT"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "87389 is HIV-1 antigen with HIV-1 & HIV-2 antibodies, the standard HIV antigen test. Other candidates are either confirmatory tests, rapid tests, or unrelated antigens."
+ },
+ "a82782b616e86b5f": {
+  "codes": [],
+  "confidence": "low",
+  "needs_review": false,
+  "note": "No gonorrhea-specific antigen code present in candidates. All candidates are unrelated antigens (TB, complement, hepatitis, etc.) or non-gonorrhea serological tests."
+ },
+ "f6e53842153b1664": {
+  "codes": [
+   {
+    "code": "86631",
+    "type": "CPT"
+   }
+  ],
+  "confidence": "medium",
+  "needs_review": true,
+  "note": "86631 is chlamydia antibody, not antigen. No direct chlamydia antigen code (87110 series) in candidates. This antibody code is the closest available match but does not match the requested antigen test."
+ },
+ "20766b6c10889300": {
+  "codes": [
+   {
+    "code": "86762",
+    "type": "CPT"
+   },
+   {
+    "code": "86762",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "86762 is rubella antibody, clinically equivalent to rubella screen. Both CPT and HCPCS versions available."
+ },
+ "b1bf7fe3c0a9e376": {
+  "codes": [
+   {
+    "code": "86787",
+    "type": "CPT"
+   },
+   {
+    "code": "86787",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "86787 is varicella-zoster antibody, clinically equivalent to varicella-zoster antibody measurement. Both CPT and HCPCS versions available."
+ },
+ "738ef973ddbb79eb": {
+  "codes": [
+   {
+    "code": "84156",
+    "type": "CPT"
+   },
+   {
+    "code": "84156",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "84156 directly describes protein total in urine by method other than refractometry, which is the standard qualitative urine protein test."
+ },
+ "59deac817bea40ec": {
+  "codes": [
+   {
+    "code": "82948",
+    "type": "CPT"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "82948 glucose reagent strip is the standard screening method for urine glucose in diabetes screening."
+ },
+ "f63c002779cf8cfe": {
+  "codes": [
+   {
+    "code": "Q0091",
+    "type": "HCPCS"
+   },
+   {
+    "code": "P3001",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "Q0091 and P3001 are clinically equivalent screening pap smear codes. Other candidates are unrelated (cervical spine procedures, traction equipment, blood smears, etc.) despite containing the word 'cervical'."
+ },
+ "373082d7bd50f4d1": {
+  "codes": [
+   {
+    "code": "86580",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "86580 is clinically equivalent to TB tine test (intradermal tuberculin skin test). All other candidates are unrelated laboratory or diagnostic procedures."
+ },
+ "6fdac63b6545a32d": {
+  "codes": [
+   {
+    "code": "96040",
+    "type": "CPT"
+   },
+   {
+    "code": "96040",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "medium",
+  "needs_review": true,
+  "note": "96040 (Genetic Counseling) is the only candidate clinically aligned with 'genetic screening,' but it describes counseling rather than screening itself. Other candidates are for drug screening, alcohol screening, PSA screening, colonography, breast imaging, and visual screening\u2014none are genetic screening tests. Service mapping is uncertain without clarification of whether this refers to genetic counseling, carrier screening, or a specific genetic test panel."
+ },
+ "f53c1f6e063f1942": {
+  "codes": [
+   {
+    "code": "D0270",
+    "type": "HCPCS"
+   },
+   {
+    "code": "D0272",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": true,
+  "note": "D0270 is single bitewing image; D0272 is two bitewing images. Service description 'bitewing radiographs' (plural) suggests multiple images, but exact number of views not specified in clinical request."
+ },
+ "dff071287d4af8c7": {
+  "codes": [
+   {
+    "code": "D1110",
+    "type": "HCPCS"
+   },
+   {
+    "code": "D1120",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "D1110 (adult prophylaxis) and D1120 (child prophylaxis) are clinically equivalent to supragingival plaque and calculus removal. All other candidates are unrelated procedures (imaging, GI, orthopedic, etc.)."
+ },
+ "82e6de14d9db3c20": {
+  "codes": [
+   {
+    "code": "D4341",
+    "type": "HCPCS"
+   },
+   {
+    "code": "D4346",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "D4341 (Periodontal scaling & root) and D4346 (Scaling gingiv inflammation) are clinically equivalent to subgingival plaque and calculus removal. Other candidates are for surgical procedures (root surgery, tooth extraction, endodontics) or unrelated procedures (rhinoplasty) and do not match the clinical service."
+ },
+ "a6a62d3b365bd3f8": {
+  "codes": [
+   {
+    "code": "D4211",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "medium",
+  "needs_review": true,
+  "note": "Laterality 'right' suggests a single quadrant or limited area, which aligns with D4211 (1-3 teeth). However, the exact number of teeth affected is not specified in the service description, making this a reasonable but not certain match. D4210 and D4212 are not selected as they indicate either 4+ teeth or 'rest' of mouth, which do not align with a right-sided procedure."
+ },
+ "db45c7edfcb9170c": {
+  "codes": [
+   {
+    "code": "D4341",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "D4341 'Periodontal scaling & root' is clinically equivalent to scaling service. Other candidates are root surgery, tooth removal, or unrelated procedures."
+ },
+ "7a695890741ef103": {
+  "codes": [
+   {
+    "code": "D1206",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "D1206 'Topical fluoride varnish' is clinically equivalent to desensitizing medicament application. 99188 also matches but listed as HCPCS in candidates despite CPT format. Other candidates are splints, casts, braces, or unrelated procedures."
+ },
+ "5c8b50289aad6b6d": {
+  "codes": [
+   {
+    "code": "86593",
+    "type": "CPT"
+   },
+   {
+    "code": "86593",
+    "type": "HCPCS"
+   },
+   {
+    "code": "0210U",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "86593 (RPR/Syphilis titer) and 0210U (Syphilis test antibody quantitative) are direct matches. 86592 is qualitative; 86593 is quantitative (titer)."
+ },
+ "024bf89344c89400": {
+  "codes": [],
+  "confidence": "low",
+  "needs_review": false,
+  "note": "No candidates specifically describe gonorrhea testing. 86631 (Chlamydia) is related STI but not gonorrhea. Cannot map to any candidate code without clinical inaccuracy."
+ },
+ "30659df47a053f22": {
+  "codes": [
+   {
+    "code": "86762",
+    "type": "CPT"
+   },
+   {
+    "code": "86762",
+    "type": "HCPCS"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": false,
+  "note": "86762 is direct match for Rubella antibody screening."
+ },
+ "0c3b86c278463d37": {
+  "codes": [
+   {
+    "code": "97161",
+    "type": "CPT"
+   },
+   {
+    "code": "97162",
+    "type": "CPT"
+   },
+   {
+    "code": "97163",
+    "type": "CPT"
+   }
+  ],
+  "confidence": "medium",
+  "needs_review": true,
+  "note": "Physical therapy evaluation codes are clinically appropriate for pregnancy-safe PT, but complexity level (low/mod/high) is not specified in the service description, requiring clinical judgment to select the correct code. Excluded HCPCS duplicates of CPT codes and clinically inappropriate candidates (electroconvulsive therapy, infrared/UV therapy, psychophysiological therapy, thrombolytic therapy, radiopharmaceutical therapy, antigen therapy, skin peel, nasal procedures, etc.)."
+ },
+ "a6c6acc96413ddeb": {
+  "codes": [
+   {
+    "code": "82947",
+    "type": "CPT"
+   },
+   {
+    "code": "82948",
+    "type": "CPT"
+   },
+   {
+    "code": "82950",
+    "type": "CPT"
+   },
+   {
+    "code": "82951",
+    "type": "CPT"
+   }
+  ],
+  "confidence": "high",
+  "needs_review": true,
+  "note": "Pre-meal glucose checks are point-of-care blood glucose tests. Selected codes are direct glucose measurement/assay codes. 82947 (fasting glucose) and 82950 (post-glucose dose) are most clinically aligned with pre-meal timing, but needs_review=true because 'pre-meal' timing and number of checks per encounter are not specified in candidates. 82948 (reagent strip) and 82951 (multiple) are also reasonable but less specific without frequency data. Excluded continuous monitoring (95250, 0446T, 0447T) and non-glucose codes (EEG, cardiac, BP monitoring)."
+ }
+}

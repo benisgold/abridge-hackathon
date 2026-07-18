@@ -1,5 +1,38 @@
 # abridge-hackathon
 
+## Python environment
+
+Set up a local virtual environment (`.venv`, git-ignored) and install the pinned dependencies:
+
+```bash
+# from the repo root (abridge-hackathon/)
+python3 -m venv .venv
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+Add your Anthropic key to a `.env` file at the repo root (also git-ignored):
+
+```
+ANTHROPIC_API_KEY=sk-ant-...
+```
+
+### Running the notebooks
+
+The `data_processing/*.ipynb` notebooks expect this environment. Either:
+
+- **In VS Code / Cursor:** open a notebook and pick the `.venv` interpreter as the kernel (top-right kernel picker → *Python Environments* → `.venv`), or
+- **From the CLI:**
+
+```bash
+source .venv/bin/activate
+jupyter nbconvert --to notebook --execute --inplace \
+  data_processing/04_avs_line_to_billable_codes.ipynb
+```
+
+If you hit `ModuleNotFoundError: No module named 'dotenv'` (or similar), the notebook is running against the wrong interpreter — make sure the selected kernel is the `.venv` created above.
+
 ## Data setup
 
 The dataset is **not** included in this repository (it's git-ignored).

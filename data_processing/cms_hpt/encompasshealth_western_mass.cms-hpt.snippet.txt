@@ -1,0 +1,12 @@
+# cms-hpt fetch metadata
+# facility: ENCOMPASS HEALTH REHAB HOSPITAL OF WESTERN MASS
+# system-url: https://www.encompasshealth.com/
+# cms-hpt-url: https://www.encompasshealth.com/cms-hpt.txt
+# location-page-url: https://www.encompasshealth.com/locations/western-mass-rehab/financial-information/price-transparency
+# mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/042987822_Encompass-Health-Rehabilitation-Hospital-of-Western-Massachusetts_standardcharges.csv
+# --- original cms-hpt.txt body ---
+location-name: Encompass Health Rehabilitation Hospital of Western Massachusetts
+source-page-url: https://www.encompasshealth.com/locations/western-mass-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/042987822_Encompass-Health-Rehabilitation-Hospital-of-Western-Massachusetts_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com

@@ -1,0 +1,10 @@
+# Lowell General Hospital — resolved via Tufts Medicine
+
+cms-hpt-url: https://www.tuftsmedicine.org/cms-hpt.txt
+local-file: tuftsmedicine_org.cms-hpt.txt
+system-url: https://www.tuftsmedicine.org/
+hospital-url: https://www.lowellgeneral.org/
+price-transparency-page-url: https://www.tuftsmedicine.org/get-care/cost-estimate
+mrf-url: https://www.tuftsmedicine.org/sites/default/files/2026-03/042103590_lowellgeneralhospital_standardcharges.csv.zip
+Note: Lowell General Hospital and Saints Campus share the same MRF zip.
+Note: live fetch of cms-hpt.txt may return 403 from some networks; script falls back to known published body.

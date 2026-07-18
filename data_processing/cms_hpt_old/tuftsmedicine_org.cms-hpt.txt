@@ -1,0 +1,34 @@
+# cms-hpt fetch metadata
+# facility: THE LOWELL GENERAL HOSPITAL (via Tufts Medicine)
+# system-url: https://www.tuftsmedicine.org/
+# cms-hpt-url: https://www.tuftsmedicine.org/cms-hpt.txt
+# --- original cms-hpt.txt body ---
+location-name: Tufts Medical Center
+source-page-url: https://www.tuftsmedicine.org/get-care/cost-estimate
+mrf-url: https://www.tuftsmedicine.org/sites/default/files/2026-03/043400617_tuftsmedicalcenter_standardcharges.csv.zip
+contact-name: Rachel Verville
+contact-email: Rachel.Verville@tuftsmedicine.org
+
+location-name: Lowell General Hospital
+source-page-url: https://www.tuftsmedicine.org/get-care/cost-estimate
+mrf-url: https://www.tuftsmedicine.org/sites/default/files/2026-03/042103590_lowellgeneralhospital_standardcharges.csv.zip
+contact-name: Rachel Verville
+contact-email: Rachel.Verville@tuftsmedicine.org
+
+location-name: Lowell General Hospital Saints Campus
+source-page-url: https://www.tuftsmedicine.org/get-care/cost-estimate
+mrf-url: https://www.tuftsmedicine.org/sites/default/files/2026-03/042103590_lowellgeneralhospital_standardcharges.csv.zip
+contact-name: Rachel Verville
+contact-email: Rachel.Verville@tuftsmedicine.org
+
+location-name: Melrose-Wakefield Hospital Campus
+source-page-url: https://www.tuftsmedicine.org/get-care/cost-estimate
+mrf-url: https://www.tuftsmedicine.org/sites/default/files/2026-03/042767880_melrosewakefieldhealthcare_standardcharges.csv.zip
+contact-name: Rachel Verville
+contact-email: Rachel.Verville@tuftsmedicine.org
+
+location-name: Lawrence Memorial Hospital Campus
+source-page-url: https://www.tuftsmedicine.org/get-care/cost-estimate
+mrf-url: https://www.tuftsmedicine.org/sites/default/files/2026-03/042767880_melrosewakefieldhealthcare_standardcharges.csv.zip
+contact-name: Rachel Verville
+contact-email: Rachel.Verville@tuftsmedicine.org

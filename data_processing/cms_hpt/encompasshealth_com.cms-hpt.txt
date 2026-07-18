@@ -1,0 +1,1114 @@
+# cms-hpt fetch metadata
+# facility: ENCOMPASS HEALTH (includes Western Massachusetts)
+# system-url: https://www.encompasshealth.com/
+# cms-hpt-url: https://www.encompasshealth.com/cms-hpt.txt
+# --- original cms-hpt.txt body ---
+location-name: Encompass Health Rehabilitation Hospital of Abilene
+source-page-url: https://www.encompasshealth.com/locations/abilene-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/262652076_Encompass-Health-Rehabilitation-Hospital-of-Abilene_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Albuquerque
+source-page-url: https://www.encompasshealth.com/locations/albuquerque-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631011171_Encompass-Health-Rehabilitation-Hospital-of-Albuquerque_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Alexandria
+source-page-url: https://www.encompasshealth.com/locations/alexandria-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/251659391_Encompass-Health-Rehabilitation-Hospital-of-Alexandria_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Altamonte Springs
+source-page-url: https://www.encompasshealth.com/locations/altamonte-springs-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/452905189_Encompass-Health-Rehabilitation-Hospital-of-Altamonte-Springs_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Altoona
+source-page-url: https://www.encompasshealth.com/locations/altoona-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/262198419_Encompass-Health-Rehabilitation-Hospital-of-Altoona_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Rehabilitation Hospital of Amarillo
+source-page-url: https://www.encompasshealth.com/locations/amarillo-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/872420281_Rehabilitation-Hospital-of-Amarillo_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: AnMed Health Rehabilitation Hospital
+source-page-url: https://www.encompasshealth.com/locations/anmed-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/943430783_AnMed-Health-Rehabilitation-Hospital_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Arlington
+source-page-url: https://www.encompasshealth.com/locations/arlington-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631184844_Encompass-Health-Rehabilitation-Hospital-of-Arlington_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Rehabilitation Hospital of Athens
+source-page-url: https://www.encompasshealth.com/locations/athens-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/881987618_Rehabilitation-Hospital-of-Athens_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Rehabilitation Hospital of Atlanta
+source-page-url: https://www.encompasshealth.com/locations/atlanta-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/853587868_Rehabilitation-Hospital-of-Atlanta_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Rehabilitation Hospital of Augusta
+source-page-url: https://www.encompasshealth.com/locations/augusta-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/461318969_Rehabilitation-Hospital-of-Augusta_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Austin
+source-page-url: https://www.encompasshealth.com/locations/austin-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/261408389_Encompass-Health-Rehabilitation-Hospital-of-Austin_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Bakersfield
+source-page-url: https://www.encompasshealth.com/locations/bakersfield-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631184845_Encompass-Health-Rehabilitation-Hospital-of-Bakersfield_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Bluffton
+source-page-url: https://www.encompasshealth.com/locations/bluffton-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/811718775_Encompass-Health-Rehabilitation-Hospital-of-Bluffton_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Rehabilitation Hospital of Bowie
+source-page-url: https://www.encompasshealth.com/locations/bowie-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/822257492_Rehabilitation-Hospital-of-Bowie_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Braintree
+source-page-url: https://www.encompasshealth.com/locations/braintree-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/901015323_Encompass-Health-Rehabilitation-Hospital-of-Braintree_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Braintree at Framingham
+source-page-url: https://www.encompasshealth.com/locations/braintree-rehab-framingham/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/901015323_Encompass-Health-Rehabilitation-Hospital-of-Braintree-at-Framingham_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Morgantown at Bridgeport
+source-page-url: https://www.encompasshealth.com/locations/bridgeport-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/550670907_Encompass-Health-Rehabilitation-Hospital-of-Morgantown-at-Bridgeport_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Rehabilitation Hospital of Bristol, a joint venture of Ballad Health and Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/bristol-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/205612001_Rehabilitation-Hospital-of-Bristol-a-joint-venture-of-Ballad-Health-and-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: St. John Rehabilitation Hospital, an affiliate of Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/st-john-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/474332576_St-John-Rehabilitation-Hospital-an-affiliate-of-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Rehabilitation Hospital of Cape Coral
+source-page-url: https://www.encompasshealth.com/locations/cape-coral-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/852164241_Rehabilitation-Hospital-of-Cape-Coral_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Cardinal Hill Rehabilitation Hospital
+source-page-url: https://www.encompasshealth.com/locations/cardinal-hill-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/473054927_Cardinal-Hill-Rehabilitation-Hospital_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: MUSC Health Rehabilitation Hospital, an affiliate of Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/charleston-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/570904886_MUSC-Health-Rehabilitation-Hospital-an-affiliate-of-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Chattanooga
+source-page-url: https://www.encompasshealth.com/locations/chattanooga-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/621178229_Encompass-Health-Rehabilitation-Hospital-of-Chattanooga_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: CHI St. Joseph Health Rehabilitation Hospital, an affiliate of Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/st-j-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/475501500_CHI-St-Joseph-Health-Rehabilitation-Hospital-an-affiliate-of-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: CHI St. Vincent Sherwood Rehabilitation Hospital, a partner of Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/st-vincent-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/251652121_CHI-St-Vincent-Sherwood-Rehabilitation-Hospital-a-partner-of-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Christus Trinity Mother Frances Rehabilitation Hospital, a partner of Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/christus-tmf-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/251675784_Christus-Trinity-Mother-Frances-Rehabilitation-Hospital-a-partner-of-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Cincinnati
+source-page-url: https://www.encompasshealth.com/locations/cincinnati-rehab/financial-information/price-transparency
+mrf-url: https://www.encompasshealth.com/cdn/Files/1-price-transparency/451441844_Encompass-Health-Rehabilitation-Hospital-of-Cincinnati_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Central Florida
+source-page-url: https://www.encompasshealth.com/locations/ocala-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/273308405_Encompass-Health-Rehabilitation-Hospital-of-Central-Florida_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Central Florida-Sumter County
+source-page-url: https://www.encompasshealth.com/locations/sumter-county-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/273308405_Encompass-Health-Rehabilitation-Hospital-of-Central-FloridaSumter-County_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of City View
+source-page-url: https://www.encompasshealth.com/locations/city-view-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/251587575_Encompass-Health-Rehabilitation-Hospital-of-City-View_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Clermont
+source-page-url: https://www.encompasshealth.com/locations/clermont-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/852048497_Encompass-Health-Rehabilitation-Hospital-of-Clermont_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Colorado Springs
+source-page-url: https://www.encompasshealth.com/locations/colorado-springs-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/251612420_Encompass-Health-Rehabilitation-Hospital-of-Colorado-Springs_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Columbia
+source-page-url: https://www.encompasshealth.com/locations/columbia-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/630974715_Encompass-Health-Rehabilitation-Hospital-of-Columbia_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Rehabilitation Hospital of Columbus
+source-page-url: https://www.encompasshealth.com/locations/columbus-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/853555662_Rehabilitation-Hospital-of-Columbus_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Concord
+source-page-url: https://www.encompasshealth.com/locations/concord-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631102594_Encompass-Health-Rehabilitation-Hospital-of-Concord_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Concordville
+source-page-url: https://www.encompasshealth.com/locations/concordville-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/932117695_Encompass-Health-Rehabilitation-Hospital-of-Concordville_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Cumming
+source-page-url: https://www.encompasshealth.com/locations/cumming-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/465003520_Encompass-Health-Rehabilitation-Hospital-of-Cumming_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Cypress
+source-page-url: https://www.encompasshealth.com/locations/cypress-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/273444511_Encompass-Health-Rehabilitation-Hospital-of-Cypress_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Dallas
+source-page-url: https://www.encompasshealth.com/locations/dallas-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/262934144_Encompass-Health-Rehabilitation-Hospital-of-Dallas_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Danbury
+source-page-url: https://www.encompasshealth.com/locations/danbury-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/851354552_Encompass-Health-Rehabilitation-Hospital-of-Danbury_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: The Rehabilitation Institute of Ohio, a Joint Venture between Premier Health and Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/dayton-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/270844718_The-Rehabilitation-Institute-of-Ohio-a-Joint-Venture-between-Premier-Health-and-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Daytona Beach
+source-page-url: https://www.encompasshealth.com/locations/daytona-beach-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/883894942_Encompass-Health-Rehabilitation-Hospital-of-Daytona-Beach_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Deaconess Rehabilitation Hospital
+source-page-url: https://www.encompasshealth.com/locations/deaconess-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/721375246_Encompass-Health-Deaconess-Rehabilitation-Hospital_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Deaconess Downtown Encompass Health Deaconess Rehabilitation Hospital
+source-page-url: https://www.encompasshealth.com/locations/deaconess-rehab-downtown/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/721375246_Deaconess-Downtown-Encompass-Health-Deaconess-Rehabilitation-Hospital_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Desert Canyon
+source-page-url: https://www.encompasshealth.com/locations/desert-canyon-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/272457834_Encompass-Health-Rehabilitation-Hospital-of-Desert-Canyon_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Dothan
+source-page-url: https://www.encompasshealth.com/locations/dothan-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631097851_Encompass-Health-Rehabilitation-Hospital-of-Dothan_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of East Valley
+source-page-url: https://www.encompasshealth.com/locations/east-valley-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/262942698_Encompass-Health-Rehabilitation-Hospital-of-East-Valley_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Erie
+source-page-url: https://www.encompasshealth.com/locations/erie-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631105904_Encompass-Health-Rehabilitation-Hospital-of-Erie_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Fairlawn Rehabilitation Hospital
+source-page-url: https://www.encompasshealth.com/locations/fairlawn-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/042948290_Fairlawn-Rehabilitation-Hospital_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Fitchburg
+source-page-url: https://www.encompasshealth.com/locations/fitchburg-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/862918445_Encompass-Health-Rehabilitation-Hospital-of-Fitchburg_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Florence
+source-page-url: https://www.encompasshealth.com/locations/florence-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/570775688_Encompass-Health-Rehabilitation-Hospital-of-Florence_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Fort Mill
+source-page-url: https://www.encompasshealth.com/locations/fort-mill-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/851311484_Encompass-Health-Rehabilitation-Hospital-of-Fort-Mill_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Rehabilitation Hospital of Fort Myers
+source-page-url: https://www.encompasshealth.com/locations/fort-myers-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/854286104_Rehabilitation-Hospital-of-Fort-Myers_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Fort Smith
+source-page-url: https://www.encompasshealth.com/locations/fort-smith-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631105919_Encompass-Health-Rehabilitation-Hospital-of-Fort-Smith_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Franklin
+source-page-url: https://www.encompasshealth.com/locations/franklin-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/274344918_Encompass-Health-Rehabilitation-Hospital-of-Franklin_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Fredericksburg
+source-page-url: https://www.encompasshealth.com/locations/fredericksburg-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/200949793_Encompass-Health-Rehabilitation-Hospital-of-Fredericksburg_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Gadsden
+source-page-url: https://www.encompasshealth.com/locations/gadsden-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/274000610_Encompass-Health-Rehabilitation-Hospital-of-Gadsden_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Geisinger Encompass Health Rehabilitation Hospital
+source-page-url: https://www.encompasshealth.com/locations/geisinger/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/721398803_Geisinger-Encompass-Health-Rehabilitation-Hospital_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Altru Rehabilitation Hospital
+source-page-url: https://www.encompasshealth.com/locations/grandforks-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/870885335_Altru-Rehabilitation-Hospital_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Greenville
+source-page-url: https://www.encompasshealth.com/locations/greenville-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/833672761_Encompass-Health-Rehabilitation-Hospital-of-Greenville_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital, a partner of Memorial Hospital at Gulfport
+source-page-url: https://www.encompasshealth.com/locations/gulfport-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/814331986_Encompass-Health-Rehabilitation-Hospital-a-partner-of-Memorial-Hospital-at-Gulfport_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Harmarville
+source-page-url: https://www.encompasshealth.com/locations/harmarville-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/521960506_Encompass-Health-Rehabilitation-Hospital-of-Harmarville_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Henderson
+source-page-url: https://www.encompasshealth.com/locations/henderson-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631262946_Encompass-Health-Rehabilitation-Hospital-of-Henderson_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Rehabilitation Hospital of Henry
+source-page-url: https://www.encompasshealth.com/locations/henry-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/823168689_Rehabilitation-Hospital-of-Henry_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Houston at The Medical Center
+source-page-url: https://www.encompasshealth.com/locations/houston-med-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/882645917_Encompass-Health-Rehabilitation-Hospital-of-Houston-at-The-Medical-Center_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Humble
+source-page-url: https://www.encompasshealth.com/locations/humble-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/464003807_Encompass-Health-Rehabilitation-Hospital-of-Humble_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Huntington
+source-page-url: https://www.encompasshealth.com/locations/huntington-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/621178229_Encompass-Health-Rehabilitation-Hospital-of-Huntington_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Jacksonville
+source-page-url: https://www.encompasshealth.com/locations/jacksonville-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/852358003_Encompass-Health-Rehabilitation-Hospital-of-Jacksonville_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Johnston
+source-page-url: https://www.encompasshealth.com/locations/johnston-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/841754425_Encompass-Health-Rehabilitation-Hospital-of-Johnston_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Jonesboro
+source-page-url: https://www.encompasshealth.com/locations/jonesboro-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/461429335_Encompass-Health-Rehabilitation-Hospital-of-Jonesboro_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Kansas Rehabilitation Hospital, a joint venture of Encompass Health and Stormont Vail Health
+source-page-url: https://www.encompasshealth.com/locations/kansas-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/521535077_Kansas-Rehabilitation-Hospital-a-joint-venture-of-Encompass-Health-and-Stormont-Vail-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Katy
+source-page-url: https://www.encompasshealth.com/locations/katy-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/824549154_Encompass-Health-Rehabilitation-Hospital-of-Katy_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Rehabilitation Hospital of Kingsport, a joint venture of Ballad Health and Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/kingsport-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631028003_Rehabilitation-Hospital-of-Kingsport-a-joint-venture-of-Ballad-Health-and-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Kissimmee
+source-page-url: https://www.encompasshealth.com/locations/kissimmee-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/862462263_Encompass-Health-Rehabilitation-Hospital-of-Kissimmee_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Patricia Neal Rehabilitation Hospital
+source-page-url: https://www.encompasshealth.com/locations/knoxville-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/850874009_Patricia-Neal-Rehabilitation-Hospital_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Patricia Neal Rehabilitation Hospital Fort Sanders
+source-page-url: https://www.encompasshealth.com/locations/knoxville-rehab-fort-sanders/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/850874009_Patricia-Neal-Rehabilitation-Hospital-Fort-Sanders_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Lakeland
+source-page-url: https://www.encompasshealth.com/locations/lakeland-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/851599538_Encompass-Health-Rehabilitation-Hospital-of-Lakeland_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Lakeshore Rehabilitation Hospital
+source-page-url: https://www.encompasshealth.com/locations/lakeshore-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/621178229_Encompass-Health-Lakeshore-Rehabilitation-Hospital_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Lakeview
+source-page-url: https://www.encompasshealth.com/locations/lakeview-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/251573943_Encompass-Health-Rehabilitation-Hospital-of-Lakeview_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Lake Worth
+source-page-url: https://www.encompasshealth.com/locations/lake-worth-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/871764834_Encompass-Health-Rehabilitation-Hospital-of-Lake-Worth_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Largo
+source-page-url: https://www.encompasshealth.com/locations/largo-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631134645_Encompass-Health-Rehabilitation-Hospital-of-Largo_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Las Vegas
+source-page-url: https://www.encompasshealth.com/locations/las-vegas-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/251693810_Encompass-Health-Rehabilitation-Hospital-of-Las-Vegas_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Institute of Libertyville
+source-page-url: https://www.encompasshealth.com/locations/libertyville-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/842352894_Encompass-Health-Rehabilitation-Institute-of-Libertyville_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Littleton
+source-page-url: https://www.encompasshealth.com/locations/littleton-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/831877464_Encompass-Health-Rehabilitation-Hospital-of-Littleton_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Baptist Health Rehabilitation Hospital
+source-page-url: https://www.encompasshealth.com/locations/louisville-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/844618032_Baptist-Health-Rehabilitation-Hospital_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Manati
+source-page-url: https://www.encompasshealth.com/locations/manati-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/201151662_Encompass-Health-Rehabilitation-Hospital-of-Manati_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital, an affiliate of Martin Health
+source-page-url: https://www.encompasshealth.com/locations/martin-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/274895765_Encompass-Health-Rehabilitation-Hospital-an-affiliate-of-Martin-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Mechanicsburg
+source-page-url: https://www.encompasshealth.com/locations/mechanicsburg-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631105923_Encompass-Health-Rehabilitation-Hospital-of-Mechanicsburg_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Memphis, a partner of Methodist Healthcare
+source-page-url: https://www.encompasshealth.com/locations/memphis-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631107459_Encompass-Health-Rehabilitation-Hospital-of-Memphis-a-partner-of-Methodist-Healthcare_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Miami
+source-page-url: https://www.encompasshealth.com/locations/miami-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/275253818_Encompass-Health-Rehabilitation-Hospital-of-Miami_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of the Mid-Cities
+source-page-url: https://www.encompasshealth.com/locations/mid-cities-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/261408611_Encompass-Health-Rehabilitation-Hospital-of-the-MidCities_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: MidAmerica Rehabilitation Hospital
+source-page-url: https://www.encompasshealth.com/locations/mid-america-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/742491473_MidAmerica-Rehabilitation-Hospital_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Middletown
+source-page-url: https://www.encompasshealth.com/locations/middletown-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/273463026_Encompass-Health-Rehabilitation-Hospital-of-Middletown_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Midland Odessa
+source-page-url: https://www.encompasshealth.com/locations/midland-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631105911_Encompass-Health-Rehabilitation-Hospital-of-Midland-Odessa_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Modesto
+source-page-url: https://www.encompasshealth.com/locations/modesto-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/464417320_Encompass-Health-Rehabilitation-Hospital-of-Modesto_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Montgomery
+source-page-url: https://www.encompasshealth.com/locations/montgomery-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631106107_Encompass-Health-Rehabilitation-Hospital-of-Montgomery_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Morgantown
+source-page-url: https://www.encompasshealth.com/locations/morgantown-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/550670907_Encompass-Health-Rehabilitation-Hospital-of-Morgantown_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Mount Carmel Rehabilitation Hospital, an affiliate of Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/mount-carmel-rehab/financial-information/price-transparency
+mrf-url: https://www.encompasshealth.com/cdn/Files/1-price-transparency/474200156_Mount-Carmel-Rehabilitation-Hospital-an-affiliate-of-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Murrieta
+source-page-url: https://www.encompasshealth.com/locations/murrieta-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/823473130_Encompass-Health-Rehabilitation-Hospital-of-Murrieta_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Naples
+source-page-url: https://www.encompasshealth.com/locations/naples-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/851887489_Rehabilitation-Hospital-of-Naples_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: New England Rehabilitation Hospital of Portland, a Joint Venture of Maine Medical Center and Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/nerhp/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/721371920_New-England-Rehabilitation-Hospital-of-Portland-a-Joint-Venture-of-Maine-Medical-Center-and-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of New England
+source-page-url: https://www.encompasshealth.com/locations/new-england-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/901015581_Encompass-Health-Rehabilitation-Hospital-of-New-England_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of New England at Beverly
+source-page-url: https://www.encompasshealth.com/locations/new-england-rehab-beverly/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/901015581_Encompass-Health-Rehabilitation-Hospital-of-New-England-at-Beverly_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of New England at Lowell
+source-page-url: https://www.encompasshealth.com/locations/new-england-rehab-lowell/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/901015581_Encompass-Health-Rehabilitation-Hospital-of-New-England-at-Lowell_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Rehabilitation Hospital of Newnan
+source-page-url: https://www.encompasshealth.com/locations/newnan-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/273390540_Rehabilitation-Hospital-of-Newnan_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Nittany Valley
+source-page-url: https://www.encompasshealth.com/locations/nittany-valley-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631105924_Encompass-Health-Rehabilitation-Hospital-of-Nittany-Valley_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of North Alabama
+source-page-url: https://www.encompasshealth.com/locations/huntsville-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/371921725_Encompass-Health-Rehabilitation-Hospital-of-North-Alabama_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of North Memphis, a partner of Methodist Healthcare
+source-page-url: https://www.encompasshealth.com/locations/north-memphis-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631107459_Encompass-Health-Rehabilitation-Hospital-of-North-Memphis-a-partner-of-Methodist-Healthcare_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of North Tampa
+source-page-url: https://www.encompasshealth.com/locations/north-tampa-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/815205937_Encompass-Health-Rehabilitation-Hospital-of-North-Tampa_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Northern Kentucky
+source-page-url: https://www.encompasshealth.com/locations/kentucky-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631184835_Encompass-Health-Rehabilitation-Hospital-of-Northern-Kentucky_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Northern Virginia
+source-page-url: https://www.encompasshealth.com/locations/northern-virginia-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/261159764_Encompass-Health-Rehabilitation-Hospital-of-Northern-Virginia_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Northwest Tucson
+source-page-url: https://www.encompasshealth.com/locations/northwest-tucson-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/251654947_Encompass-Health-Rehabilitation-Hospital-of-Northwest-Tucson_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Novant Health Rehabilitation Hospital, an affiliate of Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/novant-health-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/813251045_Novant-Health-Rehabilitation-Hospital-an-affiliate-of-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Ascension St. John Rehabilitation Hospital of Owasso, an affiliate of Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/st-john-rehab-owasso/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/474332576_Ascension-St-John-Rehabilitation-Hospital-an-affiliate-of-Encompass-Health-Owasso_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Panama City
+source-page-url: https://www.encompasshealth.com/locations/panama-city-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631119356_Encompass-Health-Rehabilitation-Hospital-of-Panama-City_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Parkersburg
+source-page-url: https://www.encompasshealth.com/locations/parkersburg-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/232655290_Encompass-Health-Rehabilitation-Hospital-of-Parkersburg_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Pearland
+source-page-url: https://www.encompasshealth.com/locations/pearland-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/811940348_Encompass-Health-Rehabilitation-Hospital-of-Pearland_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Pensacola
+source-page-url: https://www.encompasshealth.com/locations/pensacola-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/822383902_Encompass-Health-Rehabilitation-Hospital-of-Pensacola_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Petersburg
+source-page-url: https://www.encompasshealth.com/locations/petersburg-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/200948362_Encompass-Health-Rehabilitation-Hospital-of-Petersburg_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Rehabilitation Hospital of Phenix City
+source-page-url: https://www.encompasshealth.com/locations/phenix-city-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631280233_Rehabilitation-Hospital-of-Phenix-City_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Plano
+source-page-url: https://www.encompasshealth.com/locations/plano-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/251661222_Encompass-Health-Rehabilitation-Hospital-of-Plano_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Princeton
+source-page-url: https://www.encompasshealth.com/locations/princeton-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/232655290_Encompass-Health-Rehabilitation-Hospital-of-Princeton_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Prosper
+source-page-url: https://www.encompasshealth.com/locations/prosper-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/862964873_Encompass-Health-Rehabilitation-Hospital-of-Prosper_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: The Quad Cities Rehabilitation Institute
+source-page-url: https://www.encompasshealth.com/locations/quad-cities-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/843864099_The-Quad-Cities-Rehabilitation-Institute_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Quillen Rehabilitation Hospital, a  joint venture of Ballad Health and Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/quillen-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/465144209_Quillen-Rehabilitation-Hospital-a-joint-venture-of-Ballad-Health-and-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Reading
+source-page-url: https://www.encompasshealth.com/locations/reading-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/721397929_Encompass-Health-Rehabilitation-Hospital-of-Reading_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: The Rehabilitation Institute of St. Louis, an affiliation of BJC HealthCare and Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/rehab-institute-stl/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631254288_The-Rehabilitation-Institute-of-St-Louis-an-affiliation-of-BJC-HealthCare-and-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Richardson
+source-page-url: https://www.encompasshealth.com/locations/richardson-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/205315890_Encompass-Health-Rehabilitation-Hospital-of-Richardson_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Richmond
+source-page-url: https://www.encompasshealth.com/locations/richmond-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/232655290_Encompass-Health-Rehabilitation-Hospital-of-Richmond_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Rock Hill
+source-page-url: https://www.encompasshealth.com/locations/rock-hill-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/571071353_Encompass-Health-Rehabilitation-Hospital-of-Rock-Hill_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Round Rock
+source-page-url: https://www.encompasshealth.com/locations/round-rock-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/208038733_Encompass-Health-Rehabilitation-Hospital-of-Round-Rock_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Rusk Rehabilitation Hospital, an affiliation of Encompass Health and MU Health Care
+source-page-url: https://www.encompasshealth.com/locations/rusk-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/721349747_Rusk-Rehabilitation-Hospital-an-affiliation-of-Encompass-Health-and-MU-Health-Care_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Salisbury
+source-page-url: https://www.encompasshealth.com/locations/salisbury-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/232655290_Encompass-Health-Rehabilitation-Hospital-of-Salisbury_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of San Antonio
+source-page-url: https://www.encompasshealth.com/locations/san-antonio-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631105930_Encompass-Health-Rehabilitation-Hospital-of-San-Antonio_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of San Juan
+source-page-url: https://www.encompasshealth.com/locations/puerto-rico-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/460977422_Encompass-Health-Rehabilitation-Hospital-of-San-Juan_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Sarasota
+source-page-url: https://www.encompasshealth.com/locations/sarasota-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631134650_Encompass-Health-Rehabilitation-Hospital-of-Sarasota_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Savannah
+source-page-url: https://www.encompasshealth.com/locations/savannah-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/471281407_Encompass-Health-Rehabilitation-Hospital-of-Savannah_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Scottsdale
+source-page-url: https://www.encompasshealth.com/locations/scottsdale-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631184846_Encompass-Health-Rehabilitation-Hospital-of-Scottsdale_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Sea Pines Rehabilitation Hospital, an affiliate of Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/seapines-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631134647_Sea-Pines-Rehabilitation-Hospital-an-affiliate-of-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Sewickley
+source-page-url: https://www.encompasshealth.com/locations/sewickley-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631227351_Encompass-Health-Rehabilitation-Hospital-of-Sewickley_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Shannon Rehabilitation Hospital, an affiliate of Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/shannon-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/843211164_Shannon-Rehabilitation-Hospital-an-affiliate-of-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Shelby County
+source-page-url: https://www.encompasshealth.com/locations/shelby-county-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/270275705_Encompass-Health-Rehabilitation-Hospital-of-Shelby-County_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: The Rehabilitation Institute of Southern Illinois
+source-page-url: https://www.encompasshealth.com/locations/shiloh-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/834553991_The-Rehabilitation-Institute-of-Southern-Illinois_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Shreveport
+source-page-url: https://www.encompasshealth.com/locations/shreveport-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/844765362_Encompass-Health-Rehabilitation-Hospital-of-Shreveport_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Sioux Falls
+source-page-url: https://www.encompasshealth.com/locations/sioux-falls-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/832549368_Encompass-Health-Rehabilitation-Hospital-of-Sioux-Falls_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: South Plains Rehabilitation Hospital, an affiliate of UMC and Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/south-plains-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/823034309_South-Plains-Rehabilitation-Hospital-an-affiliate-of-UMC-and-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Spring Hill
+source-page-url: https://www.encompasshealth.com/locations/springhill-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631244181_Encompass-Health-Rehabilitation-Hospital-of-Spring-Hill_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Saint Alphonsus Regional Rehabilitation Hospital, an affiliate of Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/boise-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/824272202_Saint-Alphonsus-Regional-Rehabilitation-Hospital-an-affiliate-of-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of St. Augustine
+source-page-url: https://www.encompasshealth.com/locations/st-augustine-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/851559447_Encompass-Health-Rehabilitation-Hospital-of-St-Augustine_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: St Peters IRF Location The Rehabilitation Institute of St. Louis, an affiliation of BJC HealthCare and Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/rehab-institute-stl-st-peters/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631254288_St-Peters-IRF-Location-The-Rehabilitation-Institute-of-St-Louis-an-affiliation-of-BJC-HealthCare-and-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: The Rehabilitation Institute of St. Louis West County
+source-page-url: https://www.encompasshealth.com/locations/rehab-institute-stl-west-county/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631254288_The-Rehabilitation-Institute-of-St-Louis-West-County_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of St. Petersburg
+source-page-url: https://www.encompasshealth.com/locations/st-petersburg-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/873073937_Encompass-Health-Rehabilitation-Hospital-of-St-Petersburg_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: CHI St. Vincent Hot Springs Rehabilitation Hospital, a partner of Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/st-v-hotsprings/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/251652121_CHI-St-Vincent-Hot-Springs-Rehabilitation-Hospital-a-partner-of-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Sugar Land
+source-page-url: https://www.encompasshealth.com/locations/sugarland-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/272810882_Encompass-Health-Rehabilitation-Hospital-of-Sugar-Land_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Sunrise
+source-page-url: https://www.encompasshealth.com/locations/sunrise-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631134714_Encompass-Health-Rehabilitation-Hospital-of-Sunrise_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Tallahassee
+source-page-url: https://www.encompasshealth.com/locations/tallahassee-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631134713_Encompass-Health-Rehabilitation-Hospital-of-Tallahassee_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Texarkana
+source-page-url: https://www.encompasshealth.com/locations/texarkana-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631105916_Encompass-Health-Rehabilitation-Hospital-of-Texarkana_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital The Vintage
+source-page-url: https://www.encompasshealth.com/locations/the-vintage-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/270941690_Encompass-Health-Rehabilitation-Hospital-The-Vintage_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of The Woodlands
+source-page-url: https://www.encompasshealth.com/locations/the-woodlands-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631105909_Encompass-Health-Rehabilitation-Hospital-of-The-Woodlands_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Little River Tidelands Health Rehabilitation Hospital, an affiliate of Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/tidelands-health-littleriver/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/812585212_Little-River-Tidelands-Health-Rehabilitation-Hospital-an-affiliate-of-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Tidelands Health Rehabilitation Hospital, an affiliate of Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/tidelands-health-murrells-inlet/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/812585212_Tidelands-Health-Rehabilitation-Hospital-an-affiliate-of-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Tinton Falls, a Joint Venture with Monmouth Medical Center
+source-page-url: https://www.encompasshealth.com/locations/tinton-falls-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631254173_Encompass-Health-Rehabilitation-Hospital-of-Tinton-Falls-a-Joint-Venture-with-Monmouth-Medical-Center_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Toledo
+source-page-url: https://www.encompasshealth.com/locations/toledo-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/843719357_Encompass-Health-Rehabilitation-Hospital-of-Toledo_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Toms River
+source-page-url: https://www.encompasshealth.com/locations/toms-river-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631105897_Encompass-Health-Rehabilitation-Hospital-of-Toms-River_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Treasure Coast
+source-page-url: https://www.encompasshealth.com/locations/treasure-coast-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631105921_Encompass-Health-Rehabilitation-Hospital-of-Treasure-Coast_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Institute of Tucson
+source-page-url: https://www.encompasshealth.com/locations/rehab-institute-of-tucson/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631184847_Encompass-Health-Rehabilitation-Institute-of-Tucson_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Tustin
+source-page-url: https://www.encompasshealth.com/locations/tustin-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/330695017_Encompass-Health-Rehabilitation-Hospital-of-Tustin_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: University of Iowa Health Network Rehabilitation Hospital
+source-page-url: https://www.encompasshealth.com/locations/coralville-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/831261306_University-of-Iowa-Health-Network-Rehabilitation-Hospital-a-venture-with-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Utah
+source-page-url: https://www.encompasshealth.com/locations/utah-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631105917_Encompass-Health-Rehabilitation-Hospital-of-Utah_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: UVA Encompass Health Rehabilitation Hospital
+source-page-url: https://www.encompasshealth.com/locations/uva-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/721397571_UVA-Encompass-Health-Rehabilitation-Hospital_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Valley of The Sun Rehabilitation Hospital
+source-page-url: https://www.encompasshealth.com/locations/valley-of-the-sun-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631184848_Encompass-Health-Valley-of-The-Sun-Rehabilitation-Hospital_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Van Matre Encompass Health Rehabilitation Institute
+source-page-url: https://www.encompasshealth.com/locations/van-matre-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/364397130_Van-Matre-Encompass-Health-Rehabilitation-Institute_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Vanderbilt Stallworth Rehabilitation Hospital
+source-page-url: https://www.encompasshealth.com/locations/vanderbilt-stallworth/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631077470_Vanderbilt-Stallworth-Rehabilitation-Hospital_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Vineland
+source-page-url: https://www.encompasshealth.com/locations/vineland-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/262414472_Encompass-Health-Rehabilitation-Hospital-of-Vineland_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital Vision Park
+source-page-url: https://www.encompasshealth.com/locations/vision-park-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/260518706_Encompass-Health-Rehabilitation-Hospital-Vision-Park_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Waco
+source-page-url: https://www.encompasshealth.com/locations/waco-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/844256550_Encompass-Health-Rehabilitation-Hospital-of-Waco_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital, a partner of Washington Regional
+source-page-url: https://www.encompasshealth.com/locations/fayetteville-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/251652127_Encompass-Health-Rehabilitation-Hospital-a-partner-of-Washington-Regional_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: West Tennessee Healthcare Rehabilitation Hospital Cane Creek, a partnership with Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/cane-creek-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/475297151_West-Tennessee-Healthcare-Rehabilitation-Hospital-Cane-Creek-a-partnership-with-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Irmo
+source-page-url: https://www.encompasshealth.com/locations/irmo-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/832802172_Encompass-Health-Rehabilitation-Hospital-of-Irmo_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: West Tennessee Healthcare Rehabilitation Hospital Jackson, a partnership with Encompass Health
+source-page-url: https://www.encompasshealth.com/locations/jackson-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/475297151_West-Tennessee-Healthcare-Rehabilitation-Hospital-Jackson-a-partnership-with-Encompass-Health_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Western Massachusetts
+source-page-url: https://www.encompasshealth.com/locations/western-mass-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/042987822_Encompass-Health-Rehabilitation-Hospital-of-Western-Massachusetts_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of Wichita Falls
+source-page-url: https://www.encompasshealth.com/locations/wichita-falls-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/251664933_Encompass-Health-Rehabilitation-Hospital-of-Wichita-Falls_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Encompass Health Rehabilitation Hospital of York
+source-page-url: https://www.encompasshealth.com/locations/york-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/631105925_Encompass-Health-Rehabilitation-Hospital-of-York_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com
+
+location-name: Yuma Rehabilitation Hospital, an affiliation of Encompass Health and Yuma Regional Medical Center
+source-page-url: https://www.encompasshealth.com/locations/yuma-rehab/financial-information/price-transparency
+mrf-url: https://edge.sitecorecloud.io/encompasshee178-encompasshed9db-prodb258-07da/media/Project/EncompassHealth/encompasshealth/Files/1-price-transparency/943427408_Yuma-Rehabilitation-Hospital-an-affiliation-of-Encompass-Health-and-Yuma-Regional-Medical-Center_standardcharges.csv
+contact-name: Ryan Wilson
+contact-email: ryan.wilson@encompasshealth.com

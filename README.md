@@ -1,21 +1,34 @@
 # abridge-hackathon
 
-## Running the app
+## Python environment
 
-A React frontend (Vite + TypeScript + Tailwind) and a Python backend (FastAPI).
-
-Prerequisites: Node 20+, Python 3.11+, [uv](https://docs.astral.sh/uv/), and an
-Anthropic API key (the CPT extraction step calls Claude — see below).
+Set up a local virtual environment (`.venv`, git-ignored) and install the pinned dependencies:
 
 ```bash
-cp backend/.env.example backend/.env   # then add your ANTHROPIC_API_KEY
+# from the repo root (abridge-hackathon/)
+python3 -m venv .venv
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 ```
 
-Backend — in one terminal:
+Add your Anthropic key to a `.env` file at the repo root (also git-ignored):
+
+```
+ANTHROPIC_API_KEY=sk-ant-...
+```
+
+### Running the notebooks
+
+The `data_processing/*.ipynb` notebooks expect this environment. Either:
+
+- **In VS Code / Cursor:** open a notebook and pick the `.venv` interpreter as the kernel (top-right kernel picker → _Python Environments_ → `.venv`), or
+- **From the CLI:**
 
 ```bash
-cd backend
-uv run uvicorn app.main:app --reload --port 8000
+source .venv/bin/activate
+jupyter nbconvert --to notebook --execute --inplace \
+  data_processing/04_avs_line_to_billable_codes.ipynb
 ```
 
 Frontend — in another terminal:
@@ -37,7 +50,7 @@ Three screens, in order:
 1. **Visit summary** — two panels side by side. On the left, the after-visit
    summary the care team uploaded (pick any of the 25 encounters from the
    dropdown; ones with no priced follow-ups are marked). On the right, the
-   procedures *recommended as follow-up* are extracted, streaming in one at a
+   procedures _recommended as follow-up_ are extracted, streaming in one at a
    time, with anything already done at the visit excluded.
 
    **Each code is traced to the line it came from.** The source line is
@@ -45,6 +58,7 @@ Three screens, in order:
    Clicking a code emphasises its line (and vice versa). Codes drawn from the
    same line share one colour. A line that produces many codes (a lab panel can
    yield 15+) collapses to a count badge rather than a wall of badges.
+
 2. **Estimated costs** — each code with its description, average and lowest
    published price across Boston-area hospitals, and how many hospitals publish
    it. Click any row to include or exclude it; the totals recompute. **This
@@ -95,7 +109,7 @@ absent (the row is then omitted rather than faked):
 - **With your insurance** — a typical (median) negotiated rate across the
   hospital's plans. Not specific to your plan, which the app doesn't collect.
 - **Expected range** — the p10–p90 band of what was actually paid, shown only
-  when published *and* plausible. Only Cambridge Health Alliance publishes
+  when published _and_ plausible. Only Cambridge Health Alliance publishes
   percentiles, and near-zero floors (capitated contracts) are filtered out, so
   this row appears mainly when you drill down to a single CHA-priced code.
 
@@ -147,11 +161,13 @@ Robbert's pipeline before running:
 cp ../abridge-hackathon-robbert/data_processing/processed_csv/*.csv data/processed_csv/
 ```
 
+If you hit `ModuleNotFoundError: No module named 'dotenv'` (or similar), the notebook is running against the wrong interpreter — make sure the selected kernel is the `.venv` created above.
+
 ## Data setup
 
 The dataset is **not** included in this repository (it's git-ignored).
 
-It comes from the [**Abridge x Anthropic x Lightspeed** hackathon — *The Future of Agentic AI in Healthcare*](https://cerebralvalley.ai/e/abridge-hackathon/details), under **"6️⃣ Abridge Provided Resources"**: anonymized patient-encounter and EHR datasets with associated FHIR data. Download the `.zip` (dataset + spec) from the [Google Drive link here](https://drive.google.com/file/d/14TA58TvEotA_oqbnfKdV9ZzpKHUfSZKn/view?usp=sharing).
+It comes from the [**Abridge x Anthropic x Lightspeed** hackathon — _The Future of Agentic AI in Healthcare_](https://cerebralvalley.ai/e/abridge-hackathon/details), under **"6️⃣ Abridge Provided Resources"**: anonymized patient-encounter and EHR datasets with associated FHIR data. Download the `.zip` (dataset + spec) from the [Google Drive link here](https://drive.google.com/file/d/14TA58TvEotA_oqbnfKdV9ZzpKHUfSZKn/view?usp=sharing).
 
 Before running anything, download the dataset from the hackathon and place it in a `./data` folder at the repo root:
 

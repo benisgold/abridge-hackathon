@@ -376,6 +376,41 @@ def blocks(filename):
 def choose(filename, predicate):
     return next(((location, url) for location, url in blocks(filename) if predicate(location)), ("", ""))
 
+# Physical address + geocoded coordinates for each dataset hospital, keyed by
+# encounter_number. Reusable for plotting facilities on a map.
+hospital_locations = {
+    2: {
+        "hospital_address": "1493 Cambridge Street, Cambridge, MA 02139",
+        "hospital_latitude": 42.3735,
+        "hospital_longitude": -71.1010,
+    },
+    5: {
+        "hospital_address": "300 Longwood Avenue, Boston, MA 02115",
+        "hospital_latitude": 42.3372,
+        "hospital_longitude": -71.1057,
+    },
+    9: {
+        "hospital_address": "222 State Street, Ludlow, MA 01056",
+        "hospital_latitude": 42.1806,
+        "hospital_longitude": -72.4514,
+    },
+    16: {
+        "hospital_address": "41 Mall Road, Burlington, MA 01805",
+        "hospital_latitude": 42.4998,
+        "hospital_longitude": -71.2109,
+    },
+    17: {
+        "hospital_address": "55 Fogg Road, South Weymouth, MA 02190",
+        "hospital_latitude": 42.1668,
+        "hospital_longitude": -70.9495,
+    },
+    18: {
+        "hospital_address": "295 Varnum Avenue, Lowell, MA 01854",
+        "hospital_latitude": 42.6553,
+        "hospital_longitude": -71.3506,
+    },
+}
+
 specs = [
     (2, "CAMBRIDGE PUBLIC HEALTH COMMISSION", "https://www.challiance.org/cms-hpt.txt",
      "challiance_org.cms-hpt.txt", lambda location: True),
@@ -397,10 +432,14 @@ for encounter_number, dataset_name, cms_hpt_url, cms_hpt_file, predicate in spec
     mrf_location, mrf_url = choose(cms_hpt_file, predicate)
     filename = unquote(urlparse(mrf_url).path.rsplit("/", 1)[-1]) if mrf_url else ""
     local_path = mrf_dir / filename if filename else None
+    location_info = hospital_locations.get(encounter_number, {})
     rows.append({
         "encounter_number": encounter_number,
         "dataset_facility_name": dataset_name,
         "matched_mrf_location": mrf_location,
+        "hospital_address": location_info.get("hospital_address", ""),
+        "hospital_latitude": location_info.get("hospital_latitude", ""),
+        "hospital_longitude": location_info.get("hospital_longitude", ""),
         "cms_hpt_url": cms_hpt_url,
         "local_cms_hpt_file": f"cms_hpt/{cms_hpt_file}",
         "mrf_url": mrf_url,

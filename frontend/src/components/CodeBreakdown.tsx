@@ -1,11 +1,24 @@
 import { formatUSD } from '../lib/format'
-import type { PriceSource, PricingResponse } from '../types'
+import type { CodePricing, PriceSource, PricingResponse } from '../types'
 
 type Props = {
   pricing: PricingResponse
   selectedCodes: Set<string>
   onToggle: (code: string) => void
   onContinue: () => void
+}
+
+/** Circled "i" carrying its one-liner in a tooltip. */
+function InfoIcon({ label }: { label: string }) {
+  return (
+    <span
+      title={label}
+      aria-label={label}
+      className="ml-1 inline-flex h-3.5 w-3.5 cursor-help items-center justify-center rounded-full bg-slate-400 align-middle text-[9px] font-bold text-white"
+    >
+      i
+    </span>
+  )
 }
 
 /**
@@ -69,6 +82,32 @@ function SourcesCell({ sources }: { sources: PriceSource[] }) {
   )
 }
 
+/** The p10–p90 band, or a "limited data" note when there's essentially one plan. */
+function ExpectedRangeCell({ item }: { item: CodePricing }) {
+  const hasBand = item.expected_low !== null && item.expected_high !== null
+  return (
+    <div className="text-right">
+      {item.limited_data ? (
+        <span className="text-slate-400">Limited data</span>
+      ) : hasBand ? (
+        <span className="whitespace-nowrap text-slate-900">
+          {formatUSD(item.expected_low!)}
+          {item.expected_median !== null &&
+            ` – ${formatUSD(item.expected_median)}`}{' '}
+          – {formatUSD(item.expected_high!)}
+        </span>
+      ) : (
+        <span className="text-slate-400">—</span>
+      )}
+      {!item.limited_data && item.n_payers > 0 && (
+        <p className="mt-0.5 text-xs text-slate-400">
+          based on {item.n_payers} {item.n_payers === 1 ? 'plan' : 'plans'}
+        </p>
+      )}
+    </div>
+  )
+}
+
 export function CodeBreakdown({
   pricing,
   selectedCodes,
@@ -78,8 +117,14 @@ export function CodeBreakdown({
   const selected = pricing.codes.filter((c) =>
     selectedCodes.has(c.procedure.code),
   )
-  const totalAverage = selected.reduce((sum, c) => sum + c.average, 0)
-  const totalLowest = selected.reduce((sum, c) => sum + c.lowest, 0)
+  const sum = (values: number[]) => values.reduce((a, b) => a + b, 0)
+  const totalWithout = sum(selected.map((c) => c.without_insurance ?? 0))
+  const totalWith = sum(selected.map((c) => c.with_insurance ?? 0))
+  const bandSelected = selected.filter(
+    (c) => !c.limited_data && c.expected_low !== null && c.expected_high !== null,
+  )
+  const totalLow = sum(bandSelected.map((c) => c.expected_low!))
+  const totalHigh = sum(bandSelected.map((c) => c.expected_high!))
 
   return (
     <div className="rounded border border-slate-200 bg-white">
@@ -88,20 +133,31 @@ export function CodeBreakdown({
           Your estimated follow-up costs
         </h2>
         <p className="mt-0.5 text-sm text-slate-600">
-          Real prices published by Boston-area hospitals under CMS price-transparency rules. Click a row to include
-          or exclude it from your total.
+          Real prices published by Boston-area hospitals under CMS
+          price-transparency rules. Click a row to include or exclude it from
+          your total.
         </p>
       </div>
 
       <div className="overflow-x-auto md:overflow-x-visible">
-        <table className="w-full min-w-[46rem] text-left">
+        <table className="w-full min-w-[56rem] text-left">
           <thead>
             <tr className="border-b border-slate-200 text-sm text-slate-600">
               <th className="px-6 py-3 font-medium">Include</th>
               <th className="px-3 py-3 font-medium">Code</th>
               <th className="px-3 py-3 font-medium">Procedure</th>
-              <th className="px-3 py-3 text-right font-medium">Average</th>
-              <th className="px-3 py-3 text-right font-medium">Lowest</th>
+              <th className="px-3 py-3 text-right font-medium">
+                Without insurance
+                <InfoIcon label="What you pay if you self-pay." />
+              </th>
+              <th className="px-3 py-3 text-right font-medium">
+                With your insurance
+                <InfoIcon label="What your plan agreed to pay here." />
+              </th>
+              <th className="px-3 py-3 text-right font-medium">
+                Expected range
+                <InfoIcon label="What people actually paid, most landing in this band." />
+              </th>
               <th className="px-6 py-3 font-medium">Published by</th>
             </tr>
           </thead>
@@ -109,6 +165,7 @@ export function CodeBreakdown({
             {pricing.codes.map((item) => {
               const code = item.procedure.code
               const included = selectedCodes.has(code)
+              const dim = included ? '' : 'opacity-60'
               return (
                 <tr
                   key={code}
@@ -144,18 +201,25 @@ export function CodeBreakdown({
                     )}
                   </td>
                   <td
-                    className={`px-3 py-4 text-right whitespace-nowrap text-slate-900 ${
-                      included ? '' : 'line-through'
-                    }`}
+                    className={`px-3 py-4 text-right whitespace-nowrap text-slate-900 ${dim}`}
                   >
-                    {formatUSD(item.average)}
+                    {item.without_insurance !== null ? (
+                      formatUSD(item.without_insurance)
+                    ) : (
+                      <span className="text-slate-400">—</span>
+                    )}
                   </td>
                   <td
-                    className={`px-3 py-4 text-right font-medium whitespace-nowrap text-emerald-700 ${
-                      included ? '' : 'line-through'
-                    }`}
+                    className={`px-3 py-4 text-right whitespace-nowrap text-slate-900 ${dim}`}
                   >
-                    {formatUSD(item.lowest)}
+                    {item.with_insurance !== null ? (
+                      formatUSD(item.with_insurance)
+                    ) : (
+                      <span className="text-slate-400">—</span>
+                    )}
+                  </td>
+                  <td className={`px-3 py-4 text-sm ${dim}`}>
+                    <ExpectedRangeCell item={item} />
                   </td>
                   <td className="px-6 py-4 text-sm whitespace-nowrap">
                     <SourcesCell sources={item.sources} />
@@ -171,10 +235,17 @@ export function CodeBreakdown({
                 {pricing.codes.length === 1 ? 'procedure' : 'procedures'}
               </td>
               <td className="px-3 py-4 text-right whitespace-nowrap text-slate-900">
-                {formatUSD(totalAverage)}
+                {formatUSD(totalWithout)}
               </td>
-              <td className="px-3 py-4 text-right whitespace-nowrap text-emerald-700">
-                {formatUSD(totalLowest)}
+              <td className="px-3 py-4 text-right whitespace-nowrap text-slate-900">
+                {formatUSD(totalWith)}
+              </td>
+              <td className="px-3 py-4 text-right whitespace-nowrap text-slate-900">
+                {bandSelected.length > 0 ? (
+                  `${formatUSD(totalLow)} – ${formatUSD(totalHigh)}`
+                ) : (
+                  <span className="text-slate-400">—</span>
+                )}
               </td>
               <td className="px-6 py-4" />
             </tr>

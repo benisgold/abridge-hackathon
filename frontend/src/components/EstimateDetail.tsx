@@ -22,31 +22,71 @@ function InfoIcon({ label }: { label: string }) {
   )
 }
 
-function RangeBar({ low, high, value }: { low: number; high: number; value: number }) {
+/**
+ * Visualises the p10–p90 band with the p50 (median) marked, plus where the
+ * headline "you pay" figure lands within it.
+ */
+function RangeBar({
+  low,
+  median,
+  high,
+  value,
+}: {
+  low: number
+  median: number | null
+  high: number
+  value: number
+}) {
   const span = high - low
-  // The cash price can sit outside the negotiated band; clamp so the marker
-  // stays on the bar rather than flying off the end.
-  const clamped = Math.min(Math.max(value, low), high)
-  const percent = span > 0 ? ((clamped - low) / span) * 100 : 50
+  const pct = (v: number) =>
+    span > 0 ? ((Math.min(Math.max(v, low), high) - low) / span) * 100 : 50
 
   return (
-    <div className="px-8 pt-2 pb-1">
-      <div className="flex items-center gap-2">
-        <span className="shrink-0 text-sm text-slate-700">{formatUSD(low)}</span>
-        <div className="relative h-px flex-1 bg-slate-800">
-          <span className="absolute -top-[3px] -left-[3px] h-[7px] w-[7px] rounded-full bg-slate-900" />
-          <span className="absolute -top-[3px] -right-[3px] h-[7px] w-[7px] rounded-full bg-slate-900" />
+    <div className="px-2 pt-2 pb-1">
+      <div className="relative mx-1 h-1.5 rounded-full bg-slate-200">
+        {/* Shaded p10→p90 band */}
+        <span className="absolute inset-y-0 left-0 right-0 rounded-full bg-teal-100" />
+        {/* p50 median tick */}
+        {median !== null && (
           <span
-            className="absolute -top-[5px] h-[11px] w-[11px] -translate-x-1/2 rounded-full border-2 border-white bg-emerald-600"
-            style={{ left: `${percent}%` }}
+            className="absolute -top-[3px] h-3 w-3 -translate-x-1/2 rounded-full border-2 border-white bg-slate-900"
+            style={{ left: `${pct(median)}%` }}
+            title={`Median (p50) ${formatUSD(median)}`}
           />
+        )}
+        {/* Where the quoted price falls */}
+        <span
+          className="absolute -top-[4px] h-3.5 w-3.5 -translate-x-1/2 rounded-full border-2 border-white bg-emerald-600 shadow"
+          style={{ left: `${pct(value)}%` }}
+          title={`You pay ${formatUSD(value)}`}
+        />
+      </div>
+
+      <div className="mt-3 flex items-end justify-between text-sm">
+        <div className="text-left">
+          <div className="font-semibold text-slate-900">{formatUSD(low)}</div>
+          <div className="text-xs tracking-wide text-slate-500">p10</div>
         </div>
-        <span className="shrink-0 text-sm text-slate-700">{formatUSD(high)}</span>
+        {median !== null && (
+          <div className="max-w-[40%] text-center">
+            <div className="font-semibold text-slate-900">
+              {formatUSD(median)}
+            </div>
+            <div className="text-xs tracking-wide text-slate-500">
+              what people actually paid p50
+            </div>
+          </div>
+        )}
+        <div className="text-right">
+          <div className="font-semibold text-slate-900">{formatUSD(high)}</div>
+          <div className="text-xs tracking-wide text-slate-500">p90</div>
+        </div>
       </div>
-      <div className="flex justify-between px-6 text-sm text-slate-600">
-        <span>Low</span>
-        <span>High</span>
-      </div>
+
+      <p className="mt-2 flex items-center gap-1.5 text-xs text-slate-500">
+        <span className="inline-block h-2.5 w-2.5 rounded-full bg-emerald-600" />
+        You pay {formatUSD(value)}
+      </p>
     </div>
   )
 }
@@ -167,6 +207,7 @@ export function EstimateDetail({
           {hasBand && (
             <RangeBar
               low={breakdown.expected_low!}
+              median={breakdown.expected_median}
               high={breakdown.expected_high!}
               value={breakdown.patient_responsibility}
             />
@@ -211,12 +252,16 @@ export function EstimateDetail({
                 <div className="flex justify-between">
                   <dt className="font-medium text-slate-800">Expected range</dt>
                   <dd className="font-medium text-slate-900">
-                    {formatUSD(breakdown.expected_low!)} –{' '}
-                    {formatUSD(breakdown.expected_high!)}
+                    {formatUSD(breakdown.expected_low!)}
+                    {breakdown.expected_median !== null &&
+                      ` – ${formatUSD(breakdown.expected_median)}`}{' '}
+                    – {formatUSD(breakdown.expected_high!)}
                   </dd>
                 </div>
                 <p className="mt-0.5 text-sm text-slate-600">
-                  What people actually paid, most landing in this band.
+                  What people actually paid (p10
+                  {breakdown.expected_median !== null && ' · p50 median'} · p90),
+                  most landing in this band.
                 </p>
               </div>
             )}

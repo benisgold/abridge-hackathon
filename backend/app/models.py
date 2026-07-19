@@ -44,6 +44,7 @@ class Breakdown(BaseModel):
     without_insurance: int | None
     with_insurance: int | None
     expected_low: int | None
+    expected_median: int | None
     expected_high: int | None
 
     # List price, where published, and the implied self-pay discount.
@@ -102,6 +103,17 @@ class CodePricing(BaseModel):
     average: int
     lowest: int
     n_hospitals: int
+    # The three headline figures, aggregated (median) across the publishing
+    # hospitals. None means nobody publishes that figure — render nothing.
+    without_insurance: int | None = None  # typical discounted cash / self-pay
+    with_insurance: int | None = None  # typical negotiated ("dollar") rate
+    expected_low: int | None = None  # p10 of what people actually paid
+    expected_median: int | None = None  # p50
+    expected_high: int | None = None  # p90
+    # Total plans (payers) behind these numbers, for the quiet "based on N
+    # plans" note. limited_data hides the range when there's essentially one.
+    n_payers: int = 0
+    limited_data: bool = False
     # Every hospital publishing this code, so the UI can list them on hover.
     sources: list[PriceSource] = []
 

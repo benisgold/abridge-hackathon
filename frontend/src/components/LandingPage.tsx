@@ -45,6 +45,31 @@ const money = (value: number) =>
     maximumFractionDigits: 0,
   }).format(value)
 
+const money0 = (value: number) =>
+  new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(value)
+
+// Real ingest counts behind the estimates, shown in the "The data" section so
+// the demo is grounded in the actual price-transparency files we processed.
+const HOSPITAL_ROWS = [
+  { name: "Boston Children's (Longwood)", rows: 465_548 },
+  { name: 'Lahey Hospital & Medical Center (Burlington)', rows: 91_487 },
+  { name: 'South Shore Hospital', rows: 167_552 },
+  {
+    name: 'Encompass Health Rehab Hospital of Western MA',
+    rows: 48_046,
+  },
+  { name: 'Price Transparency 2026 (2320)', rows: 1_022_366 },
+] as const
+
+const CODE_TYPES = [
+  { type: 'CPT', count: 4_891 },
+  { type: 'HCPCS', count: 15_814 },
+] as const
+
+const TOTAL_ROWS = HOSPITAL_ROWS.reduce((sum, h) => sum + h.rows, 0)
+const MAX_ROWS = Math.max(...HOSPITAL_ROWS.map((h) => h.rows))
+const TOTAL_CODES = 20_705
+
 type Props = {
   /** Opens the real OpenCost Health tool. */
   onLaunch: () => void
@@ -351,6 +376,62 @@ export function LandingPage({ onLaunch }: Props) {
                   >
                     CMS source ↗
                   </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="data-foundation fade-up">
+              <div className="foundation-head">
+                <div className="foundation-stat">
+                  <strong>{money0(TOTAL_ROWS)}</strong>
+                  <span>priced line items ingested</span>
+                </div>
+                <div className="foundation-stat">
+                  <strong>5</strong>
+                  <span>Massachusetts hospitals</span>
+                </div>
+                <div className="foundation-stat">
+                  <strong>{money0(TOTAL_CODES)}</strong>
+                  <span>distinct billable codes</span>
+                </div>
+              </div>
+
+              <div className="foundation-body">
+                <div className="foundation-block">
+                  <div className="small-label">Rows per hospital</div>
+                  <div className="foundation-bars">
+                    {HOSPITAL_ROWS.map((h) => (
+                      <div key={h.name} className="foundation-bar-row">
+                        <div className="foundation-bar-label">{h.name}</div>
+                        <div className="foundation-bar-track">
+                          <div
+                            className="foundation-bar-fill"
+                            style={{
+                              width: `${(h.rows / MAX_ROWS) * 100}%`,
+                            }}
+                          />
+                        </div>
+                        <div className="foundation-bar-value">
+                          {money0(h.rows)}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="foundation-block">
+                  <div className="small-label">Codes by type</div>
+                  <div className="foundation-codes">
+                    {CODE_TYPES.map((c) => (
+                      <div key={c.type} className="foundation-code-card">
+                        <div className="foundation-code-type">{c.type}</div>
+                        <div className="foundation-code-count">
+                          {money0(c.count)}
+                        </div>
+                        <div className="foundation-code-sub">distinct codes</div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

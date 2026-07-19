@@ -65,6 +65,7 @@ class HospitalPrice:
     negotiated_min: float | None
     negotiated_max: float | None
     p10: float | None
+    p50: float | None
     p90: float | None
     gross: float | None
     n_payers: int
@@ -130,6 +131,7 @@ def _parse_prices(raw: str) -> dict[str, HospitalPrice]:
             negotiated_min=_f(value.get("negotiated_min")),
             negotiated_max=_f(value.get("negotiated_max")),
             p10=_f(value.get("p10")),
+            p50=_f(value.get("p50")),
             p90=_f(value.get("p90")),
             gross=_f(value.get("gross")),
             n_payers=_i(value.get("n_payers")),

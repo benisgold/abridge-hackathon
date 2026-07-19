@@ -6,6 +6,7 @@ UI omits that row.
 """
 
 from hashlib import sha256
+from statistics import median
 
 from .data import find_seed
 from .real_data import HospitalPrice, RealCode
@@ -96,6 +97,11 @@ def build_breakdown(
         expected_low = sum(b[0] for b in bands)  # type: ignore[index]
         expected_high = sum(b[1] for b in bands)  # type: ignore[index]
 
+    # The p50 (median of what people actually paid). Summed across the basket
+    # only when every line publishes one, so the total median stays honest.
+    p50_parts = [p.p50 for p, _ in usable if p.p50 is not None]
+    expected_median = round(sum(p50_parts)) if len(p50_parts) == len(usable) else None
+
     gross_parts = [p.gross for p, _ in usable if p.gross is not None]
     gross = round(sum(gross_parts)) if len(gross_parts) == len(usable) else None
     discount = (
@@ -112,6 +118,7 @@ def build_breakdown(
         without_insurance=without_insurance,
         with_insurance=with_insurance,
         expected_low=expected_low,
+        expected_median=expected_median,
         expected_high=expected_high,
         gross=gross,
         discount=discount,
@@ -127,11 +134,13 @@ def market_pricing(
 ) -> CodePricing | None:
     """Average and lowest across the hospitals that publish this code."""
     sources: list[PriceSource] = []
+    publishing: list[HospitalPrice] = []
     for hospital_id, price in code.prices.items():
         value = payable(price)
         if value is None:
             continue
         amount, basis = value
+        publishing.append(price)
         # A hospital in the registry gets its curated name; whether it's shown
         # on the map depends on the paediatric toggle, so the "Published by"
         # list stays in step with the pins the user actually sees.
@@ -151,10 +160,39 @@ def market_pricing(
 
     sources.sort(key=lambda s: s.amount)
     amounts = [s.amount for s in sources]
+
+    # The three headline figures, taken as the median across hospitals so a
+    # single outlier can't drag the "typical" number around.
+    cash_values = [p.discounted_cash for p in publishing if p.discounted_cash is not None]
+    without_insurance = round(median(cash_values)) if cash_values else None
+
+    negotiated_values = [
+        p.negotiated_median for p in publishing if p.negotiated_median is not None
+    ]
+    with_insurance = round(median(negotiated_values)) if negotiated_values else None
+
+    bands = [b for b in (expected_band(p) for p in publishing) if b is not None]
+    expected_low = round(median(b[0] for b in bands)) if bands else None
+    expected_high = round(median(b[1] for b in bands)) if bands else None
+
+    p50_values = [p.p50 for p in publishing if p.p50 is not None]
+    expected_median = round(median(p50_values)) if p50_values else None
+
+    # Total plans behind the market view, so "based on N plans" reflects every
+    # payer that contributed, not just the hospital count.
+    n_payers = sum(p.n_payers for p in publishing)
+
     return CodePricing(
         procedure=to_procedure(code),
         average=round(sum(amounts) / len(amounts)),
         lowest=min(amounts),
         n_hospitals=len(amounts),
+        without_insurance=without_insurance,
+        with_insurance=with_insurance,
+        expected_low=expected_low,
+        expected_median=expected_median,
+        expected_high=expected_high,
+        n_payers=n_payers,
+        limited_data=n_payers <= LIMITED_DATA_PAYERS,
         sources=sources,
     )

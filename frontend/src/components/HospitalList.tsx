@@ -17,6 +17,9 @@ export function HospitalList({ results, selectedId, onSelect }: Props) {
     <ul className="flex max-h-[32rem] flex-col gap-2 overflow-y-auto pr-1">
       {results.map((result) => {
         const selected = result.hospital.id === selectedId
+        const { expected_low: low, expected_median: mid, expected_high: high } =
+          result.breakdown
+        const hasBand = low !== null && high !== null
         return (
           <li key={result.hospital.id}>
             <button
@@ -55,6 +58,18 @@ export function HospitalList({ results, selectedId, onSelect }: Props) {
                     <span className="text-xs font-medium tracking-wide text-emerald-700 uppercase">
                       Lowest
                     </span>
+                  )}
+                  {hasBand && (
+                    <p className="mt-1 text-xs whitespace-nowrap text-slate-500">
+                      <span className="text-slate-400">p10–p90</span>{' '}
+                      {formatUSD(low)}–{formatUSD(high)}
+                    </p>
+                  )}
+                  {mid !== null && (
+                    <p className="text-xs whitespace-nowrap text-slate-500">
+                      <span className="text-slate-400">p50</span>{' '}
+                      {formatUSD(mid)}
+                    </p>
                   )}
                 </div>
               </div>

@@ -30,6 +30,7 @@ export type Breakdown = {
   without_insurance: number | null
   with_insurance: number | null
   expected_low: number | null
+  expected_median: number | null
   expected_high: number | null
   gross: number | null
   discount: number | null
@@ -103,6 +104,19 @@ export type CodePricing = {
   lowest: number
   /** How many hospitals publish a price for this code. */
   n_hospitals: number
+  /** Typical self-pay (discounted cash) price; null when unpublished. */
+  without_insurance: number | null
+  /** Typical negotiated ("with insurance") rate; null when unpublished. */
+  with_insurance: number | null
+  /** p10–p90 band of what people actually paid; null when unavailable. */
+  expected_low: number | null
+  /** p50 (median) of what people actually paid; null when unavailable. */
+  expected_median: number | null
+  expected_high: number | null
+  /** Total plans (payers) behind these numbers. */
+  n_payers: number
+  /** True when there's essentially one plan — hide the range. */
+  limited_data: boolean
   /** Every hospital publishing this code, revealed on hover. */
   sources: PriceSource[]
 }

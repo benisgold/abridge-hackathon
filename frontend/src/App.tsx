@@ -71,7 +71,7 @@ function App({ onBackHome }: AppProps = {}) {
   // Whether paediatric hospitals appear on the map / in the "Published by"
   // count. Off by default (every patient here is an adult); the header toggle
   // flips it so the two counts always agree with what's shown.
-  const [includePaediatric, setIncludePaediatric] = useState(false)
+  const [includePaediatric, setIncludePaediatric] = useState(true)
 
   // Hospitals. `hospitalCodes` is a separate selection: patients often split
   // procedures across facilities, so what you're pricing overall and what

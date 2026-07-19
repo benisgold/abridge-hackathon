@@ -190,3 +190,7 @@ Steps:
 3. Unzip / place the dataset inside `./data` so the files live under `./data/synthetic-ambient-fhir-25/`.
 
 The `./data` folder is listed in `.gitignore`, so the data stays local and is never committed.
+
+```
+uv run uvicorn app.main:app --reload --port 8000
+```

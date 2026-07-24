@@ -43,14 +43,20 @@ Copy the example and fill in as needed:
 cp .env.example .env
 ```
 
-| Variable             | Default            | Purpose                                                                 |
-| -------------------- | ------------------ | ----------------------------------------------------------------------- |
-| `EXTRACTION_MODE`    | `csv`              | `csv` replays pre-extracted codes (no API key). `live` calls Claude.    |
-| `ANTHROPIC_API_KEY`  | —                  | Required only when `EXTRACTION_MODE=live`.                              |
-| `EXTRACTION_MODEL`   | `claude-haiku-4-5` | Model used in `live` mode.                                              |
-| `INCLUDE_PAEDIATRIC` | off                | Set to `1`/`true` to include Boston Children's in pricing/maps.         |
+| Variable             | Default            | Purpose                                                                       |
+| -------------------- | ------------------ | ----------------------------------------------------------------------------- |
+| `ANTHROPIC_ENABLED`  | `false`            | Master switch for the Claude agent. `false` never calls the API (CSV replay). |
+| `EXTRACTION_MODE`    | `csv`              | `csv` replays pre-extracted codes (no API key). `live` calls Claude.          |
+| `ANTHROPIC_API_KEY`  | —                  | Required only when the live agent is enabled.                                  |
+| `EXTRACTION_MODEL`   | `claude-haiku-4-5` | Model used in `live` mode.                                                     |
+| `INCLUDE_PAEDIATRIC` | off                | Set to `1`/`true` to include Boston Children's in pricing/maps.               |
 
-The `.env` is loaded from `backend/.env` (see `app/main.py`).
+`ANTHROPIC_ENABLED` gates everything: while it's `false`, `EXTRACTION_MODE=live`
+is ignored and the app always replays CSV, so the Anthropic key is never used.
+Flip it to `true` (and set `EXTRACTION_MODE=live` + a key) to turn the agent on.
+
+The `.env` is loaded from the repo-root `.env` first, then `backend/.env` (which
+overrides it) — see `app/main.py`.
 
 ## Data
 

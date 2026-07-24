@@ -84,7 +84,13 @@ patients, LLM-generated notes), no real patients.
 
 ### Extraction
 
-`backend/app/extraction.py` runs in one of two modes, set by `EXTRACTION_MODE`:
+The Claude agent is gated by a master switch, `ANTHROPIC_ENABLED` (default
+`false`). While it's off, the Anthropic API key is never used and the app always
+replays CSV, regardless of `EXTRACTION_MODE`. Set `ANTHROPIC_ENABLED=true` in the
+`.env` to turn the live agent back on.
+
+`backend/app/extraction.py` runs in one of two modes, set by `EXTRACTION_MODE`
+(only honoured when `ANTHROPIC_ENABLED=true`):
 
 - **`csv`** (default) — replays the codes Robbert's pipeline already extracted
   for each encounter, paced over the SSE stream so the reveal still animates.

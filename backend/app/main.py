@@ -9,7 +9,7 @@ from fastapi.responses import StreamingResponse
 from . import real_data
 from .data import HOSPITALS, ZIP_CENTROIDS, visible_hospitals
 from .encounters import Encounter, EncounterSummary, find_encounter, load_encounters
-from .extraction import EXTRACTION_MODE, replay_extraction, stream_extraction
+from .extraction import extraction_mode, replay_extraction, stream_extraction
 from .geo import haversine_miles
 from .models import (
     EstimateResponse,
@@ -22,7 +22,11 @@ from .models import (
 )
 from .pricing import build_breakdown, market_pricing, payable, to_procedure
 
-load_dotenv(Path(__file__).resolve().parents[1] / ".env")
+# Load the repo-root .env first (shared secrets like ANTHROPIC_API_KEY live
+# there), then let backend/.env override it if present.
+_BACKEND_DIR = Path(__file__).resolve().parents[1]
+load_dotenv(_BACKEND_DIR.parent / ".env")
+load_dotenv(_BACKEND_DIR / ".env", override=True)
 
 ESTIMATE_VALID_DAYS = 30
 
@@ -43,7 +47,7 @@ def health() -> dict[str, str | bool | int]:
     return {
         "status": "ok",
         "price_data_present": real_data.dataset_present(),
-        "extraction_mode": EXTRACTION_MODE,
+        "extraction_mode": extraction_mode(),
         "priced_hospitals": len(HOSPITALS),
     }
 
@@ -86,7 +90,7 @@ async def extract_codes(request: ExtractRequest) -> StreamingResponse:
             status_code=400, detail="Provide either encounter_id or summary_text."
         )
 
-    if EXTRACTION_MODE == "live":
+    if extraction_mode() == "live":
         stream = stream_extraction(summary_text, request.model)
     else:
         if encounter is None:

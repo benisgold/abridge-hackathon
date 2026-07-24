@@ -15,10 +15,34 @@ from pydantic import BaseModel, ValidationError
 
 from . import real_data
 
-# "csv" replays Robbert's precomputed codes (default — real prices, no API key
-# needed). "live" calls Claude, which still works but produces codes that may
-# not exist in the published price data and therefore can't be priced.
-EXTRACTION_MODE = os.environ.get("EXTRACTION_MODE", "csv").lower()
+def _env_flag(name: str, default: bool = False) -> bool:
+    """Reads a boolean-ish env var (1/true/yes/on → True)."""
+    raw = os.environ.get(name)
+    if raw is None:
+        return default
+    return raw.strip().lower() in ("1", "true", "yes", "on")
+
+
+def anthropic_enabled() -> bool:
+    """Master switch for the Claude (Anthropic API key) extraction agent.
+
+    Off by default so the app never touches the API. Flip ANTHROPIC_ENABLED=true
+    in the .env to turn the live agent back on. Read lazily so toggling it in the
+    .env (loaded at startup) takes effect without editing code.
+    """
+    return _env_flag("ANTHROPIC_ENABLED", False)
+
+
+def extraction_mode() -> str:
+    """The effective extraction mode: "csv" replay or "live" Claude.
+
+    "csv" replays Robbert's precomputed codes (real prices, no API key needed).
+    "live" calls Claude, which still works but produces codes that may not exist
+    in the published price data and therefore can't be priced. Live only takes
+    effect when the Anthropic agent is enabled; otherwise we always replay CSV.
+    """
+    mode = os.environ.get("EXTRACTION_MODE", "csv").lower()
+    return mode if anthropic_enabled() else "csv"
 
 # The only two models the UI lets the user pick between. Haiku is the cheap,
 # fast tier; Sonnet trades cost for accuracy. Anything outside this set is
